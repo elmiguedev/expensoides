@@ -1,0 +1,76 @@
+{
+    "apartments": [
+        {
+            "floor": 2,
+            "number": 12,
+            "owner": "Darío Barassi",
+            "id": 0
+        },
+        {
+            "floor": 2,
+            "number": 11,
+            "owner": "Guido Kaczka",
+            "id": 1
+        },
+        {
+            "floor": 2,
+            "number": 10,
+            "owner": "Gabriel Medina",
+            "id": 2
+        },
+        {
+            "floor": 2,
+            "number": 9,
+            "owner": "Emilio Ravenna",
+            "id": 3
+        },
+        {
+            "floor": 1,
+            "number": 8,
+            "owner": "Pablo Lampone",
+            "id": 4
+        },
+        {
+            "floor": 1,
+            "number": 7,
+            "owner": "Mario Santos",
+            "id": 5
+        },
+        {
+            "floor": 1,
+            "number": 6,
+            "owner": "Flor Finkel",
+            "id": 6
+        },
+        {
+            "floor": 1,
+            "number": 5,
+            "owner": "Dardo Fuseneco",
+            "id": 7
+        },
+        {
+            "floor": 1,
+            "number": 4,
+            "owner": "Paola Argento",
+            "id": 8
+        },
+        {
+            "floor": 0,
+            "number": 3,
+            "owner": "Coki Argento",
+            "id": 9
+        },
+        {
+            "floor": 0,
+            "number": 2,
+            "owner": "Pepe Argento",
+            "id": 10
+        },
+        {
+            "floor": 0,
+            "number": 1,
+            "owner": "Moni Argento",
+            "id": 11
+        }
+    ]
+}

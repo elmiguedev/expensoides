@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import AddApartmentAction from "../../actions/AddApartmentAction";
-import ListApartmentsAction from "../../actions/ListApartmentsAction";
+import AddApartmentAction from "../../actions/apartments/AddApartmentAction";
+import ListApartmentsAction from "../../actions/apartments/ListApartmentsAction";
 
 export default class ApartmentHandler {
     private addApartmentAction: AddApartmentAction;

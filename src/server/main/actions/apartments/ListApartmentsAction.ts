@@ -1,5 +1,5 @@
-import Apartment from "../domain/Apartment";
-import ApartmentRepository from "../domain/ApartmentRepository";
+import Apartment from "../../domain/apartments/Apartment";
+import ApartmentRepository from "../../domain/apartments/ApartmentRepository";
 
 export default class ListApartmentsAction {
     private apartmentRepository: ApartmentRepository;

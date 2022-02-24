@@ -1,7 +1,6 @@
-import JSONdb from "simple-json-db";
-import Apartment from "../../domain/Apartment";
-import ApartmentRepository from "../../domain/ApartmentRepository";
-import JsonDb from "../db/JsonDb";
+import Apartment from "../../../domain/apartments/Apartment";
+import ApartmentRepository from "../../../domain/apartments/ApartmentRepository";
+import JsonDb from "../../db/JsonDb";
 
 export default class JsonDbApartmentRepository implements ApartmentRepository {
 

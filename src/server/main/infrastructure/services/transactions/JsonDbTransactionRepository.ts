@@ -1,0 +1,32 @@
+import Transaction from "../../../domain/transactions/Transaction";
+import TransactionRepository from "../../../domain/transactions/TransactionRepository";
+import JsonDb from "../../db/JsonDb";
+
+export default class JsonDbTransactionRepository implements TransactionRepository {
+
+  private db: JsonDb;
+
+  constructor() {
+    this.db = new JsonDb();
+  }
+
+  getAll(): Transaction[] {
+    const transactions = this.db.get<Transaction>("transactions");
+    return transactions;
+  }
+
+  add(transaction: Transaction) {
+    const transactions = this.db.get<Transaction>("transactions");
+    transaction.id = transactions.length;
+    transactions.push(transaction);
+    this.db.set("transactions", transactions);
+  }
+  getBalance(): number {
+    const transactions = this.db.get<Transaction>("transactions");
+    const balance = transactions
+      .map(t => t.mount)
+      .reduce((prev, next) => prev + next, 0);
+    return balance;
+  }
+
+}

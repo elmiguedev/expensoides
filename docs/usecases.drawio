@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NXZYRI2cLS-5SG9tABwp" name="Page-1">
-        <mxGraphModel dx="435" dy="462" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="556" dy="492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -16,7 +16,7 @@
                 <mxCell id="5" value="Ver detalle de departamento" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="240" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="Listar departamentos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="6" value="Listar departamentos" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="160" y="340" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="Agregar nuevo departamento" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -37,7 +37,7 @@
                 <mxCell id="12" value="Imprimir comprobante de expensas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="440" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Guardar contacto" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="13" value="Guardar contacto" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="40" width="120" height="80" as="geometry"/>
                 </mxCell>
             </root>

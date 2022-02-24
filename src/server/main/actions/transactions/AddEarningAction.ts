@@ -10,8 +10,7 @@ export default class AddEarningAction {
     }
 
     execute(data: ActionData): Transaction {
-        const transaction:Transaction = {
-            apartmentId: data.apartmentId,
+        const transaction: Transaction = {
             mount: Math.abs(data.mount),
             description: data.description,
             date: new Date()
@@ -24,7 +23,6 @@ export default class AddEarningAction {
 }
 
 interface ActionData {
-    apartmentId: number;
     mount: number;
     description: string;
 }

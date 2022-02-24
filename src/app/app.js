@@ -1,8 +1,8 @@
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/home/Home";
-import { About } from "./pages/about/About";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
+import { Transactions } from "./pages/transactions/Transactions";
 
 export const App = () => {
   return (
@@ -10,7 +10,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="transactions" element={<Transactions />} />
         </Route>
       </Routes>
     </BrowserRouter>

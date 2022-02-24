@@ -22781,8 +22781,8 @@ parcelHelpers.export(exports, "App", ()=>App
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _layout = require("./components/Layout");
 var _home = require("./pages/home/Home");
-var _about = require("./pages/about/About");
 var _reactRouterDom = require("react-router-dom");
+var _transactions = require("./pages/transactions/Transactions");
 const App = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
@@ -22801,8 +22801,8 @@ const App = ()=>{
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "about",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_about.About, {
+                        path: "transactions",
+                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_transactions.Transactions, {
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
@@ -22835,7 +22835,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","./pages/about/About":"1QscD","react-router-dom":"isLSr","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8NkAr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"isLSr","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/transactions/Transactions":"fmRgn"}],"8NkAr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24795,7 +24795,7 @@ const Navbar = ()=>{
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
                                     className: "nav-link",
                                     to: "/",
-                                    children: "Home"
+                                    children: "Inicio"
                                 }, void 0, false, {
                                     fileName: "src/app/components/Navbar.js",
                                     lineNumber: 14,
@@ -24810,8 +24810,8 @@ const Navbar = ()=>{
                                 className: "nav-item",
                                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
                                     className: "nav-link",
-                                    to: "/about",
-                                    children: "About"
+                                    to: "/transactions",
+                                    children: "Transacciones"
                                 }, void 0, false, {
                                     fileName: "src/app/components/Navbar.js",
                                     lineNumber: 17,
@@ -26546,36 +26546,344 @@ $RefreshReg$(_c, "Apartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"1QscD":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ff77 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"fmRgn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$33a2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ff77.prelude(module);
+$parcel$ReactRefreshHelpers$33a2.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "About", ()=>About
+parcelHelpers.export(exports, "Transactions", ()=>Transactions
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const About = ()=>{
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-        children: "About"
-    }, void 0, false, {
-        fileName: "src/app/pages/about/About.js",
-        lineNumber: 2,
-        columnNumber: 13
+var _react = require("react");
+var _transactionService = require("../../services/TransactionService");
+var _s = $RefreshSig$();
+const Transactions = ()=>{
+    _s();
+    const [transactions, setTransactions] = _react.useState([]);
+    const [balance, setBalance] = _react.useState(0);
+    const [newTransaction, setNewTransaction] = _react.useState({
+        mount: 0,
+        description: ""
+    });
+    const getTransactions = ()=>{
+        _transactionService.TransactionService.getAll().then((data)=>{
+            setTransactions(data);
+        });
+    };
+    const getBalance = ()=>{
+        _transactionService.TransactionService.getBalance().then((data)=>{
+            setBalance(data);
+        });
+    };
+    const handleMountInputChange = (e)=>{
+        setNewTransaction({
+            ...newTransaction,
+            mount: +e.target.value
+        });
+    };
+    const handleDescriptionInputChange = (e)=>{
+        setNewTransaction({
+            ...newTransaction,
+            description: e.target.value
+        });
+    };
+    const addPayment = ()=>{
+        _transactionService.TransactionService.addPayment(newTransaction).then(()=>{
+            getBalance();
+            getTransactions();
+            clearNewTransaction();
+        });
+    };
+    const addEarning = ()=>{
+        _transactionService.TransactionService.addEarning(newTransaction).then(()=>{
+            getBalance();
+            getTransactions();
+            clearNewTransaction();
+        });
+    };
+    const clearNewTransaction = ()=>{
+        setNewTransaction({
+            mount: 0,
+            description: ""
+        });
+    };
+    _react.useEffect(()=>{
+        getTransactions();
+        getBalance();
+    }, []);
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                        children: "Transacciones"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/transactions/Transactions.js",
+                        lineNumber: 65,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 64,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 63,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
+                            children: "Agregar transaccion"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 70,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                            type: "number",
+                            placeholder: "monto",
+                            value: newTransaction.mount,
+                            onChange: handleMountInputChange
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 71,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                            type: "text",
+                            placeholder: "descripcion",
+                            value: newTransaction.description,
+                            onChange: handleDescriptionInputChange
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 72,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                            className: "btn btn-primary",
+                            onClick: addEarning,
+                            children: "Agregar ingreso"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 73,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                            className: "btn btn-danger",
+                            onClick: addPayment,
+                            children: "Agregar gasto"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 74,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 69,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 68,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("strong", {
+                            children: "Balance total: "
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 79,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                            className: `badge ${balance >= 0 ? "bg-success" : "bg-danger"}`,
+                            children: balance
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 80,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 78,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 77,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("table", {
+                        className: "table table-condensed table-striped",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("thead", {
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "id"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 88,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "mount"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 89,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "description"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 90,
+                                            columnNumber: 33
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "date"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 91,
+                                            columnNumber: 33
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/app/pages/transactions/Transactions.js",
+                                    lineNumber: 87,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/app/pages/transactions/Transactions.js",
+                                lineNumber: 86,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
+                                children: transactions.map((transaction)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                        className: transaction.mount >= 0 ? 'table-success' : 'table-danger',
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.id
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 97,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.mount
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 98,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.description
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 99,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.date
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 100,
+                                                columnNumber: 37
+                                            }, undefined)
+                                        ]
+                                    }, transaction.id, true, {
+                                        fileName: "src/app/pages/transactions/Transactions.js",
+                                        lineNumber: 96,
+                                        columnNumber: 33
+                                    }, undefined)
+                                )
+                            }, void 0, false, {
+                                fileName: "src/app/pages/transactions/Transactions.js",
+                                lineNumber: 94,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/app/pages/transactions/Transactions.js",
+                        lineNumber: 85,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 84,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 83,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/transactions/Transactions.js",
+        lineNumber: 62,
+        columnNumber: 9
     }, undefined));
 };
-_c = About;
+_s(Transactions, "u2NYPujk0tgv7Ol6lS96T93BUGs=");
+_c = Transactions;
 var _c;
-$RefreshReg$(_c, "About");
+$RefreshReg$(_c, "Transactions");
 
-  $parcel$ReactRefreshHelpers$ff77.postlude(module);
+  $parcel$ReactRefreshHelpers$33a2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../services/TransactionService":"kTOjL"}],"kTOjL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TransactionService", ()=>TransactionService
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+class TransactionService {
+    constructor(){
+    }
+    static async addPayment(transaction) {
+        const response = await _axiosDefault.default.post("/api/transactions/payment", transaction);
+        return response.data;
+    }
+    static async addEarning(transaction) {
+        const response = await _axiosDefault.default.post("/api/transactions/earning", transaction);
+        return response.data;
+    }
+    static async getBalance() {
+        const response = await _axiosDefault.default.get("/api/transactions/balance");
+        return response.data;
+    }
+    static async getAll() {
+        const response = await _axiosDefault.default.get("/api/transactions");
+        return response.data;
+    }
+}
+
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

@@ -72,5 +72,43 @@
             "owner": "Moni Argento",
             "id": 11
         }
+    ],
+    "transactions": [
+        {
+            "mount": 100,
+            "description": "Cobro magico",
+            "date": "2022-02-24T04:38:31.996Z",
+            "id": 0
+        },
+        {
+            "mount": 150,
+            "description": "Cobro ultra magico",
+            "date": "2022-02-24T04:38:52.338Z",
+            "id": 1
+        },
+        {
+            "mount": -40,
+            "description": "Cosas de limpieza",
+            "date": "2022-02-24T04:40:52.617Z",
+            "id": 2
+        },
+        {
+            "mount": 100,
+            "description": "casino",
+            "date": "2022-02-24T05:00:07.013Z",
+            "id": 3
+        },
+        {
+            "mount": -120,
+            "description": "perfumina",
+            "date": "2022-02-24T05:00:15.977Z",
+            "id": 4
+        },
+        {
+            "mount": -100,
+            "description": "palo de escoba",
+            "date": "2022-02-24T05:00:34.416Z",
+            "id": 5
+        }
     ]
 }

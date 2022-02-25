@@ -7,8 +7,7 @@ describe("Add earning task", () => {
         const transactionRepository = getTransactionRepository();
         const action = new AddEarningAction(transactionRepository);
 
-        const transaction =  action.execute({
-            apartmentId: 1,
+        const transaction = action.execute({
             mount: 2,
             description: "",
         });

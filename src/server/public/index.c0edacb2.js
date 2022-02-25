@@ -26626,17 +26626,17 @@ const Transactions = ()=>{
                     }, void 0, false, {
                         fileName: "src/app/pages/transactions/Transactions.js",
                         lineNumber: 65,
-                        columnNumber: 21
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/transactions/Transactions.js",
                     lineNumber: 64,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/transactions/Transactions.js",
                 lineNumber: 63,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
@@ -26648,7 +26648,7 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 70,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
                             type: "number",
@@ -26658,7 +26658,7 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 71,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
                             type: "text",
@@ -26668,7 +26668,7 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 72,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
                             className: "btn btn-primary",
@@ -26677,7 +26677,7 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 73,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
                             className: "btn btn-danger",
@@ -26686,18 +26686,18 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 74,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/app/pages/transactions/Transactions.js",
                     lineNumber: 69,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/transactions/Transactions.js",
                 lineNumber: 68,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
@@ -26709,7 +26709,7 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 79,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                             className: `badge ${balance >= 0 ? "bg-success" : "bg-danger"}`,
@@ -26717,18 +26717,18 @@ const Transactions = ()=>{
                         }, void 0, false, {
                             fileName: "src/app/pages/transactions/Transactions.js",
                             lineNumber: 80,
-                            columnNumber: 21
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/app/pages/transactions/Transactions.js",
                     lineNumber: 78,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/transactions/Transactions.js",
                 lineNumber: 77,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
@@ -26745,39 +26745,39 @@ const Transactions = ()=>{
                                         }, void 0, false, {
                                             fileName: "src/app/pages/transactions/Transactions.js",
                                             lineNumber: 88,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "mount"
                                         }, void 0, false, {
                                             fileName: "src/app/pages/transactions/Transactions.js",
                                             lineNumber: 89,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "description"
                                         }, void 0, false, {
                                             fileName: "src/app/pages/transactions/Transactions.js",
                                             lineNumber: 90,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "date"
                                         }, void 0, false, {
                                             fileName: "src/app/pages/transactions/Transactions.js",
                                             lineNumber: 91,
-                                            columnNumber: 33
+                                            columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/app/pages/transactions/Transactions.js",
                                     lineNumber: 87,
-                                    columnNumber: 29
+                                    columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/app/pages/transactions/Transactions.js",
                                 lineNumber: 86,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
                                 children: transactions.map((transaction)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
@@ -26788,65 +26788,65 @@ const Transactions = ()=>{
                                             }, void 0, false, {
                                                 fileName: "src/app/pages/transactions/Transactions.js",
                                                 lineNumber: 97,
-                                                columnNumber: 37
+                                                columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: transaction.mount
                                             }, void 0, false, {
                                                 fileName: "src/app/pages/transactions/Transactions.js",
                                                 lineNumber: 98,
-                                                columnNumber: 37
+                                                columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: transaction.description
                                             }, void 0, false, {
                                                 fileName: "src/app/pages/transactions/Transactions.js",
                                                 lineNumber: 99,
-                                                columnNumber: 37
+                                                columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: transaction.date
                                             }, void 0, false, {
                                                 fileName: "src/app/pages/transactions/Transactions.js",
                                                 lineNumber: 100,
-                                                columnNumber: 37
+                                                columnNumber: 19
                                             }, undefined)
                                         ]
                                     }, transaction.id, true, {
                                         fileName: "src/app/pages/transactions/Transactions.js",
                                         lineNumber: 96,
-                                        columnNumber: 33
+                                        columnNumber: 17
                                     }, undefined)
                                 )
                             }, void 0, false, {
                                 fileName: "src/app/pages/transactions/Transactions.js",
                                 lineNumber: 94,
-                                columnNumber: 25
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/app/pages/transactions/Transactions.js",
                         lineNumber: 85,
-                        columnNumber: 21
+                        columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/transactions/Transactions.js",
                     lineNumber: 84,
-                    columnNumber: 17
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/transactions/Transactions.js",
                 lineNumber: 83,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app/pages/transactions/Transactions.js",
         lineNumber: 62,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined));
 };
-_s(Transactions, "u2NYPujk0tgv7Ol6lS96T93BUGs=");
+_s(Transactions, "SVZAjbYB6UmQwnaoLjUjpHpuxEo=");
 _c = Transactions;
 var _c;
 $RefreshReg$(_c, "Transactions");

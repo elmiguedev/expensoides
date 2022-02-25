@@ -12,17 +12,14 @@ describe("Get balance action", () => {
 
         addEarningAction.execute({
             mount: 2000,
-            apartmentId: 1,
             description: ""
         });
         addEarningAction.execute({
             mount: 1000,
-            apartmentId: 1,
             description: ""
         });
         addPaymentAction.execute({
             mount: 800,
-            apartmentId: 1,
             description: ""
         });
 

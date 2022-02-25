@@ -8,8 +8,7 @@ describe("Add payment action", () => {
         const transactionRepository = getTransactionRepository();
         const action = new AddPaymentAction(transactionRepository);
 
-        const transaction =  action.execute({
-            apartmentId: 1,
+        const transaction = action.execute({
             mount: 2,
             description: "",
         });

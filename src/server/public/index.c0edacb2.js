@@ -22835,7 +22835,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"isLSr","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/transactions/Transactions":"fmRgn"}],"8NkAr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"isLSr","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8NkAr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -26872,7 +26872,7 @@ $RefreshReg$(_c, "Transactions");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../services/TransactionService":"kTOjL"}],"kTOjL":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/TransactionService":"kTOjL","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"kTOjL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "TransactionService", ()=>TransactionService

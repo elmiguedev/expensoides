@@ -10,7 +10,7 @@ export default class JsonDbExpenseRepository implements ExpenseRepository {
         this.db = new JsonDb();
     }
 
-    getExpense(apartmentId: number, year: number, month: number): Expense {
+    getExpense(apartmentId: number, year: number, month: number): Expense | undefined {
         const expenses = this.db.get<Expense>("expenses");
         return expenses.find(e =>
             e.apartmentId === apartmentId &&

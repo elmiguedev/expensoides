@@ -1,6 +1,7 @@
 import { ApartmentService } from "../../services/ApartmentService";
 import { Apartment } from "./components/Apartment";
 import { useState, useEffect } from "react";
+import { ExpensesService } from "../../services/ExpensesService";
 
 export const Home = () => {
 
@@ -16,6 +17,10 @@ export const Home = () => {
     }));
   }
 
+  const generateExpensesButtonHandler = () => {
+    ExpensesService.generateAllExpenses().then();
+  }
+
   return (
     <div>
       <div className="row mb-3">
@@ -25,7 +30,7 @@ export const Home = () => {
       </div>
       <div className="row mb-3">
         <div className="col">
-          <button className="btn btn-primary">Generar expensas</button>
+          <button onClick={generateExpensesButtonHandler} className="btn btn-primary">Generar expensas</button>
         </div>
       </div>
       <div className="row">

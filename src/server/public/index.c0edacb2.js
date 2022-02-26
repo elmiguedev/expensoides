@@ -24989,6 +24989,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _apartmentService = require("../../services/ApartmentService");
 var _apartment = require("./components/Apartment");
 var _react = require("react");
+var _expensesService = require("../../services/ExpensesService");
 var _s = $RefreshSig$();
 const Home = ()=>{
     _s();
@@ -25001,6 +25002,9 @@ const Home = ()=>{
             setApartments(apartments);
         });
     };
+    const generateExpensesButtonHandler = ()=>{
+        _expensesService.ExpensesService.generateAllExpenses().then();
+    };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25009,28 +25013,6 @@ const Home = ()=>{
                     className: "col",
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
                         children: "Dptos"
-                    }, void 0, false, {
-                        fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 23,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 22,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/home/Home.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row mb-3",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                        className: "btn btn-primary",
-                        children: "Generar expensas"
                     }, void 0, false, {
                         fileName: "src/app/pages/home/Home.js",
                         lineNumber: 28,
@@ -25047,6 +25029,29 @@ const Home = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row mb-3",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                        onClick: generateExpensesButtonHandler,
+                        className: "btn btn-primary",
+                        children: "Generar expensas"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/home/Home.js",
+                        lineNumber: 33,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/Home.js",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/home/Home.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
                 children: apartments1.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "col-3",
@@ -25054,24 +25059,24 @@ const Home = ()=>{
                             apartment: apartment
                         }, void 0, false, {
                             fileName: "src/app/pages/home/Home.js",
-                            lineNumber: 34,
+                            lineNumber: 39,
                             columnNumber: 13
                         }, undefined)
                     }, apartment.id, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 33,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, undefined)
                 )
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 31,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app/pages/home/Home.js",
-        lineNumber: 20,
+        lineNumber: 25,
         columnNumber: 5
     }, undefined));
 };
@@ -25085,7 +25090,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"35kqt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../services/ExpensesService":"8o2ak"}],"35kqt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ApartmentService", ()=>ApartmentService
@@ -26576,7 +26581,23 @@ $RefreshReg$(_c, "Apartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"fmRgn":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8o2ak":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+class ExpensesService {
+    static async generateAllExpenses() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth();
+        console.log(year, month);
+    }
+}
+
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"fmRgn":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$33a2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

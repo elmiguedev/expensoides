@@ -1,5 +1,6 @@
 import ApartmentRepository from "../../domain/apartments/ApartmentRepository";
 import BuildingRepository from "../../domain/building/BuildingRepository";
+import Expense from "../../domain/expenses/Expense";
 import ExpenseRepository from "../../domain/expenses/ExpenseRepository";
 
 export default class GenerateAllExpensesAction {
@@ -19,9 +20,9 @@ export default class GenerateAllExpensesAction {
 
     public execute(data: ActionData) {
         const apartments = this.apartmentRepository.getAll();
-        const expenses = [];
+        const expenses: Expense[] = [];
         apartments.forEach(apartment => {
-            if (!this.checkExistingExpence(apartment.id, data.year, data.month)) {
+            if (apartment.id && !this.checkExistingExpence(apartment.id, data.year, data.month)) {
                 const expense = this.expenseRepository.add({
                     apartmentId: apartment.id,
                     year: data.year,

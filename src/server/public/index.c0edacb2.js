@@ -620,10 +620,10 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"353sK":[function(require,module,exports) {
+},{}],"jMz5c":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
-var HMR_PORT = 1234;
+var HMR_PORT = 38059;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "0398b3edc0edacb2";
@@ -25003,7 +25003,9 @@ const Home = ()=>{
         });
     };
     const generateExpensesButtonHandler = ()=>{
-        _expensesService.ExpensesService.generateAllExpenses().then();
+        _expensesService.ExpensesService.generateAllExpenses().then((expenses)=>{
+            console.log(expenses);
+        });
     };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
@@ -25015,17 +25017,17 @@ const Home = ()=>{
                         children: "Dptos"
                     }, void 0, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 28,
+                        lineNumber: 30,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 27,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 26,
+                lineNumber: 28,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25038,17 +25040,17 @@ const Home = ()=>{
                         children: "Generar expensas"
                     }, void 0, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 33,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 32,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 31,
+                lineNumber: 33,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25059,24 +25061,24 @@ const Home = ()=>{
                             apartment: apartment
                         }, void 0, false, {
                             fileName: "src/app/pages/home/Home.js",
-                            lineNumber: 39,
+                            lineNumber: 41,
                             columnNumber: 13
                         }, undefined)
                     }, apartment.id, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 38,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined)
                 )
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 36,
+                lineNumber: 38,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app/pages/home/Home.js",
-        lineNumber: 25,
+        lineNumber: 27,
         columnNumber: 5
     }, undefined));
 };
@@ -26531,8 +26533,21 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Apartment", ()=>Apartment
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _expensesService = require("../../../services/ExpensesService");
+var _s = $RefreshSig$();
 const Apartment = (props)=>{
+    _s();
     const { apartment  } = props;
+    const [expenses, setExpenses] = _react.useState([]);
+    const getUnpaidExpenses = ()=>{
+        _expensesService.ExpensesService.getUnpaidExpensesByApartment(apartment.id).then((data)=>{
+            setExpenses(data);
+        });
+    };
+    _react.useEffect(()=>{
+        getUnpaidExpenses();
+    }, []);
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         className: "card card-primary mb-4",
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -26542,14 +26557,25 @@ const Apartment = (props)=>{
                     children: apartment.number
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 10,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                     children: apartment.owner
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 11,
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                    children: [
+                        "Adeuda ",
+                        expenses.length,
+                        " expensas"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 27,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -26557,21 +26583,22 @@ const Apartment = (props)=>{
                     children: "Pagar expensas"
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 12,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/app/pages/home/components/Apartment.js",
-            lineNumber: 9,
+            lineNumber: 24,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/pages/home/components/Apartment.js",
-        lineNumber: 8,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined));
 };
+_s(Apartment, "XCaxB2DEspMpdgcH+IrrPBpyP4o=");
 _c = Apartment;
 var _c;
 $RefreshReg$(_c, "Apartment");
@@ -26581,7 +26608,7 @@ $RefreshReg$(_c, "Apartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8o2ak":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../../services/ExpensesService":"8o2ak"}],"8o2ak":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService
@@ -26592,8 +26619,16 @@ class ExpensesService {
     static async generateAllExpenses() {
         const today = new Date();
         const year = today.getFullYear();
-        const month = today.getMonth();
-        console.log(year, month);
+        const month = today.getMonth() + 1;
+        const response = await _axiosDefault.default.post("/api/expenses/generate/all", {
+            year: year,
+            month: month
+        });
+        return response.data;
+    }
+    static async getUnpaidExpensesByApartment(apartmentId) {
+        const response = await _axiosDefault.default.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
+        return response.data;
     }
 }
 
@@ -26935,6 +26970,6 @@ class TransactionService {
     }
 }
 
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","jMz5c","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

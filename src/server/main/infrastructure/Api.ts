@@ -4,6 +4,7 @@ import AddApartmentAction from "../actions/apartments/AddApartmentAction";
 import ListApartmentsAction from "../actions/apartments/ListApartmentsAction";
 import GenerateAllExpensesAction from "../actions/expenses/GenerateAllExpensesAction";
 import GenerateExpensesAction from "../actions/expenses/GenerateExpensesAction";
+import GetUnpaidExpensesAction from "../actions/expenses/GetUnpaidExpensesAction";
 import AddEarningAction from "../actions/transactions/AddEarningAction";
 import AddPaymentAction from "../actions/transactions/AddPaymentAction";
 import GetBalanceAction from "../actions/transactions/GetBalanceAction";
@@ -47,6 +48,7 @@ const generateAllExpensesAction = new GenerateAllExpensesAction(
     expensesRepository,
     buildingRepository
 )
+const getUnpaidExpensesAction = new GetUnpaidExpensesAction(expensesRepository);
 
 const apartmentHandler = new ApartmentHandler(
     addApartmentAction,
@@ -62,11 +64,13 @@ const transactionHandler = new TransactionHandler(
 
 const expensesHandler = new ExpensesHandler(
     generateExpensesAction,
-    generateAllExpensesAction
+    generateAllExpensesAction,
+    getUnpaidExpensesAction
 );
 
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
 app.get("/api/apartments", apartmentHandler.getAll.bind(apartmentHandler));
+app.get("/api/apartments/:apartmentId/expenses/unpaid", expensesHandler.getUnpaidExpenses.bind(expensesHandler));
 
 app.get("/api/transactions", transactionHandler.getAll.bind(transactionHandler));
 app.post("/api/transactions/payment", transactionHandler.addPayment.bind(transactionHandler));

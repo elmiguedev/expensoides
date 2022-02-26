@@ -18,7 +18,9 @@ export const Home = () => {
   }
 
   const generateExpensesButtonHandler = () => {
-    ExpensesService.generateAllExpenses().then();
+    ExpensesService.generateAllExpenses().then(expenses => {
+      console.log(expenses);
+    });
   }
 
   return (

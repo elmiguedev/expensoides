@@ -21,15 +21,17 @@ export default class GenerateAllExpensesAction {
     public execute(data: ActionData) {
         const apartments = this.apartmentRepository.getAll();
         const expenses: Expense[] = [];
+
         apartments.forEach(apartment => {
-            if (apartment.id && !this.checkExistingExpence(apartment.id, data.year, data.month)) {
-                const expense = this.expenseRepository.add({
+            if (apartment.id !== undefined && !this.checkExistingExpence(apartment.id, data.year, data.month)) {
+                const expense = {
                     apartmentId: apartment.id,
                     year: data.year,
                     month: data.month,
                     mount: this.buildingRepository.getExpensesMount(),
-                    description: "test"
-                });
+                    description: "test",
+                    paid: false
+                };
 
                 this.expenseRepository.add(expense);
                 expenses.push(expense);

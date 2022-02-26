@@ -66,3 +66,4 @@ describe("Add apartment action", () => {
 const getApartmentRepository = () => {
     return new InMemoryApartmentRepository();
 }
+

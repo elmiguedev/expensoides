@@ -6,4 +6,5 @@ export default interface Expense {
   month: number;
   mount: number;
   description: string;
+  paid: boolean;
 }

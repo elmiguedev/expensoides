@@ -13,6 +13,7 @@ describe("Get list of apartment action", () => {
 
     test("should return an array with 1 item after add a apartment", () => {
         const apartmentRepository = getApartmentRepository();
+
         const addApartmentAction = new AddApartmentAction(apartmentRepository);
         const action = new ListApartmentsAction(apartmentRepository);
 

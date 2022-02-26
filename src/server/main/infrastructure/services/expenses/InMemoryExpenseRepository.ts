@@ -9,6 +9,10 @@ export default class InMemoryExpenseRepository implements ExpenseRepository {
     this.expenses = [];
   }
 
+  getUnpaidByApartment(apartmentId: number): Expense[] {
+    return this.expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);
+  }
+
   getExpense(apartmentId: number, year: number, month: number): Expense {
     return this.expenses.find(e =>
       e.apartmentId === apartmentId &&

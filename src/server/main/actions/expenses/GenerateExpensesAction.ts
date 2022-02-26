@@ -23,7 +23,8 @@ export default class GenerateExpensesAction {
       year: data.year,
       month: data.month,
       mount: this.buildingRepository.getExpensesMount(),
-      description: "test"
+      description: "test",
+      paid: false
     });
     return expense;
   }

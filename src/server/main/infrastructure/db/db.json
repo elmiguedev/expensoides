@@ -117,5 +117,127 @@
             "ordinaryExpense": 1800,
             "extraordinaryExpense": 200
         }
+    ],
+    "expenses": [
+        {
+            "apartmentId": 0,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.023Z",
+            "id": 0
+        },
+        {
+            "apartmentId": 1,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.024Z",
+            "id": 1
+        },
+        {
+            "apartmentId": 2,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.024Z",
+            "id": 2
+        },
+        {
+            "apartmentId": 3,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.025Z",
+            "id": 3
+        },
+        {
+            "apartmentId": 4,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.025Z",
+            "id": 4
+        },
+        {
+            "apartmentId": 5,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.025Z",
+            "id": 5
+        },
+        {
+            "apartmentId": 6,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.026Z",
+            "id": 6
+        },
+        {
+            "apartmentId": 7,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.026Z",
+            "id": 7
+        },
+        {
+            "apartmentId": 8,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.026Z",
+            "id": 8
+        },
+        {
+            "apartmentId": 9,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.027Z",
+            "id": 9
+        },
+        {
+            "apartmentId": 10,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.027Z",
+            "id": 10
+        },
+        {
+            "apartmentId": 11,
+            "year": 2022,
+            "month": 2,
+            "mount": 2000,
+            "description": "test",
+            "paid": false,
+            "createdDate": "2022-02-26T05:40:27.027Z",
+            "id": 11
+        }
     ]
 }

@@ -26524,6 +26524,22 @@ const Apartment = (props)=>{
                     fileName: "src/app/pages/home/components/Apartment.js",
                     lineNumber: 11,
                     columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    className: "btn btn-light",
+                    children: "Generar expensas"
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    className: "btn btn-primary",
+                    children: "Pagar expensas"
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 13,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {

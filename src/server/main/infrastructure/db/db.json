@@ -110,5 +110,12 @@
             "date": "2022-02-24T05:00:34.416Z",
             "id": 5
         }
+    ],
+    "buildings": [
+        {
+            "id": 1,
+            "ordinaryExpense": 1800,
+            "extraordinaryExpense": 200
+        }
     ]
 }

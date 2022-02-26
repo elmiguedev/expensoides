@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export class ExpensesService {
-  constructor() {
+
+  static async generateAllExpenses() {
+
   }
 
 }

@@ -5,6 +5,7 @@ export default class InMemoryBuildingRepository implements BuildingRepository {
   private building: Building;
   constructor() {
     this.building = {
+      id: 1,
       ordinaryExpense: 1600,
       extraordinaryExpense: 200
     }

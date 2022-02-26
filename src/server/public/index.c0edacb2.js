@@ -25004,7 +25004,7 @@ const Home = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row",
+                className: "row mb-3",
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                     className: "col",
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
@@ -25025,6 +25025,28 @@ const Home = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row mb-3",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                        className: "btn btn-primary",
+                        children: "Generar expensas"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/home/Home.js",
+                        lineNumber: 28,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/Home.js",
+                    lineNumber: 27,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/home/Home.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
                 children: apartments1.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "col-3",
@@ -25032,18 +25054,18 @@ const Home = ()=>{
                             apartment: apartment
                         }, void 0, false, {
                             fileName: "src/app/pages/home/Home.js",
-                            lineNumber: 29,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, undefined)
                     }, apartment.id, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 28,
+                        lineNumber: 33,
                         columnNumber: 11
                     }, undefined)
                 )
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 26,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined)
         ]
@@ -26526,19 +26548,11 @@ const Apartment = (props)=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                    className: "btn btn-light",
-                    children: "Generar expensas"
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 12,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
                     className: "btn btn-primary",
                     children: "Pagar expensas"
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 13,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, undefined)
             ]

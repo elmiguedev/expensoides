@@ -18,9 +18,14 @@ export const Home = () => {
 
   return (
     <div>
-      <div className="row">
+      <div className="row mb-3">
         <div className="col">
           <h1>Dptos</h1>
+        </div>
+      </div>
+      <div className="row mb-3">
+        <div className="col">
+          <button className="btn btn-primary">Generar expensas</button>
         </div>
       </div>
       <div className="row">

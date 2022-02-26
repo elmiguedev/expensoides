@@ -9,7 +9,6 @@ export const Apartment = (props) => {
       <div className="card-body">
         <h4>{apartment.number}</h4>
         <p>{apartment.owner}</p>
-        <button className="btn btn-light">Generar expensas</button>
         <button className="btn btn-primary">Pagar expensas</button>
       </div>
     </div>

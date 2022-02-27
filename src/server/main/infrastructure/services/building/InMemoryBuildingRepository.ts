@@ -1,7 +1,7 @@
-import Building from "../../../domain/building/Building";
-import BuildingRepository from "../../../domain/building/BuildingRepository";
+import { Building } from "../../../domain/building/Building";
+import { BuildingRepository } from "../../../domain/building/BuildingRepository";
 
-export default class InMemoryBuildingRepository implements BuildingRepository {
+export class InMemoryBuildingRepository implements BuildingRepository {
   private building: Building;
   constructor() {
     this.building = {

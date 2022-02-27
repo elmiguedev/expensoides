@@ -1,9 +1,8 @@
-import InMemoryApartmentRepository from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
-import ListApartmentsAction from "../../../main/actions/apartments/ListApartmentsAction";
-import GenerateExpensesAction from "../../../main/actions/expenses/GenerateExpensesAction";
-import AddApartmentAction from "../../../main/actions/apartments/AddApartmentAction";
-import InMemoryExpenseRepository from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
-import InMemoryBuildingRepository from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
+import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { GenerateExpensesAction } from "../../../main/actions/expenses/GenerateExpensesAction";
+import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
+import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
+import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 
 describe("GenerateExpenses Action", () => {
   test("should generate new expense entity", () => {

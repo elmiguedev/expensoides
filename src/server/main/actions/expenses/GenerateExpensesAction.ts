@@ -1,9 +1,9 @@
-import ApartmentRepository from "../../domain/apartments/ApartmentRepository";
-import BuildingRepository from "../../domain/building/BuildingRepository";
-import Expense from "../../domain/expenses/Expense";
-import ExpenseRepository from "../../domain/expenses/ExpenseRepository";
+import { ApartmentRepository } from "../../domain/apartments/ApartmentRepository";
+import { BuildingRepository } from "../../domain/building/BuildingRepository";
+import { Expense } from "../../domain/expenses/Expense";
+import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
 
-export default class GenerateExpensesAction {
+export class GenerateExpensesAction {
   private apartmentRepository: ApartmentRepository;
   private expenseRepository: ExpenseRepository;
   private buildingRepository: BuildingRepository;

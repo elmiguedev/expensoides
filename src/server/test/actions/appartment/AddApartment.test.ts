@@ -1,5 +1,5 @@
-import AddApartmentAction from "../../../main/actions/apartments/AddApartmentAction";
-import InMemoryApartmentRepository from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
+import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
 
 describe("Add apartment action", () => {
 

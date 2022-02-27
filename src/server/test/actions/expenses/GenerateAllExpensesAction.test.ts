@@ -1,9 +1,9 @@
-import GenerateAllExpensesAction from "../../../main/actions/expenses/GenerateAllExpensesAction";
-import Expense from "../../../main/domain/expenses/Expense";
-import InMemoryApartmentRepository from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
-import InMemoryExpenseRepository from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
-import InMemoryBuildingRepository from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
-import GenerateExpensesAction from "../../../main/actions/expenses/GenerateExpensesAction";
+import { GenerateAllExpensesAction } from "../../../main/actions/expenses/GenerateAllExpensesAction";
+import { Expense } from "../../../main/domain/expenses/Expense";
+import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
+import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
+import { GenerateExpensesAction } from "../../../main/actions/expenses/GenerateExpensesAction";
 
 describe("Generate All expenses action", () => {
 

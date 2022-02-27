@@ -1,4 +1,4 @@
-export default interface Expense {
+export interface Expense {
   id?: number;
   createdDate?: Date;
   apartmentId: number;

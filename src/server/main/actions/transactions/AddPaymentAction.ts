@@ -1,8 +1,8 @@
 
-import Transaction from "../../domain/transactions/Transaction";
-import TransactionRepository from "../../domain/transactions/TransactionRepository";
+import { Transaction } from "../../domain/transactions/Transaction";
+import { TransactionRepository } from "../../domain/transactions/TransactionRepository";
 
-export default class AddPaymentAction {
+export class AddPaymentAction {
     private transactionRepository: TransactionRepository;
 
     constructor(transactionRepository: TransactionRepository) {

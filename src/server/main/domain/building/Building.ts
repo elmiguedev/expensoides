@@ -1,4 +1,4 @@
-export default interface Building {
+export interface Building {
   id: number;
   ordinaryExpense: number;
   extraordinaryExpense: number;

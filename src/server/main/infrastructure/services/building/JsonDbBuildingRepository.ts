@@ -1,8 +1,8 @@
-import BuildingRepository from "../../../domain/building/BuildingRepository";
-import Building from "../../../domain/building/Building";
-import JsonDb from "../../db/JsonDb";
+import { BuildingRepository } from "../../../domain/building/BuildingRepository";
+import { Building } from "../../../domain/building/Building";
+import { JsonDb } from "../../db/JsonDb";
 
-export default class JsonDbBuildingRepository implements BuildingRepository {
+export class JsonDbBuildingRepository implements BuildingRepository {
 
     private db: JsonDb;
 

@@ -1,6 +1,6 @@
-import Apartment from "./Apartment";
+import { Apartment } from "./Apartment";
 
-export default interface ApartmentRepository {
+export interface ApartmentRepository {
     add(apartment: Apartment): void;
     getAll(): Array<Apartment>;
 }

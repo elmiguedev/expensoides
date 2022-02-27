@@ -1,4 +1,4 @@
-export default interface Transaction {
+export interface Transaction {
     id?: number;
     mount: number;
     description: string;

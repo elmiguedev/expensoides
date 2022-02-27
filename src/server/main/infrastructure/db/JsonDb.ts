@@ -1,7 +1,7 @@
 import path from "path";
 import JSONdb from "simple-json-db";
 
-export default class JsonDb {
+export class JsonDb {
     private db: JSONdb;
     constructor() {
         const url = path.join(__dirname, "./db.json");

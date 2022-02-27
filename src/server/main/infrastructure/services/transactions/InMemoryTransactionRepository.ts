@@ -1,7 +1,7 @@
-import Transaction from "../../../domain/transactions/Transaction";
-import TransactionRepository from "../../../domain/transactions/TransactionRepository";
+import { Transaction } from "../../../domain/transactions/Transaction";
+import { TransactionRepository } from "../../../domain/transactions/TransactionRepository";
 
-export default class InMemoryTransactionRepository implements TransactionRepository {
+export class InMemoryTransactionRepository implements TransactionRepository {
     private transactions: Array<Transaction>;
     constructor() {
         this.transactions = new Array();

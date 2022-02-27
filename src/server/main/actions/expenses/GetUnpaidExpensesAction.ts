@@ -1,6 +1,6 @@
-import ExpenseRepository from "../../domain/expenses/ExpenseRepository";
+import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
 
-export default class GetUnpaidExpensesAction {
+export class GetUnpaidExpensesAction {
     private expenseRepository: ExpenseRepository;
 
     constructor(expenseRepository: ExpenseRepository) {

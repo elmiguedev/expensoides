@@ -1,4 +1,4 @@
-export default interface Apartment {
+export interface Apartment {
     id?: number;
     floor: number;
     owner: string;

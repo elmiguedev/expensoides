@@ -1,5 +1,5 @@
-import AddEarningAction from "../../../main/actions/transactions/AddEarningAction";
-import InMemoryTransactionRepository from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
+import { AddEarningAction } from "../../../main/actions/transactions/AddEarningAction";
+import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Add earning task", () => {
 

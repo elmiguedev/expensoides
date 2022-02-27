@@ -1,11 +1,11 @@
 import { Response } from "express";
 import { Request } from "express";
-import AddPaymentAction from "../../actions/transactions/AddPaymentAction";
-import AddEarningAction from "../../actions/transactions/AddEarningAction";
-import GetBalanceAction from "../../actions/transactions/GetBalanceAction";
-import GetTransactionsAction from "../../actions/transactions/GetTransactionsAction";
+import { AddPaymentAction } from "../../actions/transactions/AddPaymentAction";
+import { AddEarningAction } from "../../actions/transactions/AddEarningAction";
+import { GetBalanceAction } from "../../actions/transactions/GetBalanceAction";
+import { GetTransactionsAction } from "../../actions/transactions/GetTransactionsAction";
 
-export default class TransactionHandler {
+export class TransactionHandler {
   private addPaymentAction: AddPaymentAction;
   private addEarningAction: AddEarningAction;
   private getBalanceAction: GetBalanceAction;

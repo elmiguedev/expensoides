@@ -1,8 +1,8 @@
-import Transaction from "../../../domain/transactions/Transaction";
-import TransactionRepository from "../../../domain/transactions/TransactionRepository";
-import JsonDb from "../../db/JsonDb";
+import { Transaction } from "../../../domain/transactions/Transaction";
+import { TransactionRepository } from "../../../domain/transactions/TransactionRepository";
+import { JsonDb } from "../../db/JsonDb";
 
-export default class JsonDbTransactionRepository implements TransactionRepository {
+export class JsonDbTransactionRepository implements TransactionRepository {
 
   private db: JsonDb;
 

@@ -1,3 +1,3 @@
-export default interface BuildingRepository {
+export interface BuildingRepository {
   getExpensesMount(): number;
 }

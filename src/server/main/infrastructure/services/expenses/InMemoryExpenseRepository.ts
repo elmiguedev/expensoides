@@ -1,7 +1,7 @@
-import Expense from "../../../domain/expenses/Expense";
-import ExpenseRepository from "../../../domain/expenses/ExpenseRepository";
+import { Expense } from "../../../domain/expenses/Expense";
+import { ExpenseRepository } from "../../../domain/expenses/ExpenseRepository";
 
-export default class InMemoryExpenseRepository implements ExpenseRepository {
+export class InMemoryExpenseRepository implements ExpenseRepository {
 
   private expenses: Expense[];
 

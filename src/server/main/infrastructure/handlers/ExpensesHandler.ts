@@ -1,9 +1,9 @@
-import GenerateExpensesAction from "../../actions/expenses/GenerateExpensesAction";
-import GenerateAllExpensesAction from "../../actions/expenses/GenerateAllExpensesAction";
 import { Request, Response } from "express";
-import GetUnpaidExpensesAction from "../../actions/expenses/GetUnpaidExpensesAction";
+import { GenerateExpensesAction } from "../../actions/expenses/GenerateExpensesAction";
+import { GenerateAllExpensesAction } from "../../actions/expenses/GenerateAllExpensesAction";
+import { GetUnpaidExpensesAction } from "../../actions/expenses/GetUnpaidExpensesAction";
 
-export default class ExpensesHandler {
+export class ExpensesHandler {
     private generateExpensesAction: GenerateExpensesAction;
     private generateAllExpensesAction: GenerateAllExpensesAction;
     private getUnpaidExpensesAction: GetUnpaidExpensesAction;

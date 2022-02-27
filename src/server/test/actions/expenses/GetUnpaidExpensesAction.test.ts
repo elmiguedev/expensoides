@@ -1,6 +1,6 @@
-import GetUnpaidExpensesAction from "../../../main/actions/expenses/GetUnpaidExpensesAction";
-import Expense from "../../../main/domain/expenses/Expense";
-import InMemoryExpenseRepository from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository"
+import { GetUnpaidExpensesAction } from "../../../main/actions/expenses/GetUnpaidExpensesAction";
+import { Expense } from "../../../main/domain/expenses/Expense";
+import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository"
 
 describe("Get unpaid expenses action", () => {
 

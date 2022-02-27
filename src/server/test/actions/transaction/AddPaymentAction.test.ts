@@ -1,6 +1,5 @@
-import AddEarningAction from "../../../main/actions/transactions/AddEarningAction";
-import AddPaymentAction from "../../../main/actions/transactions/AddPaymentAction";
-import InMemoryTransactionRepository from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
+import { AddPaymentAction } from "../../../main/actions/transactions/AddPaymentAction";
+import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Add payment action", () => {
 

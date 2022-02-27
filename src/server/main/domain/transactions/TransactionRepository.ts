@@ -1,6 +1,6 @@
-import Transaction from "./Transaction";
+import { Transaction } from "./Transaction";
 
-export default interface TransactionRepository {
+export interface TransactionRepository {
     add(transaction: Transaction);
     getBalance(): number;
     getAll(): Transaction[];

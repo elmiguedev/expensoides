@@ -1,8 +1,8 @@
-import Expense from "../../../domain/expenses/Expense";
-import ExpenseRepository from "../../../domain/expenses/ExpenseRepository";
-import JsonDb from "../../db/JsonDb";
+import { Expense } from "../../../domain/expenses/Expense";
+import { ExpenseRepository } from "../../../domain/expenses/ExpenseRepository";
+import { JsonDb } from "../../db/JsonDb";
 
-export default class JsonDbExpenseRepository implements ExpenseRepository {
+export class JsonDbExpenseRepository implements ExpenseRepository {
 
     private db: JsonDb;
 

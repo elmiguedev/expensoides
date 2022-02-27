@@ -1,6 +1,6 @@
-import AddApartmentAction from "../../../main/actions/apartments/AddApartmentAction";
-import ListApartmentsAction from "../../../main/actions/apartments/ListApartmentsAction";
-import InMemoryApartmentRepository from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
+import { ListApartmentsAction } from "../../../main/actions/apartments/ListApartmentsAction";
+import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
 
 describe("Get list of apartment action", () => {
 

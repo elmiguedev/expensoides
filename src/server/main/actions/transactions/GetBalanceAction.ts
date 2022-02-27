@@ -1,6 +1,6 @@
-import TransactionRepository from "../../domain/transactions/TransactionRepository";
+import { TransactionRepository } from "../../domain/transactions/TransactionRepository";
 
-export default class GetBalanceAction {
+export class GetBalanceAction {
     private transactionRepository: TransactionRepository;
     constructor(transactionRepository: TransactionRepository) {
         this.transactionRepository = transactionRepository;

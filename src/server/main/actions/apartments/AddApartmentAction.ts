@@ -1,7 +1,7 @@
-import Apartment from "../../domain/apartments/Apartment";
-import ApartmentRepository from "../../domain/apartments/ApartmentRepository";
+import { Apartment } from "../../domain/apartments/Apartment";
+import { ApartmentRepository } from "../../domain/apartments/ApartmentRepository";
 
-export default class AddApartmentAction {
+export class AddApartmentAction {
     private apartmentRepository: ApartmentRepository;
 
     constructor(apartmentRepository: ApartmentRepository) {

@@ -1,8 +1,8 @@
-import Apartment from "../../../domain/apartments/Apartment";
-import ApartmentRepository from "../../../domain/apartments/ApartmentRepository";
-import JsonDb from "../../db/JsonDb";
+import { Apartment } from "../../../domain/apartments/Apartment";
+import { ApartmentRepository } from "../../../domain/apartments/ApartmentRepository";
+import { JsonDb } from "../../db/JsonDb";
 
-export default class JsonDbApartmentRepository implements ApartmentRepository {
+export class JsonDbApartmentRepository implements ApartmentRepository {
 
     private db: JsonDb;
 

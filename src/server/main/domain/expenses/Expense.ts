@@ -7,4 +7,6 @@ export interface Expense {
   mount: number;
   description: string;
   paid: boolean;
+  transactionId?: number;
+  paymentDate?: Date;
 }

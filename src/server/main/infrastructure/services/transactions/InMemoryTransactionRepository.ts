@@ -6,6 +6,11 @@ export class InMemoryTransactionRepository implements TransactionRepository {
     constructor() {
         this.transactions = new Array();
     }
+
+    getById(id: number): Transaction {
+        return this.transactions.find(t => t.id === id);
+    }
+
     getAll(): Transaction[] {
         return this.transactions;
     }

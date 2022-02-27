@@ -9,6 +9,18 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
     this.expenses = [];
   }
 
+  markAsPaid(id: number, transactionId: number): Expense {
+    const expense = this.getById(id);
+    expense.paid = true;
+    expense.transactionId = transactionId;
+    expense.paymentDate = new Date();
+    return expense;
+  }
+
+  getById(id: number): Expense {
+    return this.expenses.find(exp => exp.id === id);
+  }
+
   getUnpaidByApartment(apartmentId: number): Expense[] {
     return this.expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);
   }
@@ -23,6 +35,7 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
 
   add(expense: Expense): Expense {
     expense.createdDate = new Date();
+    expense.id = this.expenses.length;
     this.expenses.push(expense);
     return expense
   }

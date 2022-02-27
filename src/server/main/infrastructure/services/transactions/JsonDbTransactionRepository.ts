@@ -10,6 +10,11 @@ export class JsonDbTransactionRepository implements TransactionRepository {
     this.db = new JsonDb();
   }
 
+  getById(id: number): Transaction {
+    const transactions = this.db.get<Transaction>("transactions");
+    return transactions.find(t => t.id === id);
+  }
+
   getAll(): Transaction[] {
     const transactions = this.db.get<Transaction>("transactions");
     return transactions;

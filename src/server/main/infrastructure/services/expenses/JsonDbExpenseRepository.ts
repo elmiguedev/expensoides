@@ -9,6 +9,24 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
     constructor() {
         this.db = new JsonDb();
     }
+
+    markAsPaid(id: number, transactionId: number): Expense {
+        const expenses = this.db.get<Expense>("expenses");
+        const expense = expenses.find(exp => exp.id === id);
+        if (expense) {
+            expense.paid = true;
+            expense.transactionId = transactionId;
+            expense.paymentDate = new Date();
+
+            this.db.set("expenses", expenses);
+            return expense;
+        }
+    }
+
+    getById(id: number): Expense {
+        const expenses = this.db.get<Expense>("expenses");
+        return expenses.find(exp => exp.id === id);
+    }
     getUnpaidByApartment(apartmentId: number): Expense[] {
         const expenses = this.db.get<Expense>("expenses");
         return expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);

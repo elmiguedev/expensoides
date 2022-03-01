@@ -38,7 +38,7 @@ export const Home = () => {
       <div className="row">
         {apartments.map(apartment => (
           <div key={apartment.id} className="col-3">
-            <Apartment apartment={apartment}></Apartment>
+            <Apartment onChange={() => { getApartments() }} apartment={apartment}></Apartment>
           </div>
         ))}
       </div>

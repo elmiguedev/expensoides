@@ -620,10 +620,10 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"jMz5c":[function(require,module,exports) {
+},{}],"353sK":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
-var HMR_PORT = 38059;
+var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "0398b3edc0edacb2";
@@ -25058,6 +25058,9 @@ const Home = ()=>{
                 children: apartments1.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "col-3",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_apartment.Apartment, {
+                            onChange: ()=>{
+                                getApartments();
+                            },
                             apartment: apartment
                         }, void 0, false, {
                             fileName: "src/app/pages/home/Home.js",
@@ -26538,18 +26541,28 @@ var _expensesService = require("../../../services/ExpensesService");
 var _s = $RefreshSig$();
 const Apartment = (props)=>{
     _s();
-    const { apartment  } = props;
-    const [expenses, setExpenses] = _react.useState([]);
+    const { apartment , onChange  } = props;
+    const [expenses1, setExpenses] = _react.useState([]);
     const getUnpaidExpenses = ()=>{
         _expensesService.ExpensesService.getUnpaidExpensesByApartment(apartment.id).then((data)=>{
             setExpenses(data);
         });
     };
+    const payExpenses = (expenses)=>{
+        const expense = expenses[0];
+        if (expense) _expensesService.ExpensesService.payExpenses(expense.id).then((res)=>{
+            getUnpaidExpenses();
+            if (onChange) onChange();
+        });
+    };
+    const getCardClass = ()=>{
+        return `card card-primary mb-4 ${expenses1.length > 0 ? "bg-warning" : "bg-success"}`;
+    };
     _react.useEffect(()=>{
         getUnpaidExpenses();
     }, []);
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        className: "card card-primary mb-4",
+        className: getCardClass(),
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "card-body",
             children: [
@@ -26557,44 +26570,47 @@ const Apartment = (props)=>{
                     children: apartment.number
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 25,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                     children: apartment.owner
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 26,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
                     children: [
                         "Adeuda ",
-                        expenses.length,
+                        expenses1.length,
                         " expensas"
                     ]
                 }, void 0, true, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 27,
+                    lineNumber: 48,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    onClick: ()=>{
+                        payExpenses(expenses1);
+                    },
                     className: "btn btn-primary",
                     children: "Pagar expensas"
                 }, void 0, false, {
                     fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 28,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/app/pages/home/components/Apartment.js",
-            lineNumber: 24,
+            lineNumber: 45,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/pages/home/components/Apartment.js",
-        lineNumber: 23,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined));
 };
@@ -26628,6 +26644,12 @@ class ExpensesService {
     }
     static async getUnpaidExpensesByApartment(apartmentId) {
         const response = await _axiosDefault.default.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
+        return response.data;
+    }
+    static async payExpenses(expenseId) {
+        const response = await _axiosDefault.default.post(`/api/expenses/pay`, {
+            expenseId: expenseId
+        });
         return response.data;
     }
 }
@@ -26970,6 +26992,6 @@ class TransactionService {
     }
 }
 
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","jMz5c","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

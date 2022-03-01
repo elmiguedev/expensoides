@@ -4,7 +4,8 @@ import { ExpensesService } from "../../../services/ExpensesService";
 export const Apartment = (props) => {
 
   const {
-    apartment
+    apartment,
+    onChange
   } = props;
 
   const [expenses, setExpenses] = useState([]);
@@ -15,17 +16,37 @@ export const Apartment = (props) => {
     });
   }
 
+  const payExpenses = (expenses) => {
+    const expense = expenses[0];
+    if (expense) {
+      ExpensesService.payExpenses(expense.id).then(
+        (res) => {
+          getUnpaidExpenses();
+          if (onChange) {
+            onChange();
+          }
+        }
+      );
+    }
+  }
+
+  const getCardClass = () => {
+    return `card card-primary mb-4 ${expenses.length > 0 ? "bg-warning" : "bg-success"}`;
+  }
+
+
+
   useEffect(() => {
     getUnpaidExpenses();
   }, [])
 
   return (
-    <div className="card card-primary mb-4">
+    <div className={getCardClass()}>
       <div className="card-body">
         <h4>{apartment.number}</h4>
         <p>{apartment.owner}</p>
         <p>Adeuda {expenses.length} expensas</p>
-        <button className="btn btn-primary">Pagar expensas</button>
+        <button onClick={() => { payExpenses(expenses) }} className="btn btn-primary">Pagar expensas</button>
       </div>
     </div>
   )

@@ -20,4 +20,11 @@ export class ExpensesService {
     return response.data;
   }
 
+  static async payExpenses(expenseId) {
+    const response = await axios.post(`/api/expenses/pay`, {
+      expenseId: expenseId
+    });
+    return response.data;
+  }
+
 }

@@ -109,6 +109,18 @@
             "description": "palo de escoba",
             "date": "2022-02-24T05:00:34.416Z",
             "id": 5
+        },
+        {
+            "mount": 111,
+            "description": "test",
+            "date": "2022-03-01T15:29:12.836Z",
+            "id": 6
+        },
+        {
+            "mount": 2000,
+            "description": "Expenses 2/2022 of apartment id: 1",
+            "date": "2022-03-01T15:40:51.664Z",
+            "id": 7
         }
     ],
     "buildings": [
@@ -125,11 +137,9 @@
             "month": 2,
             "mount": 2000,
             "description": "test",
-            "paid": true,
+            "paid": false,
             "createdDate": "2022-02-26T05:40:27.023Z",
-            "id": 0,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:12:41.475Z"
+            "id": 0
         },
         {
             "apartmentId": 1,
@@ -137,11 +147,9 @@
             "month": 2,
             "mount": 2000,
             "description": "test",
-            "paid": true,
+            "paid": false,
             "createdDate": "2022-02-26T05:40:27.024Z",
-            "id": 1,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:11:03.982Z"
+            "id": 1
         },
         {
             "apartmentId": 2,
@@ -221,9 +229,11 @@
             "month": 2,
             "mount": 2000,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "createdDate": "2022-02-26T05:40:27.026Z",
-            "id": 8
+            "id": 8,
+            "transactionId": 7,
+            "paymentDate": "2022-03-01T15:38:12.506Z"
         },
         {
             "apartmentId": 9,
@@ -231,9 +241,11 @@
             "month": 2,
             "mount": 2000,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "createdDate": "2022-02-26T05:40:27.027Z",
-            "id": 9
+            "id": 9,
+            "transactionId": 7,
+            "paymentDate": "2022-03-01T15:29:25.141Z"
         },
         {
             "apartmentId": 10,
@@ -241,9 +253,11 @@
             "month": 2,
             "mount": 2000,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "createdDate": "2022-02-26T05:40:27.027Z",
-            "id": 10
+            "id": 10,
+            "transactionId": 6,
+            "paymentDate": "2022-03-01T15:26:40.991Z"
         },
         {
             "apartmentId": 11,

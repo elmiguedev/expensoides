@@ -3,11 +3,11 @@ import { InMemoryTransactionRepository } from "../../../main/infrastructure/serv
 
 describe("Add earning task", () => {
 
-    test("should return a transaction on adding new positive register to total balance", () => {
+    test("should return a transaction on adding new positive register to total balance", async () => {
         const transactionRepository = getTransactionRepository();
         const action = new AddEarningAction(transactionRepository);
 
-        const transaction = action.execute({
+        const transaction = await action.execute({
             mount: 2,
             description: "",
         });

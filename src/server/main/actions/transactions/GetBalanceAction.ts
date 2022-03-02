@@ -6,7 +6,7 @@ export class GetBalanceAction {
         this.transactionRepository = transactionRepository;
     }
 
-    public execute() {
+    public execute(): Promise<number> {
         return this.transactionRepository.getBalance();
     }
 }

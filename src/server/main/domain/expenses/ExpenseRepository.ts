@@ -1,9 +1,9 @@
 import { Expense } from "./Expense";
 
 export interface ExpenseRepository {
-  getExpense(apartmentId: number, year: number, month: number): Expense | undefined;
-  add(expense: Expense): Expense;
-  getUnpaidByApartment(apartmentId: number): Expense[];
-  getById(id: number): Expense;
-  markAsPaid(id: number, transactionId: number): Expense;
+  getExpense(apartmentId: number, year: number, month: number): Promise<Expense>;
+  add(expense: Expense): Promise<Expense>;
+  getUnpaidByApartment(apartmentId: number): Promise<Expense[]>;
+  getById(id: number): Promise<Expense>;
+  markAsPaid(id: number, transactionId: number): Promise<Expense>;
 }

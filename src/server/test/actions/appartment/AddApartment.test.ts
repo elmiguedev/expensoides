@@ -3,12 +3,12 @@ import { InMemoryApartmentRepository } from "../../../main/infrastructure/servic
 
 describe("Add apartment action", () => {
 
-    test("should get an apartment", () => {
+    test("should get an apartment", async () => {
         const action = new AddApartmentAction(
             getApartmentRepository()
         );
 
-        const apartment = action.execute({
+        const apartment = await action.execute({
             number: 1,
             owner: "Pepe Argento",
             floor: 0,
@@ -18,47 +18,47 @@ describe("Add apartment action", () => {
         expect(apartment).not.toBeUndefined();
     });
 
-    test("should throw an error if onwer is empty", () => {
+    test("should throw an error if onwer is empty", async () => {
         const action = new AddApartmentAction(
             getApartmentRepository()
         );
-        expect(() => {
-            const apartment = action.execute({
+        expect(async () => {
+            const apartment = await action.execute({
                 number: 0,
                 owner: "",
                 floor: 0
             });
 
-        }).toThrowError("Apartment owner is required");
+        }).rejects.toThrowError("Apartment owner is required");
     });
 
-    test("should throw an error on invalid number", () => {
+    test("should throw an error on invalid number", async () => {
         const action = new AddApartmentAction(
             getApartmentRepository()
         );
-        expect(() => {
-            const apartment = action.execute({
+        expect(async () => {
+            const apartment = await action.execute({
                 number: -1,
                 owner: "Pepe",
                 floor: 0
             });
 
-        }).toThrowError("Apartment number is invalid");
+        }).rejects.toThrowError("Apartment number is invalid");
     });
 
 
-    test("should throw an error on invalid floor", () => {
+    test("should throw an error on invalid floor", async () => {
         const action = new AddApartmentAction(
             getApartmentRepository()
         );
-        expect(() => {
-            const apartment = action.execute({
+        expect(async () => {
+            const apartment = await action.execute({
                 number: 0,
                 owner: "Pepe",
                 floor: -1
             });
 
-        }).toThrowError("Apartment floor is invalid");
+        }).rejects.toThrowError("Apartment floor is invalid");
     });
 
 });

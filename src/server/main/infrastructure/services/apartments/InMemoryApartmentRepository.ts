@@ -9,13 +9,18 @@ export class InMemoryApartmentRepository implements ApartmentRepository {
         this.apartments = new Array();
     }
 
-    add(apartment: Apartment) {
-        apartment.id = this.apartments.length;
-        this.apartments.push(apartment);
+    add(apartment: Apartment): Promise<void> {
+        return new Promise((resolve, reject) => {
+            apartment.id = this.apartments.length;
+            this.apartments.push(apartment);
+            resolve();
+        });
     }
 
-    getAll(): Apartment[] {
-        return this.apartments;
+    getAll(): Promise<Apartment[]> {
+        return new Promise((resolve, reject) => {
+            resolve(this.apartments);
+        });
     }
 
 }

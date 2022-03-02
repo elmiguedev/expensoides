@@ -8,7 +8,7 @@ export class ListApartmentsAction {
         this.apartmentRepository = apartmentRepository;
     }
 
-    public execute(): Array<Apartment> {
+    public execute(): Promise<Apartment[]> {
         return this.apartmentRepository.getAll();
     }
 }

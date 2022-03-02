@@ -41,7 +41,6 @@ const addEarningAction = new AddEarningAction(transactionRepository);
 const getBalanceAction = new GetBalanceAction(transactionRepository);
 const getTransactionsAction = new GetTransactionsAction(transactionRepository);
 const generateExpensesAction = new GenerateExpensesAction(
-    apartmentRepository,
     expensesRepository,
     buildingRepository
 )
@@ -51,7 +50,7 @@ const generateAllExpensesAction = new GenerateAllExpensesAction(
     buildingRepository
 )
 const getUnpaidExpensesAction = new GetUnpaidExpensesAction(expensesRepository);
-const payExpensesAction = new PayExpensesAction(expensesRepository, addEarningAction);
+const payExpensesAction = new PayExpensesAction(expensesRepository, transactionRepository);
 
 const apartmentHandler = new ApartmentHandler(
     addApartmentAction,

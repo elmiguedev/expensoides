@@ -4,26 +4,26 @@ import { InMemoryApartmentRepository } from "../../../main/infrastructure/servic
 
 describe("Get list of apartment action", () => {
 
-    test("should return an array", () => {
+    test("should return an array", async () => {
         const apartmentRepository = getApartmentRepository();
         const action = new ListApartmentsAction(apartmentRepository);
-        const apartments = action.execute();
+        const apartments = await action.execute();
         expect(Array.isArray(apartments)).toBe(true);
     });
 
-    test("should return an array with 1 item after add a apartment", () => {
+    test("should return an array with 1 item after add a apartment", async () => {
         const apartmentRepository = getApartmentRepository();
 
         const addApartmentAction = new AddApartmentAction(apartmentRepository);
         const action = new ListApartmentsAction(apartmentRepository);
 
-        const apartment = addApartmentAction.execute({
+        const apartment = await addApartmentAction.execute({
             floor: 0,
             number: 1,
             owner: "Pepe"
         });
 
-        const apartments = action.execute();
+        const apartments = await action.execute();
 
         expect(apartments.length).toBe(1);
     });

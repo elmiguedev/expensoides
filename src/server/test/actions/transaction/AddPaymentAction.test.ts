@@ -3,11 +3,11 @@ import { InMemoryTransactionRepository } from "../../../main/infrastructure/serv
 
 describe("Add payment action", () => {
 
-    test("should return a transaction on adding new negative register to total balance", () => {
+    test("should return a transaction on adding new negative register to total balance", async () => {
         const transactionRepository = getTransactionRepository();
         const action = new AddPaymentAction(transactionRepository);
 
-        const transaction = action.execute({
+        const transaction = await action.execute({
             mount: 2,
             description: "",
         });

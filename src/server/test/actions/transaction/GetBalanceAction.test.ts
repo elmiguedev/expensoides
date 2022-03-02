@@ -4,26 +4,26 @@ import { GetBalanceAction } from "../../../main/actions/transactions/GetBalanceA
 import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Get balance action", () => {
-    test("should get the sum of all transactions ", () => {
+    test("should get the sum of all transactions ", async () => {
         const transactionRepository = getTransactionRepository();
         const addEarningAction = new AddEarningAction(transactionRepository);
         const addPaymentAction = new AddPaymentAction(transactionRepository);
         const balanceAction = new GetBalanceAction(transactionRepository);
 
-        addEarningAction.execute({
+        await addEarningAction.execute({
             mount: 2000,
             description: ""
         });
-        addEarningAction.execute({
+        await addEarningAction.execute({
             mount: 1000,
             description: ""
         });
-        addPaymentAction.execute({
+        await addPaymentAction.execute({
             mount: 800,
             description: ""
         });
 
-        const balance = balanceAction.execute();
+        const balance = await balanceAction.execute();
 
         expect(balance).toStrictEqual(2200);
 

@@ -9,14 +9,14 @@ export class AddPaymentAction {
         this.transactionRepository = transactionRepository;
     }
 
-    execute(data: ActionData): Transaction {
+    async execute(data: ActionData): Promise<Transaction> {
         const transaction: Transaction = {
             mount: Math.abs(data.mount) * (-1),
             description: data.description,
             date: new Date()
         }
 
-        this.transactionRepository.add(transaction);
+        await this.transactionRepository.add(transaction);
 
         return transaction;
     }

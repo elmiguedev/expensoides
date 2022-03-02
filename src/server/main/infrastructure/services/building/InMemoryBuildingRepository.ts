@@ -11,9 +11,11 @@ export class InMemoryBuildingRepository implements BuildingRepository {
     }
   }
 
-  getExpensesMount(): number {
-    return this.building.extraordinaryExpense +
-      this.building.ordinaryExpense;
+  getExpensesMount(): Promise<number> {
+    return new Promise((resolve, reject) => {
+      resolve(this.building.extraordinaryExpense +
+        this.building.ordinaryExpense);
+    });
   }
 
 }

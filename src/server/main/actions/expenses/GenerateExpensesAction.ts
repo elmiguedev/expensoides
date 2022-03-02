@@ -4,33 +4,34 @@ import { Expense } from "../../domain/expenses/Expense";
 import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
 
 export class GenerateExpensesAction {
-  private apartmentRepository: ApartmentRepository;
   private expenseRepository: ExpenseRepository;
   private buildingRepository: BuildingRepository;
 
-  constructor(apartmentRepository: ApartmentRepository, expenseRepository: ExpenseRepository, buildingRepository: BuildingRepository) {
-    this.apartmentRepository = apartmentRepository;
+  constructor(expenseRepository: ExpenseRepository, buildingRepository: BuildingRepository) {
     this.expenseRepository = expenseRepository;
     this.buildingRepository = buildingRepository;
   }
 
-  public execute(data: ActionData): Expense {
-    if (this.isExpenseAlredyCreated(data)) {
+  public async execute(data: ActionData): Promise<Expense> {
+    const oldExpense = await this.isExpenseAlredyCreated(data);
+    if (oldExpense) {
       throw new Error("Expenses already generated");
     }
-    const expense = this.expenseRepository.add({
+
+    const expensesMount = await this.buildingRepository.getExpensesMount();
+    const expense = await this.expenseRepository.add({
       apartmentId: data.apartmentId,
       year: data.year,
       month: data.month,
-      mount: this.buildingRepository.getExpensesMount(),
+      mount: expensesMount,
       description: "test",
       paid: false
     });
     return expense;
   }
 
-  private isExpenseAlredyCreated(data: ActionData) {
-    const ex = this.expenseRepository.getExpense(
+  private async isExpenseAlredyCreated(data: ActionData) {
+    const ex = await this.expenseRepository.getExpense(
       data.apartmentId, data.year, data.month
     );
     return ex;

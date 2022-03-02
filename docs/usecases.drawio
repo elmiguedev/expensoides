@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NXZYRI2cLS-5SG9tABwp" name="Page-1">
-        <mxGraphModel dx="486" dy="495" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="486" dy="330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -15,7 +15,7 @@
                 <mxCell id="3" value="Generar expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="160" y="40" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="Registrar pago de expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" parent="1" vertex="1">
+                <mxCell id="4" value="Registrar pago de expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="160" y="140" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="Ver detalle de departamento" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -30,7 +30,7 @@
                 <mxCell id="8" value="Modificar datos de un departamento" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="40" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Obtener balance" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
+                <mxCell id="9" value="Obtener balance" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="320" y="140" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="Registrar pago de servicio o compra" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
@@ -62,6 +62,9 @@
                 </mxCell>
                 <mxCell id="20" value="Mostrar estado de deuda del departamento" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="240" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Imprimir informe mensual" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="440" width="120" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

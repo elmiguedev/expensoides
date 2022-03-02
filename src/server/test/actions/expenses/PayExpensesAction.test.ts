@@ -10,70 +10,66 @@ import { ExpenseRepository } from "../../../main/domain/expenses/ExpenseReposito
 
 describe("Pay expenses actions", () => {
 
-    test("should register new earning transaction", () => {
+    test("should register new earning transaction", async () => {
         const expenseRepository = getExpenseRepository();
         const transactionRepository = getTransactionRepository();
-        const addEarningAction = new AddEarningAction(transactionRepository);
-        const unpaidExpense = generateExpensesForApartmentId1(expenseRepository);
+        const unpaidExpense = await generateExpensesForApartmentId1(expenseRepository);
 
         const payExpensesAction = new PayExpensesAction(
             expenseRepository,
-            addEarningAction);
+            transactionRepository);
 
-        const expense: Expense = payExpensesAction.execute({ id: unpaidExpense.id })
-        const transaction = transactionRepository.getById(expense.transactionId);
+        const expense: Expense = await payExpensesAction.execute({ id: unpaidExpense.id })
+        const transaction = await transactionRepository.getById(expense.transactionId);
 
         expect(transaction).toBeDefined();
         expect(transaction.mount).toBeGreaterThan(0);
 
     })
 
-    test("should change expense status to paid", () => {
+    test("should change expense status to paid", async () => {
         const expenseRepository = getExpenseRepository();
         const transactionRepository = getTransactionRepository();
-        const addEarningAction = new AddEarningAction(transactionRepository);
-        const unpaidExpense = generateExpensesForApartmentId1(expenseRepository);
+        const unpaidExpense = await generateExpensesForApartmentId1(expenseRepository);
 
         const payExpensesAction = new PayExpensesAction(
             expenseRepository,
-            addEarningAction);
+            transactionRepository);
 
-        const expense: Expense = payExpensesAction.execute({ id: unpaidExpense.id })
+        const expense: Expense = await payExpensesAction.execute({ id: unpaidExpense.id })
 
         expect(expense.paid).toEqual(true);
     })
 
-    test("should register payment date", () => {
+    test("should register payment date", async () => {
         const expenseRepository = getExpenseRepository();
         const transactionRepository = getTransactionRepository();
-        const addEarningAction = new AddEarningAction(transactionRepository);
-        const unpaidExpense = generateExpensesForApartmentId1(expenseRepository);
+        const unpaidExpense = await generateExpensesForApartmentId1(expenseRepository);
 
         const payExpensesAction = new PayExpensesAction(
             expenseRepository,
-            addEarningAction);
+            transactionRepository);
 
-        const expense: Expense = payExpensesAction.execute({ id: unpaidExpense.id })
+        const expense: Expense = await payExpensesAction.execute({ id: unpaidExpense.id })
         const today = new Date();
 
         expect(expense.paymentDate.toDateString()).toEqual(today.toDateString());
     })
 
-    test("should throw an error if expense is already paid", () => {
+    test("should throw an error if expense is already paid", async () => {
         const expenseRepository = getExpenseRepository();
         const transactionRepository = getTransactionRepository();
-        const addEarningAction = new AddEarningAction(transactionRepository);
-        const unpaidExpense = generateExpensesForApartmentId1(expenseRepository);
+        const unpaidExpense = await generateExpensesForApartmentId1(expenseRepository);
 
         const payExpensesAction = new PayExpensesAction(
             expenseRepository,
-            addEarningAction);
+            transactionRepository);
 
-        const expense: Expense = payExpensesAction.execute({ id: unpaidExpense.id })
+        const expense: Expense = await payExpensesAction.execute({ id: unpaidExpense.id })
 
-        expect(() => {
-            payExpensesAction.execute({ id: unpaidExpense.id })
-        }).toThrowError("Expense already paid");
+        expect(async () => {
+            await payExpensesAction.execute({ id: unpaidExpense.id })
+        }).rejects.toThrowError("Expense already paid");
     })
 
 })
@@ -102,11 +98,9 @@ const getApartmentRepository = () => {
 }
 
 const generateExpensesForApartmentId1 = (expenseRepository: ExpenseRepository) => {
-    const apartmentRepository = getApartmentRepository();
     const buildingRepository = getBuildingRepository();
 
     const generateExpensesAction = new GenerateExpensesAction(
-        apartmentRepository,
         expenseRepository,
         buildingRepository
     );

@@ -7,24 +7,25 @@ export class InMemoryTransactionRepository implements TransactionRepository {
         this.transactions = new Array();
     }
 
-    getById(id: number): Transaction {
-        return this.transactions.find(t => t.id === id);
+    getById(id: number): Promise<Transaction> {
+        return Promise.resolve(this.transactions.find(t => t.id === id))
     }
 
-    getAll(): Transaction[] {
-        return this.transactions;
+    getAll(): Promise<Transaction[]> {
+        return Promise.resolve(this.transactions);
     }
 
-    getBalance(): number {
+    getBalance(): Promise<number> {
         const balance = this.transactions
             .map(t => t.mount)
             .reduce((prev, next) => prev + next, 0);
-        return balance;
+        return Promise.resolve(balance);
     }
 
     add(transaction: Transaction) {
         transaction.id = this.transactions.length;
         this.transactions.push(transaction);
+        return Promise.resolve();
     }
 
 }

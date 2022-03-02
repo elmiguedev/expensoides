@@ -5,25 +5,24 @@ import { InMemoryExpenseRepository } from "../../../main/infrastructure/services
 import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 
 describe("GenerateExpenses Action", () => {
-  test("should generate new expense entity", () => {
+  test("should generate new expense entity", async () => {
     const apartmentRepository = getApartmentRepository();
     const expensesRespository = getExpensesRepository();
     const buildingRespository = getBuildingRepository();
 
     const generateExpensesAction = new GenerateExpensesAction(
-      apartmentRepository,
       expensesRespository,
       buildingRespository
     );
     const addApartmentAction = new AddApartmentAction(apartmentRepository);
 
-    addApartmentAction.execute({
+    await addApartmentAction.execute({
       number: 1,
       owner: "prueba",
       floor: 0
     })
 
-    const expenses = generateExpensesAction.execute({
+    const expenses = await generateExpensesAction.execute({
       apartmentId: 1,
       year: 2020,
       month: 2
@@ -33,47 +32,45 @@ describe("GenerateExpenses Action", () => {
 
   })
 
-  test("shoud throw an error if there are alredy generated expenses for current year / month", () => {
+  test("shoud throw an error if there are alredy generated expenses for current year / month", async () => {
     const apartmentRepository = getApartmentRepository();
     const expensesRepository = getExpensesRepository();
     const buildingRepository = getBuildingRepository();
 
     const generateExpensesAction = new GenerateExpensesAction(
-      apartmentRepository,
       expensesRepository,
       buildingRepository
     );
     const addApartmentAction = new AddApartmentAction(apartmentRepository);
 
-    addApartmentAction.execute({
+    await addApartmentAction.execute({
       number: 1,
       owner: "prueba",
       floor: 0
     });
 
-    const expenses = generateExpensesAction.execute({
+    const expenses = await generateExpensesAction.execute({
       apartmentId: 1,
       year: 2020,
       month: 2
     });
 
-    expect(() => {
-      const newExpenses = generateExpensesAction.execute({
+    expect(async () => {
+      const newExpenses = await generateExpensesAction.execute({
         apartmentId: 1,
         year: 2020,
         month: 2
       });
-    }).toThrowError("Expenses already generated");
+    }).rejects.toThrowError("Expenses already generated");
 
   })
 
-  test("should assign the presetted expense mount", () => {
+  test("should assign the presetted expense mount", async () => {
     const apartmentRepository = getApartmentRepository();
     const expensesRepository = getExpensesRepository();
     const buildingRepository = getBuildingRepository();
 
     const generateExpensesAction = new GenerateExpensesAction(
-      apartmentRepository,
       expensesRepository,
       buildingRepository
     );
@@ -81,13 +78,13 @@ describe("GenerateExpenses Action", () => {
 
     const expectedMount = 1800;
 
-    addApartmentAction.execute({
+    await addApartmentAction.execute({
       number: 1,
       owner: "prueba",
       floor: 0
     })
 
-    const expenses = generateExpensesAction.execute({
+    const expenses = await generateExpensesAction.execute({
       apartmentId: 1,
       year: 2020,
       month: 2
@@ -95,9 +92,6 @@ describe("GenerateExpenses Action", () => {
 
     expect(expenses.mount).toBe(expectedMount);
   })
-
-  test("should calculate interest on payments due", () => {
-  });
 
 })
 

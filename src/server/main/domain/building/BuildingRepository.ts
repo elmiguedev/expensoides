@@ -1,3 +1,3 @@
 export interface BuildingRepository {
-  getExpensesMount(): number;
+  getExpensesMount(): Promise<number>;
 }

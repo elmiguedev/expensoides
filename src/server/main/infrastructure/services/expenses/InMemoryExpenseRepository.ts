@@ -9,35 +9,35 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
     this.expenses = [];
   }
 
-  markAsPaid(id: number, transactionId: number): Expense {
-    const expense = this.getById(id);
+  async markAsPaid(id: number, transactionId: number): Promise<Expense> {
+    const expense = await this.getById(id);
     expense.paid = true;
     expense.transactionId = transactionId;
     expense.paymentDate = new Date();
-    return expense;
+    return Promise.resolve(expense);
   }
 
-  getById(id: number): Expense {
-    return this.expenses.find(exp => exp.id === id);
+  getById(id: number): Promise<Expense> {
+    return Promise.resolve(this.expenses.find(exp => exp.id === id));
   }
 
-  getUnpaidByApartment(apartmentId: number): Expense[] {
-    return this.expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);
+  getUnpaidByApartment(apartmentId: number): Promise<Expense[]> {
+    return Promise.resolve(this.expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false));
   }
 
-  getExpense(apartmentId: number, year: number, month: number): Expense {
-    return this.expenses.find(e =>
+  getExpense(apartmentId: number, year: number, month: number): Promise<Expense> {
+    return Promise.resolve(this.expenses.find(e =>
       e.apartmentId === apartmentId &&
       e.year === year &&
       e.month === month
-    );
+    ));
   }
 
-  add(expense: Expense): Expense {
+  add(expense: Expense): Promise<Expense> {
     expense.createdDate = new Date();
     expense.id = this.expenses.length;
     this.expenses.push(expense);
-    return expense
+    return Promise.resolve(expense);
   }
 
 }

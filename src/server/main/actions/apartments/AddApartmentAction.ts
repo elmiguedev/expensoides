@@ -8,7 +8,7 @@ export class AddApartmentAction {
         this.apartmentRepository = apartmentRepository;
     }
 
-    public execute(actionData: ActionData): Apartment {
+    public async execute(actionData: ActionData): Promise<Apartment> {
 
         if (!actionData.owner) {
             throw new Error("Apartment owner is required");
@@ -28,7 +28,7 @@ export class AddApartmentAction {
             owner: actionData.owner
         }
 
-        this.apartmentRepository.add(apartment);
+        await this.apartmentRepository.add(apartment);
 
         return apartment;
     }

@@ -10,23 +10,23 @@ export class JsonDbTransactionRepository implements TransactionRepository {
     this.db = new JsonDb();
   }
 
-  getById(id: number): Transaction {
+  getById(id: number): Promise<Transaction> {
     const transactions = this.db.get<Transaction>("transactions");
     return transactions.find(t => t.id === id);
   }
 
-  getAll(): Transaction[] {
+  getAll(): Promise<Transaction[]> {
     const transactions = this.db.get<Transaction>("transactions");
     return transactions;
   }
 
-  add(transaction: Transaction) {
+  add(transaction: Transaction): Promise<void> {
     const transactions = this.db.get<Transaction>("transactions");
     transaction.id = transactions.length;
     transactions.push(transaction);
     this.db.set("transactions", transactions);
   }
-  getBalance(): number {
+  getBalance(): Promise<number> {
     const transactions = this.db.get<Transaction>("transactions");
     const balance = transactions
       .map(t => t.mount)

@@ -22,10 +22,10 @@ export class InMemoryTransactionRepository implements TransactionRepository {
         return Promise.resolve(balance);
     }
 
-    add(transaction: Transaction) {
+    add(transaction: Transaction) : Promise<Transaction>{
         transaction.id = this.transactions.length;
         this.transactions.push(transaction);
-        return Promise.resolve();
+        return Promise.resolve(transaction);
     }
 
 }

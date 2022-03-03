@@ -19,29 +19,32 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
             expense.paymentDate = new Date();
 
             this.db.set("expenses", expenses);
-            return expense;
+            return Promise.resolve(expense);
         }
     }
 
-    getById(id: number): Expense {
+    getById(id: number): Promise<Expense> {
         const expenses = this.db.get<Expense>("expenses");
-        return expenses.find(exp => exp.id === id);
+        const expense = expenses.find(exp => exp.id === id);
+        return Promise.resolve(expense);
     }
-    getUnpaidByApartment(apartmentId: number): Expense[] {
+    getUnpaidByApartment(apartmentId: number): Promise<Expense[]> {
         const expenses = this.db.get<Expense>("expenses");
-        return expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);
+        const unpaid = expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false);
+        return Promise.resolve(unpaid);
     }
 
-    getExpense(apartmentId: number, year: number, month: number): Expense | undefined {
+    getExpense(apartmentId: number, year: number, month: number): Promise<Expense> {
         const expenses = this.db.get<Expense>("expenses");
-        return expenses.find(e =>
+        const expense =  expenses.find(e =>
             e.apartmentId === apartmentId &&
             e.year === year &&
             e.month === month
         );
+        return Promise.resolve(expense);
     }
 
-    add(expense: Expense): Expense {
+    add(expense: Expense): Promise<Expense> {
         const expenses = this.db.get<Expense>("expenses");
 
         expense.createdDate = new Date();
@@ -49,7 +52,7 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
         expenses.push(expense);
 
         this.db.set("expenses", expenses);
-        return expense
+        return Promise.resolve(expense);
     }
 
 }

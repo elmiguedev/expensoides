@@ -23,38 +23,38 @@ export class TransactionHandler {
     this.getTransactionsAction = getTransactionsAction;
   }
 
-  addPayment(req: Request, res: Response) {
+  public async addPayment(req: Request, res: Response) {
     const transactionData = req.body;
     try {
-      const transaction = this.addPaymentAction.execute(transactionData);
+      const transaction = await this.addPaymentAction.execute(transactionData);
       res.status(200).json(transaction);
     } catch (error: any) {
       res.status(400).send(error.message);
     }
   }
 
-  addEarning(req: Request, res: Response) {
+  public async addEarning(req: Request, res: Response) {
     const transactionData = req.body;
     try {
-      const transaction = this.addEarningAction.execute(transactionData);
+      const transaction = await this.addEarningAction.execute(transactionData);
       res.status(200).json(transaction);
     } catch (error: any) {
       res.status(400).send(error.message);
     }
   }
 
-  getBalance(req: Request, res: Response) {
+  public async getBalance(req: Request, res: Response) {
     try {
-      const balance = this.getBalanceAction.execute();
+      const balance = await this.getBalanceAction.execute();
       res.status(200).json(balance);
     } catch (error: any) {
       res.status(400).send(error.message);
     }
   }
 
-  getAll(req: Request, res: Response) {
+  public async getAll(req: Request, res: Response) {
     try {
-      const transactions = this.getTransactionsAction.execute();
+      const transactions = await this.getTransactionsAction.execute();
       res.status(200).json(transactions);
     } catch (error: any) {
       res.status(400).send(error.message);

@@ -73,56 +73,7 @@
             "id": 11
         }
     ],
-    "transactions": [
-        {
-            "mount": 100,
-            "description": "Cobro magico",
-            "date": "2022-02-24T04:38:31.996Z",
-            "id": 0
-        },
-        {
-            "mount": 150,
-            "description": "Cobro ultra magico",
-            "date": "2022-02-24T04:38:52.338Z",
-            "id": 1
-        },
-        {
-            "mount": -40,
-            "description": "Cosas de limpieza",
-            "date": "2022-02-24T04:40:52.617Z",
-            "id": 2
-        },
-        {
-            "mount": 100,
-            "description": "casino",
-            "date": "2022-02-24T05:00:07.013Z",
-            "id": 3
-        },
-        {
-            "mount": -120,
-            "description": "perfumina",
-            "date": "2022-02-24T05:00:15.977Z",
-            "id": 4
-        },
-        {
-            "mount": -100,
-            "description": "palo de escoba",
-            "date": "2022-02-24T05:00:34.416Z",
-            "id": 5
-        },
-        {
-            "mount": 111,
-            "description": "test",
-            "date": "2022-03-01T15:29:12.836Z",
-            "id": 6
-        },
-        {
-            "mount": 2000,
-            "description": "Expenses 2/2022 of apartment id: 1",
-            "date": "2022-03-01T15:40:51.664Z",
-            "id": 7
-        }
-    ],
+    "transactions": [],
     "buildings": [
         {
             "id": 1,
@@ -134,142 +85,132 @@
         {
             "apartmentId": 0,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": false,
-            "createdDate": "2022-02-26T05:40:27.023Z",
-            "id": 0
+            "paid": true,
+            "createdDate": "2022-03-03T21:17:01.753Z",
+            "id": 0,
+            "transactionId": 1,
+            "paymentDate": "2022-03-03T21:17:05.804Z"
         },
         {
             "apartmentId": 1,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": false,
-            "createdDate": "2022-02-26T05:40:27.024Z",
-            "id": 1
+            "paid": true,
+            "createdDate": "2022-03-03T21:17:01.754Z",
+            "id": 1,
+            "transactionId": 2,
+            "paymentDate": "2022-03-03T21:17:10.652Z"
         },
         {
             "apartmentId": 2,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
             "paid": true,
-            "createdDate": "2022-02-26T05:40:27.024Z",
+            "createdDate": "2022-03-03T21:17:01.755Z",
             "id": 2,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:10:31.561Z"
+            "transactionId": 4,
+            "paymentDate": "2022-03-03T21:17:21.699Z"
         },
         {
             "apartmentId": 3,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.025Z",
-            "id": 3,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:08:49.271Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.755Z",
+            "id": 3
         },
         {
             "apartmentId": 4,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.025Z",
-            "id": 4,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:14:48.471Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.756Z",
+            "id": 4
         },
         {
             "apartmentId": 5,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
             "paid": true,
-            "createdDate": "2022-02-26T05:40:27.025Z",
+            "createdDate": "2022-03-03T21:17:01.756Z",
             "id": 5,
             "transactionId": 6,
-            "paymentDate": "2022-03-01T15:14:45.062Z"
+            "paymentDate": "2022-03-03T21:17:40.150Z"
         },
         {
             "apartmentId": 6,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
             "paid": true,
-            "createdDate": "2022-02-26T05:40:27.026Z",
+            "createdDate": "2022-03-03T21:17:01.757Z",
             "id": 6,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:14:36.767Z"
+            "transactionId": 5,
+            "paymentDate": "2022-03-03T21:17:27.201Z"
         },
         {
             "apartmentId": 7,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.026Z",
-            "id": 7,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:13:33.240Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.757Z",
+            "id": 7
         },
         {
             "apartmentId": 8,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.026Z",
-            "id": 8,
-            "transactionId": 7,
-            "paymentDate": "2022-03-01T15:38:12.506Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.758Z",
+            "id": 8
         },
         {
             "apartmentId": 9,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.027Z",
-            "id": 9,
-            "transactionId": 7,
-            "paymentDate": "2022-03-01T15:29:25.141Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.759Z",
+            "id": 9
         },
         {
             "apartmentId": 10,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.027Z",
-            "id": 10,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:26:40.991Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.759Z",
+            "id": 10
         },
         {
             "apartmentId": 11,
             "year": 2022,
-            "month": 2,
+            "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": true,
-            "createdDate": "2022-02-26T05:40:27.027Z",
-            "id": 11,
-            "transactionId": 6,
-            "paymentDate": "2022-03-01T15:21:32.593Z"
+            "paid": false,
+            "createdDate": "2022-03-03T21:17:01.760Z",
+            "id": 11
         }
     ]
 }

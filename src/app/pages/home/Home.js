@@ -12,8 +12,9 @@ export const Home = () => {
   }, []);
 
   const getApartments = () => {
-    ApartmentService.getAll().then((apartments => {
-      setApartments(apartments);
+    ApartmentService.getAll().then((data => {
+      console.log("LOS APT", data);
+      setApartments(data);
     }));
   }
 

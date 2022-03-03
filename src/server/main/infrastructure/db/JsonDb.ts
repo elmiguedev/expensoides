@@ -22,5 +22,7 @@ export class JsonDb {
             this.db.sync();
         }
         this.db.set(key, value);
+        this.db.sync();
+
     }
 }

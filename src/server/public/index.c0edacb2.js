@@ -24993,13 +24993,14 @@ var _expensesService = require("../../services/ExpensesService");
 var _s = $RefreshSig$();
 const Home = ()=>{
     _s();
-    const [apartments1, setApartments] = _react.useState([]);
+    const [apartments, setApartments] = _react.useState([]);
     _react.useEffect(()=>{
         getApartments();
     }, []);
     const getApartments = ()=>{
-        _apartmentService.ApartmentService.getAll().then((apartments)=>{
-            setApartments(apartments);
+        _apartmentService.ApartmentService.getAll().then((data)=>{
+            console.log("LOS APT", data);
+            setApartments(data);
         });
     };
     const generateExpensesButtonHandler = ()=>{
@@ -25017,17 +25018,17 @@ const Home = ()=>{
                         children: "Dptos"
                     }, void 0, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 29,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25040,22 +25041,22 @@ const Home = ()=>{
                         children: "Generar expensas"
                     }, void 0, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 35,
+                        lineNumber: 36,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
-                children: apartments1.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                children: apartments.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                         className: "col-3",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_apartment.Apartment, {
                             onChange: ()=>{
@@ -25064,24 +25065,24 @@ const Home = ()=>{
                             apartment: apartment
                         }, void 0, false, {
                             fileName: "src/app/pages/home/Home.js",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 13
                         }, undefined)
                     }, apartment.id, false, {
                         fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 40,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, undefined)
                 )
             }, void 0, false, {
                 fileName: "src/app/pages/home/Home.js",
-                lineNumber: 38,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app/pages/home/Home.js",
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 5
     }, undefined));
 };
@@ -25095,7 +25096,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../services/ExpensesService":"8o2ak"}],"35kqt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"35kqt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ApartmentService", ()=>ApartmentService
@@ -26624,7 +26625,7 @@ $RefreshReg$(_c, "Apartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../../services/ExpensesService":"8o2ak"}],"8o2ak":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8o2ak":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService

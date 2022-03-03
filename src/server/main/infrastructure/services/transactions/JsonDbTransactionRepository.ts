@@ -12,26 +12,28 @@ export class JsonDbTransactionRepository implements TransactionRepository {
 
   getById(id: number): Promise<Transaction> {
     const transactions = this.db.get<Transaction>("transactions");
-    return transactions.find(t => t.id === id);
+    const transaction = transactions.find(t => t.id === id);
+    return Promise.resolve(transaction);
   }
 
   getAll(): Promise<Transaction[]> {
     const transactions = this.db.get<Transaction>("transactions");
-    return transactions;
+    return Promise.resolve(transactions);
   }
 
-  add(transaction: Transaction): Promise<void> {
+  add(transaction: Transaction): Promise<Transaction> {
     const transactions = this.db.get<Transaction>("transactions");
     transaction.id = transactions.length;
     transactions.push(transaction);
     this.db.set("transactions", transactions);
+    return Promise.resolve(transaction);
   }
   getBalance(): Promise<number> {
     const transactions = this.db.get<Transaction>("transactions");
     const balance = transactions
       .map(t => t.mount)
       .reduce((prev, next) => prev + next, 0);
-    return balance;
+    return Promise.resolve(balance);
   }
 
 }

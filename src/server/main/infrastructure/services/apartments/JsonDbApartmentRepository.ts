@@ -10,16 +10,17 @@ export class JsonDbApartmentRepository implements ApartmentRepository {
         this.db = new JsonDb();
     }
 
-    add(apartment: Apartment): void {
+    add(apartment: Apartment): Promise<void> {
         const apartments = this.db.get<Apartment>("apartments");
         apartment.id = apartments.length;
         apartments.push(apartment);
         this.db.set("apartments", apartments);
+        return Promise.resolve();
     }
 
-    getAll(): Apartment[] {
+    getAll(): Promise<Apartment[]> {
         const apartments = this.db.get<Apartment>("apartments");
-        return apartments;
+        return Promise.resolve(apartments);
     }
 
 }

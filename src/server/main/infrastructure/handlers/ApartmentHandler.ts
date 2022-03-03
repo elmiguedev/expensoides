@@ -14,8 +14,8 @@ export class ApartmentHandler {
         this.listApartmentsAction = listApartmentsAction;
     }
 
-    public add(req: Request, res: Response) {
-        const apartment = this.addApartmentAction.execute({
+    public async add(req: Request, res: Response) {
+        const apartment = await this.addApartmentAction.execute({
             owner: req.body.owner,
             floor: req.body.floor,
             number: req.body.number
@@ -23,7 +23,8 @@ export class ApartmentHandler {
         res.json(apartment);
     }
 
-    public getAll(req: Request, res: Response) {
-        res.json(this.listApartmentsAction.execute());
+    public async getAll(req: Request, res: Response) {
+        const apartments = await this.listApartmentsAction.execute();
+        res.json(apartments);
     }
 }

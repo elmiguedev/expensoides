@@ -30,12 +30,6 @@ export class PayExpensesAction {
         await this.transactionRepository.add(transaction);
         const paidExpense = await this.expenseRepository.markAsPaid(expense.id, transaction.id);
         return paidExpense;
-
-        // const transaction = this.addPaymentAction.execute({
-        //     description: `Expenses ${expense.month}/${expense.year} of apartment id: ${expense.apartmentId}`,
-        //     mount: expense.mount
-        // });
-
     }
 }
 

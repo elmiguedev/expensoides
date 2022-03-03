@@ -10,10 +10,10 @@ export class JsonDbBuildingRepository implements BuildingRepository {
         this.db = new JsonDb();
     }
 
-    getExpensesMount(): number {
+    getExpensesMount(): Promise<number> {
         const buildings = this.db.get<Building>("buildings");
         const building = buildings[0];
-        return building.extraordinaryExpense + building.ordinaryExpense;
+        return Promise.resolve(building.extraordinaryExpense + building.ordinaryExpense);
     }
 
 }

@@ -3,8 +3,9 @@
     "process": false
   },
   "scripts": {
+    "start":"ts-node src/server/main/infrastructure/Api.ts",
     "test": "jest",
-    "dev": "pnpm app-dev & nodemon src/server/main/infrastructure/Api.ts",
+    "dev": "pnpm app-dev & nodemon src/server/main/infrastructure/Api.ts --ignore src/server/main/infrastructure/db/db.json",
     "app-dev": "parcel watch ./src/app/index.html --dist-dir=./src/server/public"
   },
   "devDependencies": {

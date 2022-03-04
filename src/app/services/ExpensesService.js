@@ -27,4 +27,9 @@ export class ExpensesService {
     return response.data;
   }
 
+  static async getAll() {
+    const response = await axios.get(`/api/expenses`);
+    return response.data;
+  }
+
 }

@@ -21,13 +21,11 @@ export class PayExpensesAction {
             throw new Error("Expense already paid");
         }
 
-        const transaction: Transaction = {
+        const transaction: Transaction = await this.transactionRepository.add({
             mount: Math.abs(expense.mount),
             description: `Expenses ${expense.month}/${expense.year} of apartment id: ${expense.apartmentId}`,
             date: new Date()
-        }
-
-        await this.transactionRepository.add(transaction);
+        });
         const paidExpense = await this.expenseRepository.markAsPaid(expense.id, transaction.id);
         return paidExpense;
     }

@@ -9,6 +9,10 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
     this.expenses = [];
   }
 
+  public getAll(): Promise<Expense[]> {
+    return Promise.resolve(this.expenses);
+  }
+
   async markAsPaid(id: number, transactionId: number): Promise<Expense> {
     const expense = await this.getById(id);
     expense.paid = true;

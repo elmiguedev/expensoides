@@ -5,6 +5,7 @@ import { AddApartmentAction } from "../actions/apartments/AddApartmentAction";
 import { ListApartmentsAction } from "../actions/apartments/ListApartmentsAction";
 import { GenerateAllExpensesAction } from "../actions/expenses/GenerateAllExpensesAction";
 import { GenerateExpensesAction } from "../actions/expenses/GenerateExpensesAction";
+import { GetAllExpensesAction } from "../actions/expenses/GetAllExpensesAction";
 import { GetUnpaidExpensesAction } from "../actions/expenses/GetUnpaidExpensesAction";
 import { PayExpensesAction } from "../actions/expenses/PayExpensesAction";
 import { AddEarningAction } from "../actions/transactions/AddEarningAction";
@@ -25,6 +26,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "../../public")));
+
 app.get("/ping", (req: Request, res: Response) => {
     res.send("pong pong");
 });
@@ -51,6 +53,7 @@ const generateAllExpensesAction = new GenerateAllExpensesAction(
 )
 const getUnpaidExpensesAction = new GetUnpaidExpensesAction(expensesRepository);
 const payExpensesAction = new PayExpensesAction(expensesRepository, transactionRepository);
+const getAllExpensesAction = new GetAllExpensesAction(expensesRepository);
 
 const apartmentHandler = new ApartmentHandler(
     addApartmentAction,
@@ -68,7 +71,8 @@ const expensesHandler = new ExpensesHandler(
     generateExpensesAction,
     generateAllExpensesAction,
     getUnpaidExpensesAction,
-    payExpensesAction
+    payExpensesAction,
+    getAllExpensesAction
 );
 
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
@@ -83,6 +87,12 @@ app.get("/api/transactions/balance", transactionHandler.getBalance.bind(transact
 app.post("/api/expenses/generate", expensesHandler.generateExpenses.bind(expensesHandler));
 app.post("/api/expenses/generate/all", expensesHandler.generateAllExpenses.bind(expensesHandler));
 app.post("/api/expenses/pay", expensesHandler.payExpenses.bind(expensesHandler));
+app.get("/api/expenses", expensesHandler.getAll.bind(expensesHandler));
+
+
+app.get('/*', (req,res) =>{
+    res.sendFile(path.join(__dirname,"../../public/index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);

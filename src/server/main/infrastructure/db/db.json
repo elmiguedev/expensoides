@@ -73,7 +73,32 @@
             "id": 11
         }
     ],
-    "transactions": [],
+    "transactions": [
+        {
+            "mount": 2000,
+            "description": "Expenses 3/2022 of apartment id: 3",
+            "date": "2022-03-04T00:07:35.471Z",
+            "id": 0
+        },
+        {
+            "mount": 2000,
+            "description": "Expenses 3/2022 of apartment id: 4",
+            "date": "2022-03-04T00:07:45.788Z",
+            "id": 1
+        },
+        {
+            "mount": 2000,
+            "description": "Expenses 3/2022 of apartment id: 9",
+            "date": "2022-03-04T00:08:08.730Z",
+            "id": 2
+        },
+        {
+            "mount": -333,
+            "description": "",
+            "date": "2022-03-04T00:08:14.667Z",
+            "id": 3
+        }
+    ],
     "buildings": [
         {
             "id": 1,

@@ -3,6 +3,7 @@ import { Home } from "./pages/home/Home";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Transactions } from "./pages/transactions/Transactions";
+import { Expenses } from "./pages/expenses/Expenses";
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
           <Route path="transactions" element={<Transactions />} />
+          <Route path="expenses" element={<Expenses />} />
         </Route>
       </Routes>
     </BrowserRouter>

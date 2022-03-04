@@ -10,6 +10,11 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
         this.db = new JsonDb();
     }
 
+    public getAll(): Promise<Expense[]> {
+        const expenses = this.db.get<Expense>("expenses");
+        return Promise.resolve(expenses);
+    }
+
     markAsPaid(id: number, transactionId: number): Promise<Expense> {
         const expenses = this.db.get<Expense>("expenses");
         const expense = expenses.find(exp => exp.id === id);

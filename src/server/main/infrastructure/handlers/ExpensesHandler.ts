@@ -3,23 +3,27 @@ import { GenerateExpensesAction } from "../../actions/expenses/GenerateExpensesA
 import { GenerateAllExpensesAction } from "../../actions/expenses/GenerateAllExpensesAction";
 import { GetUnpaidExpensesAction } from "../../actions/expenses/GetUnpaidExpensesAction";
 import { PayExpensesAction } from "../../actions/expenses/PayExpensesAction";
+import { GetAllExpensesAction } from "../../actions/expenses/GetAllExpensesAction";
 
 export class ExpensesHandler {
     private generateExpensesAction: GenerateExpensesAction;
     private generateAllExpensesAction: GenerateAllExpensesAction;
     private getUnpaidExpensesAction: GetUnpaidExpensesAction;
     private payExpensesAction: PayExpensesAction;
+    private getAllExpensesAction: GetAllExpensesAction;
 
     constructor(
         generateExpensesAction: GenerateExpensesAction,
         generateAllExpensesAction: GenerateAllExpensesAction,
         getUnpaidExpensesAction: GetUnpaidExpensesAction,
-        payExpensesAction: PayExpensesAction
+        payExpensesAction: PayExpensesAction,
+        getAllExpensesAction: GetAllExpensesAction
     ) {
         this.generateExpensesAction = generateExpensesAction;
         this.generateAllExpensesAction = generateAllExpensesAction;
         this.getUnpaidExpensesAction = getUnpaidExpensesAction;
         this.payExpensesAction = payExpensesAction;
+        this.getAllExpensesAction = getAllExpensesAction;
     }
 
     public async generateExpenses(req: Request, res: Response) {
@@ -57,6 +61,15 @@ export class ExpensesHandler {
         try {
             const expense = await this.payExpensesAction.execute({ id: expenseId });
             res.status(200).json(expense);
+        } catch (error: any) {
+            res.status(400).send(error.message);
+        }
+    }
+
+    public async getAll(req: Request, res: Response) {
+        try {
+            const expenses = await this.getAllExpensesAction.execute();
+            res.status(200).json(expenses);
         } catch (error: any) {
             res.status(400).send(error.message);
         }

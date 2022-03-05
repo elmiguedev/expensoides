@@ -89,6 +89,78 @@ app.post("/api/expenses/generate/all", expensesHandler.generateAllExpenses.bind(
 app.post("/api/expenses/pay", expensesHandler.payExpenses.bind(expensesHandler));
 app.get("/api/expenses", expensesHandler.getAll.bind(expensesHandler));
 
+app.get("/api/pdf", (req, res) => {
+    var pdf = require("pdf-creator-node");
+    const fs = require("fs");
+
+    // Read HTML Template
+    var html = fs.readFileSync(__dirname + "/prueba.html", "utf8");
+
+    var options = {
+        format: "A4",
+        orientation: "portrait",
+        border: "10mm",
+        header: {
+            height: "45mm",
+            contents: '<div style="text-align: center;">Author: Shyam Hajare</div>'
+        },
+        footer: {
+            height: "28mm",
+            contents: {
+                first: 'Cover page',
+                2: 'Second page', // Any page number is working. 1-based index
+                default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+                last: 'Last Page'
+            }
+        }
+    };
+
+    var users = [
+        {
+          name: "Shyam",
+          age: "26",
+        },
+        {
+          name: "Navjot",
+          age: "26",
+        },
+        {
+          name: "Vitthal",
+          age: "26",
+        },
+      ];
+      var document = {
+        html: html,
+        data: {
+          users: users,
+        },
+        path: __dirname + "/output.pdf",
+        type: "",
+      };
+
+      pdf
+        .create(document, options)
+        .then((resu) => {
+            console.log(resu);
+            res.download(__dirname + "/output.pdf", "file.pdf", () => {
+                fs.unlinkSync(__dirname + "/output.pdf")
+            })
+        })
+        .catch((error) => {
+            console.error(error);
+            res.send("error" + JSON.stringify(error))
+        });
+
+  
+
+})
+
+
+
+
+
+
+
 
 app.get('/*', (req,res) =>{
     res.sendFile(path.join(__dirname,"../../public/index.html"));

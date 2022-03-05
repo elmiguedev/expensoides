@@ -159,9 +159,11 @@
             "month": 3,
             "mount": 2000,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "createdDate": "2022-03-03T21:17:01.756Z",
-            "id": 4
+            "id": 4,
+            "transactionId": 4,
+            "paymentDate": "2022-03-04T00:16:00.264Z"
         },
         {
             "apartmentId": 5,

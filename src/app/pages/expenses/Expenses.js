@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ExpensesService } from "../../services/ExpensesService";
-
+import  Pdf  from "react-to-pdf";
+import React from "react";
 export const Expenses = () => {
     
     const [expenses, setExpenses] = useState([]);
@@ -10,6 +11,11 @@ export const Expenses = () => {
             console.log("data",data);
             setExpenses(data);
         })
+    }
+    const ref = React.createRef();
+
+    const generatePrint = () => {
+  
     }
 
     useEffect(() => {
@@ -48,7 +54,16 @@ export const Expenses = () => {
                                 <td>{expense.description}</td>
                                 <td>{expense.paid ? 'si' : ''}</td>
                                 <td>{expense.createdDate}</td>
-                                <td>{expense.paid ? <button className="btn btn-primary btn-sm">Imprimir</button>:''}</td>
+                                <td>
+                                <Pdf>
+                                    {({toPdf, targetRef}) =>  (
+                                        <>
+                                            <button onClick={toPdf}>holi</button>
+                                            <div style={{ display: 'none', width: 500, height: 500, background: 'red'}} ref={targetRef}/>
+                                        </>
+                                    )}
+                                </Pdf>
+                                </td>
                             </tr>
                         ))}
                         </tbody>

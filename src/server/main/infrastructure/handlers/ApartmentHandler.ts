@@ -16,6 +16,7 @@ export class ApartmentHandler {
 
     public async add(req: Request, res: Response) {
         const apartment = await this.addApartmentAction.execute({
+            buildingId: req.body.buildingId,
             owner: req.body.owner,
             floor: req.body.floor,
             number: req.body.number

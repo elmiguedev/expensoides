@@ -6,8 +6,10 @@ export class ExpensesService {
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
+    const buildingId = 0;
 
     const response = await axios.post("/api/expenses/generate/all", {
+      buildingId: buildingId,
       year: year,
       month: month
     });

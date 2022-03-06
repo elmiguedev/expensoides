@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Expensas</title>
+
+    <style>
+        .expenses-report {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .expenses-report td {
+            vertical-align: top;
+        }
+
+        .expenses-detail {
+            width: 40%;
+        }
+
+        .expenses-text {
+            width: 60%;
+        }
+
+        .building-header {
+            text-align: center;
+
+        }
+
+        .building-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .building-name {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        .building-address {
+            font-size: 8px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .building-cuit {
+            font-size: 6px;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        .expense-table {
+            font-size: 6px;
+            width: 100%;
+        }
+
+        .expense-table {
+            border-collapse: collapse;
+        }
+
+        .expense-table tr td {
+            border: 1px solid gray;
+            height: 10px;
+        }
+
+
+        .expense-table-title {
+            font-size: 8px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        .expense-table-header {
+            font-size: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .expense-resume {
+            font-weight: bold;
+        }
+
+        tr.expense-resume td {
+            border: 0;
+        }
+
+        .expense-description {
+            border: 1px solid black;
+            padding: 4px;
+            font-size: 8px;
+        }
+
+        .expense-description p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .expense-detail-description {
+            text-align: right;
+            padding-right: 4px;
+        }
+
+        .expense-detail-mount {
+            text-align: left;
+            padding-left: 4px;
+        }
+
+        .expenses-text-title {
+            font-size: 8px;
+            text-align: center;
+        }
+
+        .expenses-text-title p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .expenses-text-period {
+            font-size: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="expenses-report">
+        <tr>
+            <!-- liquidación -->
+            <td class="expenses-detail">
+
+                <!-- titulo -->
+                <div class="building-header">
+                    <p class="building-title">CONSORCIO EDIFICIO</p>
+                    <p class="building-name">LOGO 1</p>
+                    <p class="building-address">12 DE OCTUBRE 1475</p>
+                    <p class="building-cuit">CUIT 30-70710290-6</p>
+                </div>
+
+                <!-- tabla liquidacion -->
+                <table class="expense-table">
+                    <tr class="expense-table-title">
+                        <td colspan="2">LIQUIDACIÓN</td>
+                    </tr>
+                    <tr class="expense-table-header">
+                        <td>CONCEPTO</td>
+                        <td>IMPORTE</td>
+                    </tr>
+                    <tr>
+                        <td>Expensas Comunes</td>
+                        <td>{{mount}}</td>
+                    </tr>
+                    <tr>
+                        <td>Cuota Extraordinaria</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="expense-resume">
+                        <td class="expense-detail-description">Total $</td>
+                        <td class="expense-detail-mount">{{mount}}</td>
+                    </tr>
+                    <tr class="expense-resume">
+                        <td class="expense-detail-description">PORCENTUAL DE LA UNIDAD %</td>
+                        <td class="expense-detail-mount">-</td>
+                    </tr>
+                    <tr class="expense-resume">
+                        <td class="expense-detail-description">A PAGAR $</td>
+                        <td class="expense-detail-mount">{{mount}}</td>
+                    </tr>
+                </table>
+
+
+            </td>
+
+            <!-- descripción -->
+            <td class="expenses-text">
+                <div class="expenses-text-title">
+                    <p>RECIBO DE PROPIEDAD HORIZONTAL LEY 13.512</p>
+                    <p>N° {{expenseId}}</p>
+                </div>
+
+                <div class="expenses-text-period">
+                    <p>PERIODO: {{month}} {{year}}</p>
+                </div>
+
+                <div class="expense-description">
+                    <p>Recibí de {{owner}} </p>
+                    <p>Propietario de la Unidad N° {{apartment}} del inmueble de la </p>
+                    <p>Calle 12 de Octubre 1475 la cantidad de </p>
+                    <p>Pesos {{mountDescription}} </p>
+                    <p> </p>
+                    <p>en pago del porcentual que le corresponde sobre los conceptos de la
+                        liquidación del margen </p>
+                    <p>de la fecha</p>
+                    <p></p>
+                </div>
+
+
+
+
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -3,10 +3,10 @@ import { ApartmentRepository } from "../../../domain/apartments/ApartmentReposit
 
 export class InMemoryApartmentRepository implements ApartmentRepository {
 
-    private apartments: Array<Apartment>;
+    private apartments: Apartment[];
 
     constructor() {
-        this.apartments = new Array();
+        this.apartments = [];
     }
 
     add(apartment: Apartment): Promise<void> {
@@ -20,6 +20,17 @@ export class InMemoryApartmentRepository implements ApartmentRepository {
     getAll(): Promise<Apartment[]> {
         return new Promise((resolve, reject) => {
             resolve(this.apartments);
+        });
+    }
+
+    getById(id: number): Promise<Apartment> {
+        return new Promise((resolve, reject) => {
+            const apartment = this.apartments.find(a => a.id === id);
+            if (apartment) {
+                resolve(apartment);
+            } else {
+                reject();
+            }
         });
     }
 

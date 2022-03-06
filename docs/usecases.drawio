@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NXZYRI2cLS-5SG9tABwp" name="Page-1">
-        <mxGraphModel dx="803" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="753" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -39,7 +39,7 @@
                 <mxCell id="11" value="Registrar ingreso de dinero" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="320" y="340" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="Imprimir comprobante de expensas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="12" value="Imprimir comprobante de expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
                     <mxGeometry x="320" y="440" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="13" value="Guardar contacto" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -66,8 +66,11 @@
                 <mxCell id="21" value="Imprimir informe mensual" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="440" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="Listar todas las expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                <mxCell id="22" value="Listar todas las expensas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="480" y="340" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Registrar edificio&lt;br&gt;(nombre, direccion, cuit, etc)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="560" width="120" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -23,6 +23,7 @@ export class AddApartmentAction {
         }
 
         const apartment: Apartment = {
+            buildingId: actionData.buildingId,
             floor: actionData.floor,
             number: actionData.number,
             owner: actionData.owner
@@ -35,6 +36,7 @@ export class AddApartmentAction {
 }
 
 interface ActionData {
+    buildingId: number;
     floor: number;
     owner: string;
     number: number;

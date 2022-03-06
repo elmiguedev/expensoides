@@ -89,24 +89,26 @@ const getBuildingRepository = () => {
 const getApartmentRepository = () => {
     const repository = new InMemoryApartmentRepository();
     repository.add({
+        buildingId: 1,
         floor: 1,
         number: 1,
-        owner: "test",
-        id: 1
+        owner: "test"
     });
     return repository;
 }
 
 const generateExpensesForApartmentId1 = (expenseRepository: ExpenseRepository) => {
     const buildingRepository = getBuildingRepository();
+    const apartmentRepository = getApartmentRepository();
 
     const generateExpensesAction = new GenerateExpensesAction(
         expenseRepository,
-        buildingRepository
+        buildingRepository,
+        apartmentRepository
     );
 
     const unpaidExpense = generateExpensesAction.execute({
-        apartmentId: 1,
+        apartmentId: 0,
         month: 2,
         year: 2022
     });

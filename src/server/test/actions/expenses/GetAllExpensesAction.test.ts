@@ -9,16 +9,19 @@ describe("Get all expenses action", () => {
             month: 1,
             year: 2022,
             id: 1,
-            mount: 2000,
             paid: false,
             description: "",
+            detail: [
+                { description: "", mount: 1800 },
+                { description: "", mount: 200 },
+            ]
         });
 
         const action = new GetAllExpensesAction(expenseRepository);
         const expenses = await action.execute();
 
         expect(Array.isArray(expenses)).toBe(true);
-    } )
+    })
 })
 
 const getExpenseRepository = () => {

@@ -1,10 +1,13 @@
+import { ExpenseDetail } from "../expenses/ExpenseDetail";
+
 export interface ExpenseReportData {
     expenseId: number;
     month: string;
     year: string;
     owner: string;
     apartment: string;
-    mount: number;
-    mountDescription: string;
+    totalMount: number;
+    totalMountDescription: string;
+    detail: ExpenseDetail[];
     currentDate: string;
 }

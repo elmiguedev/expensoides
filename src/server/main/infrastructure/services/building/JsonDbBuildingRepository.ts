@@ -10,10 +10,19 @@ export class JsonDbBuildingRepository implements BuildingRepository {
         this.db = new JsonDb();
     }
 
-    getExpensesMount(): Promise<number> {
+    getById(id: number): Promise<Building> {
         const buildings = this.db.get<Building>("buildings");
-        const building = buildings[0];
-        return Promise.resolve(building.extraordinaryExpense + building.ordinaryExpense);
+        const building = buildings.find(b => b.id === id);
+        return Promise.resolve(building);
+    }
+
+    async getExpensesMount(id: number): Promise<number> {
+        const building = await this.getById(id);
+        let total = 0;
+        building.expenses.forEach(detail => {
+            total += detail.mount
+        });
+        return Promise.resolve(total);
     }
 
 }

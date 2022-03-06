@@ -19,20 +19,20 @@ export class GenerateAllExpensesAction {
     }
 
     public async execute(data: ActionData) {
-        const expensesMount = await this.buildingRepository.getExpensesMount();
+        const building = await this.buildingRepository.getById(data.buildingId);
         const apartments = await this.apartmentRepository.getAll();
         const expenses: Expense[] = [];
 
         apartments.forEach(async apartment => {
             const hasExpenses = await this.checkExistingExpence(apartment.id, data.year, data.month);
             if (apartment.id !== undefined && !hasExpenses) {
-                const expense = {
+                const expense: Expense = {
                     apartmentId: apartment.id,
                     year: data.year,
                     month: data.month,
-                    mount: expensesMount,
                     description: "test",
-                    paid: false
+                    paid: false,
+                    detail: building.expenses
                 };
 
                 await this.expenseRepository.add(expense);
@@ -48,6 +48,7 @@ export class GenerateAllExpensesAction {
 }
 
 interface ActionData {
+    buildingId: number;
     year: number;
     month: number;
 }

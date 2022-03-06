@@ -18,6 +18,7 @@ describe("Get list of apartment action", () => {
         const action = new ListApartmentsAction(apartmentRepository);
 
         const apartment = await addApartmentAction.execute({
+            buildingId: 1,
             floor: 0,
             number: 1,
             owner: "Pepe"

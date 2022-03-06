@@ -19,8 +19,8 @@ describe("Generate All expenses action", () => {
         );
         const year = 2022;
         const month = 3;
-
-        const expenses: Expense[] = await generateAllExpensesAction.execute({ year, month });
+        const buildingId = 1;
+        const expenses: Expense[] = await generateAllExpensesAction.execute({ buildingId, year, month });
         const apartments = await apartmentRepository.getAll();
         expect(expenses.length).toBe(apartments.length);
         expect(expenses.filter(exp => exp.month === month && exp.year === year).length).toBe(expenses.length);
@@ -38,18 +38,20 @@ describe("Generate All expenses action", () => {
         );
         const generateExpensesAction = new GenerateExpensesAction(
             expensesRepository,
-            buildingRepository
+            buildingRepository,
+            apartmentRepository
         )
 
         const year = 2022;
         const month = 3;
+        const buildingId = 1;
         const apartmentId = 1;
 
         await generateExpensesAction.execute({
             year, month, apartmentId
         })
 
-        const expenses: Expense[] = await generateAllExpensesAction.execute({ year, month });
+        const expenses: Expense[] = await generateAllExpensesAction.execute({ buildingId, year, month });
         const apartments = await apartmentRepository.getAll();
 
         expect(expenses.length).toBe(apartments.length - 1);
@@ -61,16 +63,19 @@ describe("Generate All expenses action", () => {
 const getApartmentRepository = async () => {
     const repository = new InMemoryApartmentRepository();
     await repository.add({
+        buildingId: 1,
         number: 1,
         floor: 0,
         owner: "a"
     });
     await repository.add({
+        buildingId: 1,
         number: 2,
         floor: 0,
         owner: "b"
     });
     await repository.add({
+        buildingId: 1,
         number: 3,
         floor: 0,
         owner: "a"

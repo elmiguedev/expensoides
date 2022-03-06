@@ -22,12 +22,20 @@ export class PayExpensesAction {
         }
 
         const transaction: Transaction = await this.transactionRepository.add({
-            mount: Math.abs(expense.mount),
+            mount: this.getExpenseMount(expense),
             description: `Expenses ${expense.month}/${expense.year} of apartment id: ${expense.apartmentId}`,
             date: new Date()
         });
         const paidExpense = await this.expenseRepository.markAsPaid(expense.id, transaction.id);
         return paidExpense;
+    }
+
+    private getExpenseMount(expense: Expense): number {
+        let total = 0;
+        expense.detail.forEach(detail => {
+            total += detail.mount;
+        });
+        return Math.abs(total);
     }
 }
 

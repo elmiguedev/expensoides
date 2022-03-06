@@ -1,3 +1,6 @@
+import { Building } from "./Building";
+
 export interface BuildingRepository {
-  getExpensesMount(): Promise<number>;
+  getExpensesMount(id: number): Promise<number>;
+  getById(id: number): Promise<Building>;
 }

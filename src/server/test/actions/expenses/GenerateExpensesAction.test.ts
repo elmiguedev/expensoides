@@ -12,18 +12,20 @@ describe("GenerateExpenses Action", () => {
 
     const generateExpensesAction = new GenerateExpensesAction(
       expensesRespository,
-      buildingRespository
+      buildingRespository,
+      apartmentRepository
     );
     const addApartmentAction = new AddApartmentAction(apartmentRepository);
 
     await addApartmentAction.execute({
+      buildingId: 1,
       number: 1,
       owner: "prueba",
       floor: 0
     })
 
     const expenses = await generateExpensesAction.execute({
-      apartmentId: 1,
+      apartmentId: 0,
       year: 2020,
       month: 2
     });
@@ -39,25 +41,27 @@ describe("GenerateExpenses Action", () => {
 
     const generateExpensesAction = new GenerateExpensesAction(
       expensesRepository,
-      buildingRepository
+      buildingRepository,
+      apartmentRepository
     );
     const addApartmentAction = new AddApartmentAction(apartmentRepository);
 
     await addApartmentAction.execute({
+      buildingId: 1,
       number: 1,
       owner: "prueba",
       floor: 0
     });
 
     const expenses = await generateExpensesAction.execute({
-      apartmentId: 1,
+      apartmentId: 0,
       year: 2020,
       month: 2
     });
 
     expect(async () => {
       const newExpenses = await generateExpensesAction.execute({
-        apartmentId: 1,
+        apartmentId: 0,
         year: 2020,
         month: 2
       });
@@ -72,25 +76,32 @@ describe("GenerateExpenses Action", () => {
 
     const generateExpensesAction = new GenerateExpensesAction(
       expensesRepository,
-      buildingRepository
+      buildingRepository,
+      apartmentRepository
     );
     const addApartmentAction = new AddApartmentAction(apartmentRepository);
 
-    const expectedMount = 1800;
+    const expectedMount = 2000;
 
     await addApartmentAction.execute({
+      buildingId: 1,
       number: 1,
       owner: "prueba",
       floor: 0
     })
 
     const expenses = await generateExpensesAction.execute({
-      apartmentId: 1,
+      apartmentId: 0,
       year: 2020,
       month: 2
     });
 
-    expect(expenses.mount).toBe(expectedMount);
+    let currentMount = 0;
+    expenses.detail.forEach(detail => {
+      currentMount += detail.mount;
+    });
+
+    expect(currentMount).toBe(expectedMount);
   })
 
 })

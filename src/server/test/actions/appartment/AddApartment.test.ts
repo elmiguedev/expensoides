@@ -1,5 +1,6 @@
 import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
 import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 
 describe("Add apartment action", () => {
 
@@ -9,6 +10,7 @@ describe("Add apartment action", () => {
         );
 
         const apartment = await action.execute({
+            buildingId: 1,
             number: 1,
             owner: "Pepe Argento",
             floor: 0,
@@ -24,6 +26,7 @@ describe("Add apartment action", () => {
         );
         expect(async () => {
             const apartment = await action.execute({
+                buildingId: 1,
                 number: 0,
                 owner: "",
                 floor: 0
@@ -38,6 +41,7 @@ describe("Add apartment action", () => {
         );
         expect(async () => {
             const apartment = await action.execute({
+                buildingId: 1,
                 number: -1,
                 owner: "Pepe",
                 floor: 0
@@ -53,6 +57,7 @@ describe("Add apartment action", () => {
         );
         expect(async () => {
             const apartment = await action.execute({
+                buildingId: 1,
                 number: 0,
                 owner: "Pepe",
                 floor: -1
@@ -62,6 +67,10 @@ describe("Add apartment action", () => {
     });
 
 });
+
+const getBuildingRepository = () => {
+    return new InMemoryBuildingRepository();
+}
 
 const getApartmentRepository = () => {
     return new InMemoryApartmentRepository();

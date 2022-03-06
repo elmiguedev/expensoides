@@ -9,6 +9,11 @@ export class InMemoryApartmentRepository implements ApartmentRepository {
         this.apartments = [];
     }
 
+    getByBuildingId(buildingId: number): Promise<Apartment[]> {
+        const apartments = this.apartments.filter(a => a.buildingId === buildingId);
+        return Promise.resolve(apartments);
+    }
+
     add(apartment: Apartment): Promise<void> {
         return new Promise((resolve, reject) => {
             apartment.id = this.apartments.length;

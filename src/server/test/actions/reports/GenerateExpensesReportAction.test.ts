@@ -12,6 +12,7 @@ describe("Generate expenses report action", () => {
         const reportService = getReportService();
 
         await apartmentRepository.add({
+            buildingId: 1,
             floor: 1,
             number: 1,
             owner: "Pepe argento"
@@ -21,9 +22,9 @@ describe("Generate expenses report action", () => {
             apartmentId: 0,
             description: "Prueba",
             month: 2,
-            mount: 2000,
             paid: true,
-            year: 2022
+            year: 2022,
+            detail: []
         })
 
         const action = new GenerateExpensesReportAction(

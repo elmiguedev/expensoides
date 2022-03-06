@@ -1,4 +1,5 @@
 import { ApartmentRepository } from "../../domain/apartments/ApartmentRepository";
+import { Expense } from "../../domain/expenses/Expense";
 import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
 import { ExpenseReportData } from "../../domain/report/ExpenseReportData";
 import { ReportService } from "../../domain/report/ReportService";
@@ -38,8 +39,9 @@ export class GenerateExpensesReportAction {
             apartment: `${apartment.number}`,
             month: `${expense.month}`,
             year: `${expense.year}`,
-            mount: expense.mount,
-            mountDescription: `${expense.mount}`,
+            totalMount: this.getExpenseMount(expense),
+            totalMountDescription: `${this.getExpenseMount(expense)}`,
+            detail: expense.detail,
             owner: `${apartment.owner}`,
             currentDate: `${new Date().toDateString()}`
         }
@@ -53,7 +55,13 @@ export class GenerateExpensesReportAction {
         return filePath;
     }
 
-
+    private getExpenseMount(expense: Expense): number {
+        let total = 0;
+        expense.detail.forEach(detail => {
+            total += detail.mount;
+        });
+        return Math.abs(total);
+    }
 
 }
 

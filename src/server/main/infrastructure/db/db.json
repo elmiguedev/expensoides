@@ -102,8 +102,20 @@
     "buildings": [
         {
             "id": 1,
-            "ordinaryExpense": 1800,
-            "extraordinaryExpense": 200
+            "name": "Torre Test",
+            "address": "Av. Siempre viva 123",
+            "admin": "Pepe Argento",
+            "cuit": "20-202020202020-2",
+            "expenses": [
+                {
+                    "description": "Expensas ordinarias",
+                    "mount": 1800
+                },
+                {
+                    "description": "Expensas extraordinarias",
+                    "mount": 200
+                }
+            ]
         }
     ],
     "expenses": [

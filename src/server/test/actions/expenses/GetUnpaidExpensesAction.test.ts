@@ -17,8 +17,11 @@ describe("Get unpaid expenses action", () => {
             year,
             month: 2,
             description: "",
-            mount: 2000,
-            paid: false
+            paid: false,
+            detail: [
+                { description: "", mount: 1800 },
+                { description: "", mount: 200 },
+            ]
         });
 
         const unpaidExpense = await expenseRepository.add({
@@ -26,7 +29,10 @@ describe("Get unpaid expenses action", () => {
             year,
             month,
             description: "",
-            mount: 2000,
+            detail: [
+                { description: "", mount: 1800 },
+                { description: "", mount: 200 },
+            ],
             paid: false
         });
 

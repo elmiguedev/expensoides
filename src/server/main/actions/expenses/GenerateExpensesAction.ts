@@ -6,10 +6,12 @@ import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
 export class GenerateExpensesAction {
   private expenseRepository: ExpenseRepository;
   private buildingRepository: BuildingRepository;
+  private apartmentRepository: ApartmentRepository;
 
-  constructor(expenseRepository: ExpenseRepository, buildingRepository: BuildingRepository) {
+  constructor(expenseRepository: ExpenseRepository, buildingRepository: BuildingRepository, apartmentRepository: ApartmentRepository) {
     this.expenseRepository = expenseRepository;
     this.buildingRepository = buildingRepository;
+    this.apartmentRepository = apartmentRepository;
   }
 
   public async execute(data: ActionData): Promise<Expense> {
@@ -18,14 +20,15 @@ export class GenerateExpensesAction {
       throw new Error("Expenses already generated");
     }
 
-    const expensesMount = await this.buildingRepository.getExpensesMount();
+    const apartment = await this.apartmentRepository.getById(data.apartmentId);
+    const building = await this.buildingRepository.getById(apartment.buildingId);
     const expense = await this.expenseRepository.add({
       apartmentId: data.apartmentId,
       year: data.year,
       month: data.month,
-      mount: expensesMount,
       description: "test",
-      paid: false
+      paid: false,
+      detail: building.expenses
     });
     return expense;
   }

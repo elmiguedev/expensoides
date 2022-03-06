@@ -44,7 +44,8 @@ const getBalanceAction = new GetBalanceAction(transactionRepository);
 const getTransactionsAction = new GetTransactionsAction(transactionRepository);
 const generateExpensesAction = new GenerateExpensesAction(
     expensesRepository,
-    buildingRepository
+    buildingRepository,
+    apartmentRepository
 )
 const generateAllExpensesAction = new GenerateAllExpensesAction(
     apartmentRepository,

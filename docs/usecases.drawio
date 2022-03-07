@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NXZYRI2cLS-5SG9tABwp" name="Page-1">
-        <mxGraphModel dx="753" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="447" dy="269" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -72,7 +72,7 @@
                 <mxCell id="23" value="Registrar edificio&lt;br&gt;(nombre, direccion, cuit, etc)" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="560" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="Crear expensas genericas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
+                <mxCell id="24" value="Crear expensas genericas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="1" vertex="1">
                     <mxGeometry x="320" y="560" width="120" height="80" as="geometry"/>
                 </mxCell>
             </root>

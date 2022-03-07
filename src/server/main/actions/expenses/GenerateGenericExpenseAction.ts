@@ -39,6 +39,8 @@ export class GenerateGenericExpenseAction {
             detail: data.detail
         });
 
+        console.log("LA CREADA", expense);
+
         return expense;
     }
 }

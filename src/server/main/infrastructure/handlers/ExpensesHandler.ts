@@ -41,6 +41,7 @@ export class ExpensesHandler {
     }
 
     public async generateAllExpenses(req: Request, res: Response) {
+        console.log("SE EJECUTA LA TODAS")
         const expenseData = req.body;
         try {
             const expenses = await this.generateAllExpensesAction.execute(expenseData);
@@ -81,6 +82,7 @@ export class ExpensesHandler {
 
     public async generateGenericExpense(req: Request, res: Response) {
         try {
+            console.log("SE EJECUTA LA GENERIC")
             const data = req.body;
             const expenses = await this.generateGenericExpenseAction.execute(data);
             res.status(200).json(expenses);

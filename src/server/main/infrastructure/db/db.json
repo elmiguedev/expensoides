@@ -110,64 +110,16 @@
             "apartmentId": 0,
             "year": 2022,
             "month": 3,
-            "description": "test",
-            "paid": true,
+            "description": "dsa",
+            "paid": false,
             "detail": [
                 {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
+                    "description": "dsa",
+                    "mount": 12222
                 }
             ],
-            "createdDate": "2022-03-06T21:24:47.247Z",
-            "id": 0,
-            "transactionId": 0,
-            "paymentDate": "2022-03-06T21:32:32.042Z"
-        },
-        {
-            "apartmentId": 1,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": true,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.248Z",
-            "id": 1,
-            "transactionId": 1,
-            "paymentDate": "2022-03-06T23:51:18.784Z"
-        },
-        {
-            "apartmentId": 2,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": true,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.249Z",
-            "id": 2,
-            "transactionId": 1,
-            "paymentDate": "2022-03-06T21:32:35.695Z"
+            "createdDate": "2022-03-07T19:38:19.324Z",
+            "id": 0
         },
         {
             "apartmentId": 3,
@@ -177,200 +129,44 @@
             "paid": false,
             "detail": [
                 {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
+                    "description": "test",
+                    "mount": 12222
                 }
             ],
-            "createdDate": "2022-03-06T21:24:47.250Z",
-            "id": 3
+            "createdDate": "2022-03-07T19:41:21.306Z",
+            "id": 1
         },
         {
             "apartmentId": 4,
             "year": 2022,
             "month": 3,
-            "description": "test",
+            "description": "tete",
             "paid": false,
             "detail": [
                 {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
+                    "description": "tete",
+                    "mount": 222222
                 }
             ],
-            "createdDate": "2022-03-06T21:24:47.251Z",
-            "id": 4
+            "createdDate": "2022-03-07T19:42:18.939Z",
+            "id": 2
         },
         {
-            "apartmentId": 5,
+            "apartmentId": 2,
             "year": 2022,
             "month": 3,
-            "description": "test",
+            "description": "re",
             "paid": true,
             "detail": [
                 {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
+                    "description": "re",
+                    "mount": 22
                 }
             ],
-            "createdDate": "2022-03-06T21:24:47.252Z",
-            "id": 5,
+            "createdDate": "2022-03-07T19:43:38.283Z",
+            "id": 3,
             "transactionId": 0,
-            "paymentDate": "2022-03-06T23:49:54.515Z"
-        },
-        {
-            "apartmentId": 6,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.253Z",
-            "id": 6
-        },
-        {
-            "apartmentId": 7,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.254Z",
-            "id": 7
-        },
-        {
-            "apartmentId": 8,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.255Z",
-            "id": 8
-        },
-        {
-            "apartmentId": 9,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.257Z",
-            "id": 9
-        },
-        {
-            "apartmentId": 10,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.258Z",
-            "id": 10
-        },
-        {
-            "apartmentId": 11,
-            "year": 2022,
-            "month": 3,
-            "description": "test",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Expensas ordinarias",
-                    "mount": 1800
-                },
-                {
-                    "description": "Expensas extraordinarias",
-                    "mount": 200
-                }
-            ],
-            "createdDate": "2022-03-06T21:24:47.258Z",
-            "id": 11
-        },
-        {
-            "apartmentId": 11,
-            "year": 2022,
-            "month": 3,
-            "description": "Es solo una descripcion",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Prueba",
-                    "mount": 1000
-                }
-            ],
-            "createdDate": "2022-03-07T14:08:46.877Z",
-            "id": 12
-        },
-        {
-            "apartmentId": 0,
-            "year": 2022,
-            "month": 3,
-            "description": "Es solo una descripcion",
-            "paid": false,
-            "detail": [
-                {
-                    "description": "Prueba",
-                    "mount": 1000
-                }
-            ],
-            "createdDate": "2022-03-07T14:08:55.383Z",
-            "id": 13
+            "paymentDate": "2022-03-07T19:43:42.739Z"
         }
     ]
 }

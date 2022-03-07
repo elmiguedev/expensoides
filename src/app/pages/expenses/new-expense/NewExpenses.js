@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { DropdownList } from "../../../components/ui/DropdownList"
 import { TextField } from "../../../components/ui/TextField";
 import { ApartmentService } from "../../../services/ApartmentService";
+import { ExpensesService } from "../../../services/ExpensesService";
 
 export const NewExpenses = () => {
     const [apartments, setApartments] = useState();
@@ -42,6 +43,11 @@ export const NewExpenses = () => {
             ...expense,
             detail: expense.detail.filter(det => expense.detail.indexOf(det) !== i)
         })
+    }
+
+    const generateExpenses = async () => {
+        const response = await ExpensesService.generateGenericExpense(expense);
+        console.log(response);
     }
 
     useEffect(() => {
@@ -118,6 +124,14 @@ export const NewExpenses = () => {
                                     >x</button>
                                 </div>
                             ))}
+                        </div>
+
+                        <div className="form-group">
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                onClick={generateExpenses}
+                            >Generate expense</button>
                         </div>
 
                     </div>

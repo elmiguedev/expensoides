@@ -29,14 +29,8 @@ export class InMemoryApartmentRepository implements ApartmentRepository {
     }
 
     getById(id: number): Promise<Apartment> {
-        return new Promise((resolve, reject) => {
-            const apartment = this.apartments.find(a => a.id === id);
-            if (apartment) {
-                resolve(apartment);
-            } else {
-                reject();
-            }
-        });
+        const apartment = this.apartments.find(a => a.id === id);
+        return Promise.resolve(apartment);
     }
 
 }

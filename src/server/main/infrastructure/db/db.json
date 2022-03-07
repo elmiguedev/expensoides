@@ -341,6 +341,36 @@
             ],
             "createdDate": "2022-03-06T21:24:47.258Z",
             "id": 11
+        },
+        {
+            "apartmentId": 11,
+            "year": 2022,
+            "month": 3,
+            "description": "Es solo una descripcion",
+            "paid": false,
+            "detail": [
+                {
+                    "description": "Prueba",
+                    "mount": 1000
+                }
+            ],
+            "createdDate": "2022-03-07T14:08:46.877Z",
+            "id": 12
+        },
+        {
+            "apartmentId": 0,
+            "year": 2022,
+            "month": 3,
+            "description": "Es solo una descripcion",
+            "paid": false,
+            "detail": [
+                {
+                    "description": "Prueba",
+                    "mount": 1000
+                }
+            ],
+            "createdDate": "2022-03-07T14:08:55.383Z",
+            "id": 13
         }
     ]
 }

@@ -34,4 +34,9 @@ export class ExpensesService {
     return response.data;
   }
 
+  static async generateGenericExpense(expense) {
+    const response = await axios.post("/api/expenses/generate/generic", expense);
+    return response.data;
+  }
+
 }

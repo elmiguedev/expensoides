@@ -5,6 +5,7 @@ import { AddApartmentAction } from "../actions/apartments/AddApartmentAction";
 import { ListApartmentsAction } from "../actions/apartments/ListApartmentsAction";
 import { GenerateAllExpensesAction } from "../actions/expenses/GenerateAllExpensesAction";
 import { GenerateExpensesAction } from "../actions/expenses/GenerateExpensesAction";
+import { GenerateGenericExpenseAction } from "../actions/expenses/GenerateGenericExpenseAction";
 import { GetAllExpensesAction } from "../actions/expenses/GetAllExpensesAction";
 import { GetUnpaidExpensesAction } from "../actions/expenses/GetUnpaidExpensesAction";
 import { PayExpensesAction } from "../actions/expenses/PayExpensesAction";
@@ -52,6 +53,8 @@ const generateAllExpensesAction = new GenerateAllExpensesAction(
     expensesRepository,
     buildingRepository
 )
+const generateGenericExpenseAction = new GenerateGenericExpenseAction(expensesRepository, apartmentRepository);
+
 const getUnpaidExpensesAction = new GetUnpaidExpensesAction(expensesRepository);
 const payExpensesAction = new PayExpensesAction(expensesRepository, transactionRepository);
 const getAllExpensesAction = new GetAllExpensesAction(expensesRepository);
@@ -73,7 +76,8 @@ const expensesHandler = new ExpensesHandler(
     generateAllExpensesAction,
     getUnpaidExpensesAction,
     payExpensesAction,
-    getAllExpensesAction
+    getAllExpensesAction,
+    generateGenericExpenseAction
 );
 
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
@@ -85,8 +89,9 @@ app.post("/api/transactions/payment", transactionHandler.addPayment.bind(transac
 app.post("/api/transactions/earning", transactionHandler.addEarning.bind(transactionHandler));
 app.get("/api/transactions/balance", transactionHandler.getBalance.bind(transactionHandler));
 
-app.post("/api/expenses/generate", expensesHandler.generateExpenses.bind(expensesHandler));
+app.post("/api/expenses/generate/generic", expensesHandler.generateGenericExpense.bind(expensesHandler));
 app.post("/api/expenses/generate/all", expensesHandler.generateAllExpenses.bind(expensesHandler));
+app.post("/api/expenses/generate", expensesHandler.generateExpenses.bind(expensesHandler));
 app.post("/api/expenses/pay", expensesHandler.payExpenses.bind(expensesHandler));
 app.get("/api/expenses", expensesHandler.getAll.bind(expensesHandler));
 

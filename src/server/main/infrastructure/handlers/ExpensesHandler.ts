@@ -4,6 +4,7 @@ import { GenerateAllExpensesAction } from "../../actions/expenses/GenerateAllExp
 import { GetUnpaidExpensesAction } from "../../actions/expenses/GetUnpaidExpensesAction";
 import { PayExpensesAction } from "../../actions/expenses/PayExpensesAction";
 import { GetAllExpensesAction } from "../../actions/expenses/GetAllExpensesAction";
+import { GenerateGenericExpenseAction } from "../../actions/expenses/GenerateGenericExpenseAction";
 
 export class ExpensesHandler {
     private generateExpensesAction: GenerateExpensesAction;
@@ -11,19 +12,22 @@ export class ExpensesHandler {
     private getUnpaidExpensesAction: GetUnpaidExpensesAction;
     private payExpensesAction: PayExpensesAction;
     private getAllExpensesAction: GetAllExpensesAction;
+    private generateGenericExpenseAction: GenerateGenericExpenseAction;
 
     constructor(
         generateExpensesAction: GenerateExpensesAction,
         generateAllExpensesAction: GenerateAllExpensesAction,
         getUnpaidExpensesAction: GetUnpaidExpensesAction,
         payExpensesAction: PayExpensesAction,
-        getAllExpensesAction: GetAllExpensesAction
+        getAllExpensesAction: GetAllExpensesAction,
+        generateGenericExpenseAction: GenerateGenericExpenseAction
     ) {
         this.generateExpensesAction = generateExpensesAction;
         this.generateAllExpensesAction = generateAllExpensesAction;
         this.getUnpaidExpensesAction = getUnpaidExpensesAction;
         this.payExpensesAction = payExpensesAction;
         this.getAllExpensesAction = getAllExpensesAction;
+        this.generateGenericExpenseAction = generateGenericExpenseAction;
     }
 
     public async generateExpenses(req: Request, res: Response) {
@@ -73,6 +77,17 @@ export class ExpensesHandler {
         } catch (error: any) {
             res.status(400).send(error.message);
         }
+    }
+
+    public async generateGenericExpense(req: Request, res: Response) {
+        try {
+            const data = req.body;
+            const expenses = await this.generateGenericExpenseAction.execute(data);
+            res.status(200).json(expenses);
+        } catch (error: any) {
+            res.status(400).send(error.message);
+        }
+
     }
 
 }

@@ -22783,7 +22783,8 @@ var _layout = require("./components/Layout");
 var _home = require("./pages/home/Home");
 var _reactRouterDom = require("react-router-dom");
 var _transactions = require("./pages/transactions/Transactions");
-var _expenses = require("./pages/expenses/Expenses");
+var _expenses = require("./pages/expenses/expenses-list/Expenses");
+var _newExpenses = require("./pages/expenses/new-expense/NewExpenses");
 const App = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
@@ -22798,7 +22799,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22807,7 +22808,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22816,23 +22817,32 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 15,
+                        lineNumber: 16,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                        path: "expenses/new",
+                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newExpenses.NewExpenses, {
+                        }, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/app/App.js",
+                        lineNumber: 17,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/app/App.js",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/app/App.js",
-            lineNumber: 11,
+            lineNumber: 12,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/App.js",
-        lineNumber: 10,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined));
 };
@@ -22845,7 +22855,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/Expenses":"bK38k"}],"8NkAr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8"}],"8NkAr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27040,11 +27050,11 @@ class TransactionService {
     }
 }
 
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"bK38k":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$28da = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"4gprS":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3d14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$28da.prelude(module);
+$parcel$ReactRefreshHelpers$3d14.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27053,8 +27063,9 @@ parcelHelpers.export(exports, "Expenses", ()=>Expenses
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
-var _expensesService = require("../../services/ExpensesService");
+var _expensesService = require("../../../services/ExpensesService");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const Expenses = ()=>{
     _s();
@@ -27076,18 +27087,41 @@ const Expenses = ()=>{
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
                         children: "Expensas"
                     }, void 0, false, {
-                        fileName: "src/app/pages/expenses/Expenses.js",
-                        lineNumber: 22,
+                        fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                        lineNumber: 23,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
-                    fileName: "src/app/pages/expenses/Expenses.js",
-                    lineNumber: 21,
+                    fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                    lineNumber: 22,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
-                fileName: "src/app/pages/expenses/Expenses.js",
-                lineNumber: 20,
+                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                lineNumber: 21,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                        className: "btn btn-primary",
+                        to: "/expenses/new",
+                        children: "Registrar nuevas expensas"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                        lineNumber: 28,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                    lineNumber: 27,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                lineNumber: 26,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -27103,67 +27137,67 @@ const Expenses = ()=>{
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "ID"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 30,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 36,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "A\xf1o"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 31,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 37,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "Mes"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 32,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 38,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "Departamento (ID)"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 33,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 39,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "Descripcion"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 34,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 40,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "Pagada"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 35,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 41,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                             children: "Fecha"
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 36,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 42,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
                                         }, void 0, false, {
-                                            fileName: "src/app/pages/expenses/Expenses.js",
-                                            lineNumber: 37,
+                                            fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                            lineNumber: 43,
                                             columnNumber: 33
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
-                                    fileName: "src/app/pages/expenses/Expenses.js",
-                                    lineNumber: 29,
+                                    fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                    lineNumber: 35,
                                     columnNumber: 29
                                 }, undefined)
                             }, void 0, false, {
-                                fileName: "src/app/pages/expenses/Expenses.js",
-                                lineNumber: 28,
+                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                lineNumber: 34,
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
@@ -27172,50 +27206,50 @@ const Expenses = ()=>{
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.id
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 43,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 49,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.year
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 44,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 50,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.month
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 45,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 51,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.apartmentId
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 46,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 52,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.description
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 47,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 53,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.paid ? 'si' : ''
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 48,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 54,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
                                                 children: expense.createdDate
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 49,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 55,
                                                 columnNumber: 37
                                             }, undefined),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
@@ -27223,47 +27257,47 @@ const Expenses = ()=>{
                                                     className: "btn btn-primary",
                                                     children: "imprimir"
                                                 }, void 0, false, {
-                                                    fileName: "src/app/pages/expenses/Expenses.js",
-                                                    lineNumber: 51,
+                                                    fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                    lineNumber: 57,
                                                     columnNumber: 41
                                                 }, undefined)
                                             }, void 0, false, {
-                                                fileName: "src/app/pages/expenses/Expenses.js",
-                                                lineNumber: 50,
+                                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                                lineNumber: 56,
                                                 columnNumber: 37
                                             }, undefined)
                                         ]
                                     }, expense.id, true, {
-                                        fileName: "src/app/pages/expenses/Expenses.js",
-                                        lineNumber: 42,
+                                        fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                        lineNumber: 48,
                                         columnNumber: 33
                                     }, undefined)
                                 )
                             }, void 0, false, {
-                                fileName: "src/app/pages/expenses/Expenses.js",
-                                lineNumber: 40,
+                                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                                lineNumber: 46,
                                 columnNumber: 25
                             }, undefined)
                         ]
                     }, void 0, true, {
-                        fileName: "src/app/pages/expenses/Expenses.js",
-                        lineNumber: 27,
+                        fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                        lineNumber: 33,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
-                    fileName: "src/app/pages/expenses/Expenses.js",
-                    lineNumber: 26,
+                    fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                    lineNumber: 32,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
-                fileName: "src/app/pages/expenses/Expenses.js",
-                lineNumber: 25,
+                fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+                lineNumber: 31,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/app/pages/expenses/Expenses.js",
-        lineNumber: 19,
+        fileName: "src/app/pages/expenses/expenses-list/Expenses.js",
+        lineNumber: 20,
         columnNumber: 9
     }, undefined));
 };
@@ -27272,11 +27306,383 @@ _c = Expenses;
 var _c;
 $RefreshReg$(_c, "Expenses");
 
-  $parcel$ReactRefreshHelpers$28da.postlude(module);
+  $parcel$ReactRefreshHelpers$3d14.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react-router-dom":"klkWS"}],"4YcM8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$243a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$243a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NewExpenses", ()=>NewExpenses
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _dropdownList = require("../../../components/ui/DropdownList");
+var _textField = require("../../../components/ui/TextField");
+var _apartmentService = require("../../../services/ApartmentService");
+var _s = $RefreshSig$();
+const NewExpenses = ()=>{
+    _s();
+    const [apartments, setApartments] = _react.useState();
+    const [expense, setExpense] = _react.useState({
+        apartmentId: '',
+        description: '',
+        detail: []
+    });
+    const [detail, setDetail] = _react.useState({
+        description: '',
+        mount: 0
+    });
+    const getApartments = ()=>{
+        _apartmentService.ApartmentService.getAll().then((data)=>{
+            setApartments(data.map((a)=>{
+                return {
+                    value: a.id,
+                    text: `Departamento n° ${a.number}`
+                };
+            }));
+        });
+    };
+    const addDetail = ()=>{
+        setExpense({
+            ...expense,
+            detail: [
+                ...expense.detail,
+                detail
+            ]
+        });
+    };
+    const removeDetail = (i)=>{
+        setExpense({
+            ...expense,
+            detail: expense.detail.filter((det)=>expense.detail.indexOf(det) !== i
+            )
+        });
+    };
+    _react.useEffect(()=>{
+        getApartments();
+    }, []);
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                        children: "Registar nueva expensa"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                        lineNumber: 55,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                    lineNumber: 54,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                lineNumber: 53,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                        children: [
+                            JSON.stringify(expense),
+                            JSON.stringify(detail),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                        children: "Apartamento"
+                                    }, void 0, false, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 69,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_dropdownList.DropdownList, {
+                                        value: expense.apartmentId,
+                                        onChange: (e)=>setExpense({
+                                                ...expense,
+                                                apartmentId: +e.target.value
+                                            })
+                                        ,
+                                        items: apartments
+                                    }, void 0, false, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 70,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                lineNumber: 68,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                        children: "Descripci\xf3n"
+                                    }, void 0, false, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 78,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("textarea", {
+                                        value: expense.description,
+                                        onChange: (e)=>setExpense({
+                                                ...expense,
+                                                description: e.target.value
+                                            })
+                                        ,
+                                        className: "form-control"
+                                    }, void 0, false, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 79,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                lineNumber: 77,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                className: "form-group",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                        children: "Detalle"
+                                    }, void 0, false, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 87,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "row",
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                                className: "col",
+                                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                                    value: detail.description,
+                                                    onChange: (e)=>setDetail({
+                                                            ...detail,
+                                                            description: e.target.value
+                                                        })
+                                                }, void 0, false, {
+                                                    fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                    lineNumber: 90,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                lineNumber: 89,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                                className: "col",
+                                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                                    value: detail.mount,
+                                                    type: "number",
+                                                    onChange: (e)=>setDetail({
+                                                            ...detail,
+                                                            mount: +e.target.value
+                                                        })
+                                                }, void 0, false, {
+                                                    fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                    lineNumber: 96,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                lineNumber: 95,
+                                                columnNumber: 33
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                                className: "col",
+                                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                                                    className: "btn btn-primary",
+                                                    onClick: addDetail,
+                                                    children: "Agregar"
+                                                }, void 0, false, {
+                                                    fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                    lineNumber: 103,
+                                                    columnNumber: 37
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                lineNumber: 102,
+                                                columnNumber: 33
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 88,
+                                        columnNumber: 29
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                lineNumber: 86,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                className: "form-group",
+                                children: expense.detail && expense.detail.map((det, i)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                                                children: [
+                                                    det.mount,
+                                                    " (",
+                                                    det.description,
+                                                    ")"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                lineNumber: 114,
+                                                columnNumber: 37
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                                                type: "button",
+                                                onClick: ()=>{
+                                                    removeDetail(i);
+                                                },
+                                                children: "x"
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                                lineNumber: 115,
+                                                columnNumber: 37
+                                            }, undefined)
+                                        ]
+                                    }, i, true, {
+                                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                        lineNumber: 113,
+                                        columnNumber: 33
+                                    }, undefined)
+                                )
+                            }, void 0, false, {
+                                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                                lineNumber: 111,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                        lineNumber: 63,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                    lineNumber: 62,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+                lineNumber: 61,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/expenses/new-expense/NewExpenses.js",
+        lineNumber: 52,
+        columnNumber: 9
+    }, undefined));
+};
+_s(NewExpenses, "Vzd7TPnjo4KGSDgd8Z0MuYLRJ4A=");
+_c = NewExpenses;
+var _c;
+$RefreshReg$(_c, "NewExpenses");
+
+  $parcel$ReactRefreshHelpers$243a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../../services/ApartmentService":"35kqt","../../../components/ui/DropdownList":"782Sd","../../../components/ui/TextField":"8MB4t"}],"782Sd":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c2cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c2cd.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DropdownList", ()=>DropdownList
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const DropdownList = (props)=>{
+    const { items , value , onChange  } = props;
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("select", {
+        value: value,
+        onChange: onChange,
+        className: "form-select",
+        children: items && items.map((item)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("option", {
+                value: item.value,
+                children: item.text
+            }, item.value, false, {
+                fileName: "src/app/components/ui/DropdownList.js",
+                lineNumber: 12,
+                columnNumber: 17
+            }, undefined)
+        )
+    }, void 0, false, {
+        fileName: "src/app/components/ui/DropdownList.js",
+        lineNumber: 10,
+        columnNumber: 9
+    }, undefined));
+};
+_c = DropdownList;
+var _c;
+$RefreshReg$(_c, "DropdownList");
+
+  $parcel$ReactRefreshHelpers$c2cd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8MB4t":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1256 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1256.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TextField", ()=>TextField
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const TextField = (props)=>{
+    const { type ="text" , ...otherProps } = props;
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+        type: type,
+        className: "form-control",
+        ...otherProps
+    }, void 0, false, {
+        fileName: "src/app/components/ui/TextField.js",
+        lineNumber: 8,
+        columnNumber: 9
+    }, undefined));
+};
+_c = TextField;
+var _c;
+$RefreshReg$(_c, "TextField");
+
+  $parcel$ReactRefreshHelpers$1256.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

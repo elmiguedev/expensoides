@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { ExpensesService } from "../../services/ExpensesService";
+import { ExpensesService } from "../../../services/ExpensesService";
 import React from "react";
+import { Link } from "react-router-dom";
 export const Expenses = () => {
 
     const [expenses, setExpenses] = useState([]);
@@ -20,6 +21,11 @@ export const Expenses = () => {
             <div className="row">
                 <div className="col">
                     <h1>Expensas</h1>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <Link className="btn btn-primary" to="/expenses/new">Registrar nuevas expensas</Link>
                 </div>
             </div>
             <div className="row">

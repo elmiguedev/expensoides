@@ -3,7 +3,8 @@ import { Home } from "./pages/home/Home";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Transactions } from "./pages/transactions/Transactions";
-import { Expenses } from "./pages/expenses/Expenses";
+import { Expenses } from "./pages/expenses/expenses-list/Expenses";
+import { NewExpenses } from "./pages/expenses/new-expense/NewExpenses";
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
           <Route path="" element={<Home />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="expenses" element={<Expenses />} />
+          <Route path="expenses/new" element={<NewExpenses />} />
         </Route>
       </Routes>
     </BrowserRouter>

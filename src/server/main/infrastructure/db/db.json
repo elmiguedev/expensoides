@@ -132,7 +132,7 @@
             "year": 2022,
             "month": 3,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "detail": [
                 {
                     "description": "Expensas ordinarias",
@@ -144,7 +144,9 @@
                 }
             ],
             "createdDate": "2022-03-06T21:24:47.248Z",
-            "id": 1
+            "id": 1,
+            "transactionId": 1,
+            "paymentDate": "2022-03-06T23:51:18.784Z"
         },
         {
             "apartmentId": 2,
@@ -210,7 +212,7 @@
             "year": 2022,
             "month": 3,
             "description": "test",
-            "paid": false,
+            "paid": true,
             "detail": [
                 {
                     "description": "Expensas ordinarias",
@@ -222,7 +224,9 @@
                 }
             ],
             "createdDate": "2022-03-06T21:24:47.252Z",
-            "id": 5
+            "id": 5,
+            "transactionId": 0,
+            "paymentDate": "2022-03-06T23:49:54.515Z"
         },
         {
             "apartmentId": 6,

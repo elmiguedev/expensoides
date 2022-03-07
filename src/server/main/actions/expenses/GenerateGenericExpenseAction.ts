@@ -1,7 +1,6 @@
 import { Expense } from "../../domain/expenses/Expense";
 import { ExpenseDetail } from "../../domain/expenses/ExpenseDetail";
 import { ExpenseRepository } from "../../domain/expenses/ExpenseRepository";
-import { TransactionRepository } from "../../domain/transactions/TransactionRepository";
 
 export class GenerateGenericExpenseAction {
     private expenseRepository: ExpenseRepository;

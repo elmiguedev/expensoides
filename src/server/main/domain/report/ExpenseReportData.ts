@@ -2,12 +2,17 @@ import { ExpenseDetail } from "../expenses/ExpenseDetail";
 
 export interface ExpenseReportData {
     expenseId: number;
-    month: string;
-    year: string;
+    building: string;
+    cuit: string;
+    period: string;
     owner: string;
     apartment: string;
+    month: string;
+    address: string;
     totalMount: number;
     totalMountDescription: string;
-    detail: ExpenseDetail[];
     currentDate: string;
+    paymentType: string;
+    year: string;
+    detail: ExpenseDetail[];
 }

@@ -1,6 +1,7 @@
 import fs from "fs";
 import { GenerateExpensesReportAction } from "../../../main/actions/reports/GenerateExpensesReportAction";
 import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
+import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
 import { PdfReportService } from "../../../main/infrastructure/services/reports/PdfReportService";
 
@@ -9,6 +10,7 @@ describe("Generate expenses report action", () => {
     test("should generate a PDF file ", async () => {
         const expenseRepository = getExpenseRepository();
         const apartmentRepository = getApartmentRepository();
+        const buildingRepository = getBuildingRepository();
         const reportService = getReportService();
 
         await apartmentRepository.add({
@@ -20,24 +22,26 @@ describe("Generate expenses report action", () => {
 
         await expenseRepository.add({
             apartmentId: 0,
-            description: "Prueba",
+            description: "Expensas de prueba",
             month: 2,
             paid: true,
+            paymentDate: new Date(),
             year: 2022,
-            detail: []
+            detail: [
+                { description: "Expensas comunes", mount: 1800 },
+                { description: "Expensas extraordinarias", mount: 200 },
+            ]
         })
 
         const action = new GenerateExpensesReportAction(
             expenseRepository,
             apartmentRepository,
+            buildingRepository,
             reportService
         );
 
         const expenseId = 0;
-        console.log("BANDERIN")
         const filePath = await action.execute({ expenseId });
-
-        console.log("EL PAATH", filePath);
 
         expect(fs.existsSync(filePath)).toBe(true);
     })
@@ -54,4 +58,8 @@ const getApartmentRepository = () => {
 
 const getReportService = () => {
     return new PdfReportService();
+}
+
+const getBuildingRepository = () => {
+    return new InMemoryBuildingRepository();
 }

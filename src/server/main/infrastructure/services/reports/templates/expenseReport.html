@@ -6,6 +6,11 @@
     <title>Expensas</title>
 
     <style>
+        body {
+            font-size: 8px;
+            color: black;
+        }
+
         .expenses-report {
             width: 100%;
             padding: 8px;
@@ -21,6 +26,7 @@
 
         .expenses-text {
             width: 60%;
+            padding-left: 12px;
         }
 
         .building-header {
@@ -40,6 +46,7 @@
             font-weight: bold;
             padding: 0;
             margin: 0;
+            margin-top: 4px;
             margin-bottom: 8px;
         }
 
@@ -47,6 +54,7 @@
             font-size: 8px;
             font-weight: bold;
             margin: 0;
+            margin-bottom: 8px;
         }
 
         .building-cuit {
@@ -65,8 +73,10 @@
         }
 
         .expense-table tr td {
-            border: 1px solid gray;
+            border: 1px solid black;
             height: 10px;
+            vertical-align: middle;
+            padding-left: 4px;
         }
 
 
@@ -79,7 +89,7 @@
         }
 
         .expense-table-header {
-            font-size: 6px;
+            font-size: 8px;
             font-weight: bold;
             text-align: center;
         }
@@ -90,6 +100,8 @@
 
         tr.expense-resume td {
             border: 0;
+            font-weight: bold;
+            font-size: 8px;
         }
 
         .expense-description {
@@ -101,6 +113,7 @@
         .expense-description p {
             padding: 0;
             margin: 0;
+            line-height: 12px;
         }
 
         .expense-detail-description {
@@ -124,8 +137,40 @@
         }
 
         .expenses-text-period {
-            font-size: 10px;
+            font-size: 8px;
             text-align: left;
+        }
+
+        .expense-text-end {
+            width: 100%;
+            margin-top: 4px;
+            border-spacing: 0;
+        }
+
+        .expense-text-payment {
+            width: 40%;
+            font-size: 8px;
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        .expense-text-payment p {
+            margin: 0;
+            padding: 0;
+            line-height: 12px;
+
+        }
+
+        .expense-payment-total {
+            font-weight: bold;
+            font-size: 8px;
+        }
+
+        .expense-text-sign {
+            width: 60%;
+            font-size: 8px;
+            text-align: center;
+            padding: 4px;
         }
     </style>
 </head>
@@ -139,9 +184,9 @@
                 <!-- titulo -->
                 <div class="building-header">
                     <p class="building-title">CONSORCIO EDIFICIO</p>
-                    <p class="building-name">LOGO 1</p>
-                    <p class="building-address">12 DE OCTUBRE 1475</p>
-                    <p class="building-cuit">CUIT 30-70710290-6</p>
+                    <p class="building-name">{{building}}</p>
+                    <p class="building-address">{{address}}</p>
+                    <p class="building-cuit">CUIT {{cuit}}</p>
                 </div>
 
                 <!-- tabla liquidacion -->
@@ -153,45 +198,25 @@
                         <td>CONCEPTO</td>
                         <td>IMPORTE</td>
                     </tr>
+
+                    {{#each detail}}
                     <tr>
-                        <td>Expensas Comunes</td>
-                        <td>{{mount}}</td>
+                        <td>{{this.description}}</td>
+                        <td>{{this.mount}}</td>
                     </tr>
-                    <tr>
-                        <td>Cuota Extraordinaria</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {{/each}}
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
+
+                    <tr class="expense-resume">
                         <td></td>
                         <td></td>
                     </tr>
                     <tr class="expense-resume">
                         <td class="expense-detail-description">Total $</td>
-                        <td class="expense-detail-mount">{{mount}}</td>
+                        <td class="expense-detail-mount">{{totalMount}}</td>
                     </tr>
                     <tr class="expense-resume">
                         <td class="expense-detail-description">PORCENTUAL DE LA UNIDAD %</td>
@@ -199,7 +224,7 @@
                     </tr>
                     <tr class="expense-resume">
                         <td class="expense-detail-description">A PAGAR $</td>
-                        <td class="expense-detail-mount">{{mount}}</td>
+                        <td class="expense-detail-mount">{{totalMount}}</td>
                     </tr>
                 </table>
 
@@ -210,25 +235,68 @@
             <td class="expenses-text">
                 <div class="expenses-text-title">
                     <p>RECIBO DE PROPIEDAD HORIZONTAL LEY 13.512</p>
-                    <p>N° {{expenseId}}</p>
+                    <br>
+                    <p><b>N° {{expenseId}}</b></p>
                 </div>
 
                 <div class="expenses-text-period">
-                    <p>PERIODO: {{month}} {{year}}</p>
+                    <p>PERIODO: <b>{{period}}</b></p>
                 </div>
 
                 <div class="expense-description">
-                    <p>Recibí de {{owner}} </p>
-                    <p>Propietario de la Unidad N° {{apartment}} del inmueble de la </p>
-                    <p>Calle 12 de Octubre 1475 la cantidad de </p>
-                    <p>Pesos {{mountDescription}} </p>
-                    <p> </p>
-                    <p>en pago del porcentual que le corresponde sobre los conceptos de la
-                        liquidación del margen </p>
-                    <p>de la fecha</p>
-                    <p></p>
+                    <p>
+                        Recibí de <b>{{owner}}</b>, propietario de la Unidad
+                        N°
+                        <b>{{apartment}}</b> del inmueble de la
+                        calle <b>{{address}}</b> la cantidad de pesos <b>{{totalMountDescription}} ({{totalMount}})</b>
+                        en pago del
+                        porcentual que le corresponde sobre los conceptos de la liquidación del margen
+                        de la fecha
+                    </p>
                 </div>
 
+                <table class="expense-text-end">
+                    <tr>
+                        <td class="expense-text-payment">
+                            <p style="text-align: center;">Percibido en</p>
+                            <br>
+                            <p>
+                                Cheque Nº
+                                {{#ifCond paymentType "==" "check"}}
+                                {{totalMount}}
+                                {{/ifCond}}
+                                {{#ifCond paymentType "!=" "check"}}
+                                -
+                                {{/ifCond}}
+                            </p>
+                            <p>
+                                c/Banco
+                                {{#ifCond paymentType "==" "bank"}}
+                                {{totalMount}}
+                                {{/ifCond}}
+                                {{#ifCond paymentType "!=" "bank"}}
+                                -
+                                {{/ifCond}}
+                            </p>
+                            <p>
+                                Efectivo $
+                                {{#ifCond paymentType "==" "cash"}}
+                                {{totalMount}}
+                                {{/ifCond}}
+                                {{#ifCond paymentType "!=" "cash"}}
+                                -
+                                {{/ifCond}}
+                            </p>
+                            <hr>
+                            <p class="expense-payment-total">
+                                TOTAL $ {{totalMount}}
+                            </p>
+                        </td>
+                        <td class="expense-text-sign">
+                            <p>{{currentDate}}</p>
+                        </td>
+                    </tr>
+                </table>
 
 
 

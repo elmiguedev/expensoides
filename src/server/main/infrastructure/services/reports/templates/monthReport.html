@@ -1,0 +1,182 @@
+<html>
+
+<head>
+  <title>Report</title>
+  <style>
+    html,
+    body,
+    table {
+      font-size: 8px;
+    }
+
+    .report-title {
+      text-align: center;
+    }
+
+    .report-resume {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+
+    .report-table tr td,
+    .report-table tr th {
+      border-spacing: 0px;
+      border: 1px solid black;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .subtitle {
+      font-weight: bold;
+    }
+
+    .text-bold {
+      font-weight: bold;
+    }
+
+    .report-information {
+      margin-top: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="report-title">
+    <h1>
+      Consorcio {{building}}
+    </h1>
+    <h3>{{address}}</h3>
+    <h5>Informe administrativo {{currentPeriod}}</h5>
+  </div>
+
+  <div class="report-resume">
+    <table class="report-table">
+      <tr>
+        <td class="text-bold">Saldo</td>
+        <td>{{lastPeriod}}</td>
+        <td>$ {{lastTotalMount}}</td>
+      </tr>
+      <tr>
+        <td class="text-bold">Ingresos expensas</td>
+        <td>{{currentPeriod}}</td>
+        <td>$ {{currentTotalEarnings}}</td>
+      </tr>
+      <tr>
+        <td class="text-bold">Egresos</td>
+        <td>{{currentPeriod}}</td>
+        <td>$ {{currentTotalPayments}}</td>
+      </tr>
+      <tr>
+        <td class="text-bold">Saldo</td>
+        <td>{{currentPeriod}}</td>
+        <td>$ {{currentTotalMount}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="report-expenses">
+    <p class="subtitle">Detalle de ingresos {{currentPeriod}}</p>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Comprobante</th>
+          <th>PH</th>
+          <th>Detalle</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each expenses}}
+        <tr>
+          <td>{{this.date}}</td>
+          <td>{{this.id}}</td>
+          <td>{{this.apartment}}</td>
+          <td>{{this.description}}</td>
+          <td>$ {{this.mount}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total</td>
+          <td>$ {{this.currentTotalEarnings}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-paymets">
+    <p class="subtitle">Detalle de egresos Febrero 2022</p>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Detalle</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each payments}}
+        <tr>
+          <td>{{this.date}}</td>
+          <td>{{this.description}}</td>
+          <td>$ {{this.mount}}</td>
+        </tr>
+        {{/each}}
+        <tr>
+          <td></td>
+          <td>Total</td>
+          <td>$ {{this.currentTotalPayments}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-future-expenses">
+    <p class="subtitle">Detalle de expensas a abonar en Marzo 2022</p>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Dpto</th>
+          <th>Propietario</th>
+          <th>Expensas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each nextExpenses}}
+        <tr>
+          <td>{{this.apartment}}</td>
+          <td>{{this.owner}}</td>
+          <td>$ {{this.mount}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="report-information">
+    <p><b>CBU/ALIAS para transferencia de expensas:</b></p>
+
+    <p>
+      <b>CBU:</b> {{adminCbu}} <br>
+      <b>ALIAS:</b> {{adminAlias}} <br>
+      <b>Titular:</b> {{adminName}}
+    </p>
+
+    <p>
+      <b>Ante cualquier consulta, duda o sugerencia: </b><br>
+      <b>Tel. de administración:</b> {{adminPhone}}
+    </p>
+  </div>
+
+</body>
+
+</html>

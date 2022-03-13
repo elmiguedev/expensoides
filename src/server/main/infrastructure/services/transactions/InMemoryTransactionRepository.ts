@@ -6,6 +6,10 @@ export class InMemoryTransactionRepository implements TransactionRepository {
     constructor() {
         this.transactions = new Array();
     }
+    getByPeriod(month: number, year: number): Promise<Transaction[]> {
+        const transactions = this.transactions.filter(t => t.date.getFullYear() === year && t.date.getMonth() + 1 === month);
+        return Promise.resolve(transactions);
+    }
 
     getById(id: number): Promise<Transaction> {
         return Promise.resolve(this.transactions.find(t => t.id === id))
@@ -22,7 +26,7 @@ export class InMemoryTransactionRepository implements TransactionRepository {
         return Promise.resolve(balance);
     }
 
-    add(transaction: Transaction) : Promise<Transaction>{
+    add(transaction: Transaction): Promise<Transaction> {
         transaction.id = this.transactions.length;
         this.transactions.push(transaction);
         return Promise.resolve(transaction);

@@ -23,8 +23,12 @@ export class PdfReportService implements ReportService {
 
     }
 
-    public generateMonthReport(data: MonthReportData): Promise<string> {
-        throw new Error("Method not implemented.");
+    public async generateMonthReport(data: MonthReportData): Promise<string> {
+        const html = this.getMonthTemplate();
+        const documentConfiguration = this.getDocumentConfiguration();
+        const filePath = path.join(__dirname, "month.pdf");
+        await this.createPdf(html, documentConfiguration, data, filePath);
+        return filePath;
     }
 
     private getTemplate(path: string): string {
@@ -33,6 +37,10 @@ export class PdfReportService implements ReportService {
 
     private getExpensesTemplate(): string {
         return this.getTemplate(path.join(__dirname, "./templates/expenseReport.html"));
+    }
+
+    private getMonthTemplate(): string {
+        return this.getTemplate(path.join(__dirname, "./templates/monthReport.html"));
     }
 
     private getDocumentConfiguration() {

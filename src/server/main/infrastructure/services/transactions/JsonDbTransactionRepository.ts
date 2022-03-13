@@ -10,6 +10,12 @@ export class JsonDbTransactionRepository implements TransactionRepository {
     this.db = new JsonDb();
   }
 
+  getByPeriod(month: number, year: number): Promise<Transaction[]> {
+    const transactions = this.db.get<Transaction>("transactions");
+    const result = transactions.filter(t => t.date.getFullYear() === year && t.date.getMonth() + 1 === month);
+    return Promise.resolve(result);
+  }
+
   getById(id: number): Promise<Transaction> {
     const transactions = this.db.get<Transaction>("transactions");
     const transaction = transactions.find(t => t.id === id);

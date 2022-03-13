@@ -7,4 +7,5 @@ export interface ExpenseRepository {
   getUnpaidByApartment(apartmentId: number): Promise<Expense[]>;
   getById(id: number): Promise<Expense>;
   markAsPaid(id: number, transactionId: number): Promise<Expense>;
+  getByPeriod(month: number, year: number): Promise<Expense[]>;
 }

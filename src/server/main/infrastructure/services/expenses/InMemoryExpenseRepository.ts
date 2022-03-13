@@ -9,6 +9,11 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
     this.expenses = [];
   }
 
+  public getByPeriod(month: number, year: number): Promise<Expense[]> {
+    const result = this.expenses.filter(expense => expense.year === year && expense.month === month);
+    return Promise.resolve(result);
+  }
+
   public getAll(): Promise<Expense[]> {
     return Promise.resolve(this.expenses);
   }

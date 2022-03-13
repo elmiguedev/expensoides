@@ -10,6 +10,12 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
         this.db = new JsonDb();
     }
 
+    public getByPeriod(month: number, year: number): Promise<Expense[]> {
+        const expenses = this.db.get<Expense>("expenses");
+        const result = expenses.filter(expense => expense.year === year && expense.month === month);
+        return Promise.resolve(result);
+    }
+
     public getAll(): Promise<Expense[]> {
         const expenses = this.db.get<Expense>("expenses");
         return Promise.resolve(expenses);
@@ -41,7 +47,7 @@ export class JsonDbExpenseRepository implements ExpenseRepository {
 
     getExpense(apartmentId: number, year: number, month: number): Promise<Expense> {
         const expenses = this.db.get<Expense>("expenses");
-        const expense =  expenses.find(e =>
+        const expense = expenses.find(e =>
             e.apartmentId === apartmentId &&
             e.year === year &&
             e.month === month

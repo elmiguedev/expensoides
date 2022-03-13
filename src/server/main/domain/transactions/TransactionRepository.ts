@@ -5,4 +5,5 @@ export interface TransactionRepository {
     getBalance(): Promise<number>;
     getAll(): Promise<Transaction[]>;
     getById(id: number): Promise<Transaction>;
+    getByPeriod(month: number, year: number): Promise<Transaction[]>;
 }

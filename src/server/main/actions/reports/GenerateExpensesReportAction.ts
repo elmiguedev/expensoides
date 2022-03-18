@@ -47,7 +47,7 @@ export class GenerateExpensesReportAction {
         }
 
         const reportData: ExpenseReportData = {
-            expenseId: expense.id,
+            expenseId: String(data.expenseId).padStart(8, '0'),
             building: building.name,
             cuit: building.cuit,
             period: `${this.getMonth(expense.month)} ${expense.year}`,

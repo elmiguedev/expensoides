@@ -261,7 +261,7 @@
                             <p style="text-align: center;">Percibido en</p>
                             <br>
                             <p>
-                                Cheque Nº
+                                Cheque: $
                                 {{#ifCond paymentType "==" "check"}}
                                 {{totalMount}}
                                 {{/ifCond}}
@@ -270,7 +270,7 @@
                                 {{/ifCond}}
                             </p>
                             <p>
-                                c/Banco
+                                Banco: $
                                 {{#ifCond paymentType "==" "bank"}}
                                 {{totalMount}}
                                 {{/ifCond}}
@@ -279,7 +279,7 @@
                                 {{/ifCond}}
                             </p>
                             <p>
-                                Efectivo $
+                                Efectivo: $
                                 {{#ifCond paymentType "==" "cash"}}
                                 {{totalMount}}
                                 {{/ifCond}}

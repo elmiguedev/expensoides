@@ -1,5 +1,5 @@
 export interface ExpenseDetail {
-    id: number;
+    id?: number;
     description: string;
     mount: number;
 }

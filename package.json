@@ -31,9 +31,11 @@
     "numbers2words": "^1.4.0",
     "numero-a-letras": "^1.0.6",
     "pdf-creator-node": "^2.3.4",
+    "pg": "^8.7.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
-    "simple-json-db": "^1.2.3"
+    "simple-json-db": "^1.2.3",
+    "typeorm": "^0.2.45"
   }
 }

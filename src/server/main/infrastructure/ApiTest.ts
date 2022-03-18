@@ -6,17 +6,21 @@ import { BuildingDao, ExpenseDetailDao, SqliteBuildingRepository } from "./servi
 const start = async () => {
 
     await createConnection({
-        type: "sqlite",
-        database: "./db/sqlite/expensoides.db",
+        type: "postgres",
+        database: "expensoides",
+        host: "143.244.176.130",
+        username: "root",
+        password: "3xp3n501d35",
+        port: 9001,
         entities: [BuildingDao, ExpenseDetailDao],
         logging: false,
         synchronize: true,
     });
 
     const buildingRepository = new SqliteBuildingRepository();
-    await buildingRepository.add();
+    // await buildingRepository.add();
 
-    const b = await buildingRepository.getById(2);
+    const b = await buildingRepository.getById(4);
     console.log(b);
 
     getConnection().close()

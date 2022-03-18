@@ -1,4 +1,4 @@
-import { Column, createConnection, Entity, getConnection, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, createConnection, Entity, getConnection, JoinColumn, JoinTable, ManyToMany, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Building } from "../../../domain/building/Building";
 import { BuildingRepository } from "../../../domain/building/BuildingRepository";
 import { ExpenseDetail } from "../../../domain/expenses/ExpenseDetail";
@@ -38,7 +38,7 @@ export class SqliteBuildingRepository implements BuildingRepository {
 
     async getById(id: number): Promise<Building> {
         const repository = await this.getRepository();
-        return repository.findOne(id);
+        return repository.findOne(id, { relations: ["expenses"] });
     }
 
 }
@@ -56,7 +56,8 @@ export class BuildingDao implements Building {
     @Column()
     admin: string;
 
-    @OneToMany(type => ExpenseDetailDao, detail => detail, { cascade: true })
+    @ManyToMany(type => ExpenseDetailDao, detail => detail.id, { cascade: true })
+    @JoinTable()
     expenses: ExpenseDetailDao[];
 }
 

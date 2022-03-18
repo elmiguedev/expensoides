@@ -17,7 +17,7 @@ export class PdfReportService implements ReportService {
 
         const html = this.getExpensesTemplate();
         const documentConfiguration = this.getDocumentConfiguration();
-        const filePath = path.join(__dirname, "expenses.pdf");
+        const filePath = path.join(__dirname, `expenses_${data.expenseId}_${new Date().getMilliseconds()}.pdf`);
         await this.createPdf(html, documentConfiguration, data, filePath);
         return filePath;
 
@@ -26,7 +26,7 @@ export class PdfReportService implements ReportService {
     public async generateMonthReport(data: MonthReportData): Promise<string> {
         const html = this.getMonthTemplate();
         const documentConfiguration = this.getDocumentConfiguration();
-        const filePath = path.join(__dirname, "month.pdf");
+        const filePath = path.join(__dirname, `month_report_${data.building}_${new Date().getMilliseconds()}.pdf`);
         await this.createPdf(html, documentConfiguration, data, filePath);
         return filePath;
     }

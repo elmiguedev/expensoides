@@ -1,7 +1,7 @@
 import { ExpenseDetail } from "../expenses/ExpenseDetail";
 
 export interface ExpenseReportData {
-    expenseId: number;
+    expenseId: string;
     building: string;
     cuit: string;
     period: string;

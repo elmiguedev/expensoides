@@ -28,8 +28,8 @@ describe("Generate expenses report action", () => {
             paymentDate: new Date(),
             year: 2022,
             detail: [
-                { description: "Expensas comunes", mount: 1800 },
-                { description: "Expensas extraordinarias", mount: 200 },
+                { id: 1, description: "Expensas comunes", mount: 1800 },
+                { id: 2, description: "Expensas extraordinarias", mount: 200 },
             ]
         })
 

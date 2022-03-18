@@ -17,7 +17,7 @@ export class GenerateGenericExpenseReportAction {
   }
 
   public async execute(data: ActionData): Promise<string> {
-
+    console.log("LA DATA", data)
     const reportData: ExpenseReportData = {
       expenseId: String(data.expenseId).padStart(8, '0'),
       building: data.building,
@@ -28,7 +28,7 @@ export class GenerateGenericExpenseReportAction {
       address: `${data.address}`,
       totalMount: data.total,
       totalMountDescription: numeroALetras(data.total, ""),
-      currentDate: this.getDateDescription(data.paymentDate),
+      currentDate: this.getDateDescription(new Date(data.paymentDate)),
       paymentType: data.paymentType,
       year: `${data.year}`,
       month: `${data.month}`,

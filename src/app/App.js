@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Transactions } from "./pages/transactions/Transactions";
 import { Expenses } from "./pages/expenses/expenses-list/Expenses";
 import { NewExpenses } from "./pages/expenses/new-expense/NewExpenses";
+import { GenericExpense } from "./pages/reports/GenericExpense";
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
           <Route path="transactions" element={<Transactions />} />
           <Route path="expenses" element={<Expenses />} />
           <Route path="expenses/new" element={<NewExpenses />} />
+          <Route path="reports/expenses/generic" element={<GenericExpense />} />
         </Route>
       </Routes>
     </BrowserRouter>

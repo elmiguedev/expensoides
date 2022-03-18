@@ -22785,6 +22785,7 @@ var _reactRouterDom = require("react-router-dom");
 var _transactions = require("./pages/transactions/Transactions");
 var _expenses = require("./pages/expenses/expenses-list/Expenses");
 var _newExpenses = require("./pages/expenses/new-expense/NewExpenses");
+var _genericExpense = require("./pages/reports/GenericExpense");
 const App = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
@@ -22799,7 +22800,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22808,7 +22809,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 15,
+                        lineNumber: 16,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22817,7 +22818,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22826,23 +22827,32 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 17,
+                        lineNumber: 18,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                        path: "reports/expenses/generic",
+                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genericExpense.GenericExpense, {
+                        }, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/app/App.js",
+                        lineNumber: 19,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/app/App.js",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/app/App.js",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/App.js",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, undefined));
 };
@@ -22855,7 +22865,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8"}],"8NkAr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8","./pages/reports/GenericExpense":"edm0c"}],"8NkAr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24871,6 +24881,22 @@ const Navbar = ()=>{
                             }, void 0, false, {
                                 fileName: "src/app/components/Navbar.js",
                                 lineNumber: 19,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                    className: "nav-link",
+                                    to: "/reports/expenses/generic",
+                                    children: "Report"
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 23,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/app/components/Navbar.js",
+                                lineNumber: 22,
                                 columnNumber: 13
                             }, undefined)
                         ]
@@ -27791,6 +27817,481 @@ $RefreshReg$(_c, "Button");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"edm0c":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f3fe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f3fe.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenericExpense", ()=>GenericExpense
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reportService = require("../../services/ReportService");
+var _s = $RefreshSig$();
+const GenericExpense = (props)=>{
+    _s();
+    const [reportData, setReportData] = _react.useState({
+    });
+    const generateReport = async ()=>{
+        await _reportService.ReportService.generateGenericExpenseReport(reportData);
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: JSON.stringify(reportData)
+            }, void 0, false, {
+                fileName: "src/app/pages/reports/GenericExpense.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                        children: "Expensas generica"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/reports/GenericExpense.js",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/reports/GenericExpense.js",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/reports/GenericExpense.js",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "N\xba expensas"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 26,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.expenseId,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            expenseId: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 27,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Edificio"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 35,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.building,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            building: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 36,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 34,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "CUIT"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 44,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.cuit,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            cuit: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 45,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Mes"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 53,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "number",
+                                    className: "form-control",
+                                    value: reportData.month,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            month: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 54,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 52,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "A\xf1o"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "number",
+                                    className: "form-control",
+                                    value: reportData.year,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            year: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 63,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 61,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Due\xf1o"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 70,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.owner,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            owner: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 71,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 69,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Departamento"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 79,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.apartment,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            apartment: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 80,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 78,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Direccion"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 88,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.address,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            address: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 89,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 87,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Total"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 97,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "number",
+                                    className: "form-control",
+                                    value: reportData.total,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            total: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 98,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 96,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Fecha de pago"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 106,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                                    type: "text",
+                                    className: "form-control",
+                                    value: reportData.paymentDate,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            paymentDate: e.target.value
+                                        })
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 107,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 105,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "M\xe9todo de pago"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 115,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("select", {
+                                    className: "form-select",
+                                    value: reportData.paymentType,
+                                    onChange: (e)=>setReportData({
+                                            ...reportData,
+                                            paymentType: e.target.value
+                                        })
+                                    ,
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("option", {
+                                            value: "bank",
+                                            children: "Trasnferencia bancaria"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/reports/GenericExpense.js",
+                                            lineNumber: 121,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("option", {
+                                            value: "cash",
+                                            children: "Efectivo"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/reports/GenericExpense.js",
+                                            lineNumber: 122,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("option", {
+                                            value: "check",
+                                            children: "Cheque"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/reports/GenericExpense.js",
+                                            lineNumber: 123,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/app/pages/reports/GenericExpense.js",
+                                    lineNumber: 116,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 114,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                                className: "btn btn-primary",
+                                onClick: generateReport,
+                                children: "Imprimir"
+                            }, void 0, false, {
+                                fileName: "src/app/pages/reports/GenericExpense.js",
+                                lineNumber: 127,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/app/pages/reports/GenericExpense.js",
+                            lineNumber: 126,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/reports/GenericExpense.js",
+                    lineNumber: 24,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/reports/GenericExpense.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/reports/GenericExpense.js",
+        lineNumber: 14,
+        columnNumber: 5
+    }, undefined));
+};
+_s(GenericExpense, "F4Qla7Ly3f3jJBMNzn14nQ9rCiU=");
+_c = GenericExpense;
+var _c;
+$RefreshReg$(_c, "GenericExpense");
+
+  $parcel$ReactRefreshHelpers$f3fe.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../services/ReportService":"dT8wk"}],"dT8wk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ReportService", ()=>ReportService
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+class ReportService {
+    constructor(){
+    }
+    static generateGenericExpenseReport(data) {
+        _axiosDefault.default({
+            url: '/api/report/expenses/generic',
+            method: 'POST',
+            data: data,
+            responseType: 'blob'
+        }).then((response)=>{
+            const url = window.URL.createObjectURL(new Blob([
+                response.data
+            ]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'file.pdf'); //or any other extension
+            document.body.appendChild(link);
+            link.click();
+        });
+    }
+}
+
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

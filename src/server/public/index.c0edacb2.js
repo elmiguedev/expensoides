@@ -25173,7 +25173,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"35kqt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../services/ExpensesService":"8o2ak"}],"35kqt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ApartmentService", ()=>ApartmentService
@@ -26702,7 +26702,7 @@ $RefreshReg$(_c, "Apartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8o2ak":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../../services/ExpensesService":"8o2ak"}],"8o2ak":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService
@@ -27341,7 +27341,7 @@ $RefreshReg$(_c, "Expenses");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"4YcM8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react-router-dom":"klkWS"}],"4YcM8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$243a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27709,7 +27709,7 @@ $RefreshReg$(_c, "NewExpenses");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../components/ui/DropdownList":"782Sd","../../../components/ui/TextField":"8MB4t","../../../services/ApartmentService":"35kqt","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../../components/ui/Button":"coCjw"}],"782Sd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../../services/ApartmentService":"35kqt","../../../components/ui/DropdownList":"782Sd","../../../components/ui/TextField":"8MB4t","../../../services/ExpensesService":"8o2ak","../../../components/ui/Button":"coCjw"}],"782Sd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28263,7 +28263,7 @@ $RefreshReg$(_c, "GenericExpense");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../services/ReportService":"dT8wk"}],"dT8wk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/ReportService":"dT8wk","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"dT8wk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ReportService", ()=>ReportService

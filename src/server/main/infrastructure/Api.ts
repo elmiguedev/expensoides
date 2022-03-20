@@ -16,6 +16,7 @@ import { AddEarningAction } from "../actions/transactions/AddEarningAction";
 import { AddPaymentAction } from "../actions/transactions/AddPaymentAction";
 import { GetBalanceAction } from "../actions/transactions/GetBalanceAction";
 import { GetTransactionsAction } from "../actions/transactions/GetTransactionsAction";
+import { PostgresConnection } from "./db/PostgresConnection";
 import { ApartmentHandler } from "./handlers/ApartmentHandler";
 import { ExpensesHandler } from "./handlers/ExpensesHandler";
 import { ReportHandler } from "./handlers/ReportHandler";
@@ -36,6 +37,8 @@ app.use("/", express.static(path.join(__dirname, "../../public")));
 app.get("/ping", (req: Request, res: Response) => {
     res.send("pong pong");
 });
+
+const postgresConnection = new PostgresConnection();
 
 const apartmentRepository = new JsonDbApartmentRepository();
 const transactionRepository = new JsonDbTransactionRepository();
@@ -128,18 +131,12 @@ app.post("/api/report/expenses/generic", reportHandler.generateGenericExpenseRep
 app.post("/api/report/expenses", reportHandler.generateExpenseReport.bind(reportHandler));
 app.post("/api/report/month", reportHandler.generateMonthReport.bind(reportHandler));
 
-
-
-
-
-
-
-
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/index.html"));
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+    await postgresConnection.connect();
     console.log(`Listening on port ${PORT}`);
 });
 

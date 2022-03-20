@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import path from "path";
+import dotenv from "dotenv";
 
 import { AddApartmentAction } from "../actions/apartments/AddApartmentAction";
 import { ListApartmentsAction } from "../actions/apartments/ListApartmentsAction";
@@ -27,6 +28,8 @@ import { JsonDbBuildingRepository } from "./services/building/JsonDbBuildingRepo
 import { JsonDbExpenseRepository } from "./services/expenses/JsonDbExpenseRepository";
 import { PdfReportService } from "./services/reports/PdfReportService";
 import { JsonDbTransactionRepository } from "./services/transactions/JsonDbTransactionRepository";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -7,20 +7,23 @@ import { Expenses } from "./pages/expenses/expenses-list/Expenses";
 import { NewExpenses } from "./pages/expenses/new-expense/NewExpenses";
 import { GenericExpense } from "./pages/reports/GenericExpense";
 import { NewApartment } from "./pages/apartments/NewApartment"
+import { DataProvider } from "./context/DataContext";
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="" element={<Home />} />
-          <Route path="apartments/new" element={<NewApartment />} />
-          <Route path="transactions" element={<Transactions />} />
-          <Route path="expenses" element={<Expenses />} />
-          <Route path="expenses/new" element={<NewExpenses />} />
-          <Route path="reports/expenses/generic" element={<GenericExpense />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <DataProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="" element={<Home />} />
+            <Route path="apartments/new" element={<NewApartment />} />
+            <Route path="transactions" element={<Transactions />} />
+            <Route path="expenses" element={<Expenses />} />
+            <Route path="expenses/new" element={<NewExpenses />} />
+            <Route path="reports/expenses/generic" element={<GenericExpense />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </DataProvider>
   )
 }

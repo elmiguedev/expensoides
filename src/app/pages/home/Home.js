@@ -1,7 +1,9 @@
 import { ApartmentService } from "../../services/ApartmentService";
 import { Apartment } from "./components/Apartment";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ExpensesService } from "../../services/ExpensesService";
+import { DataContext } from "../../context/DataContext";
+import { LoadingScreen } from "../../components/ui/LoadingScreen";
 
 export const Home = () => {
 
@@ -24,11 +26,20 @@ export const Home = () => {
     });
   }
 
+  const { data, changeData } = useContext(DataContext);
+
+
   return (
     <div>
       <div className="row mb-3">
         <div className="col">
           <h1>Dptos</h1>
+          {JSON.stringify(data)}
+          <button onClick={() => {
+            changeData("loading", true); setTimeout(() => {
+              changeData("loading", false)
+            }, 3000);
+          }}>holi</button>
         </div>
       </div>
       <div className="row mb-3">
@@ -43,6 +54,6 @@ export const Home = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div >
   );
 }

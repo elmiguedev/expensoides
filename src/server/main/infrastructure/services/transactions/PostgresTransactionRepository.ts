@@ -1,12 +1,16 @@
-import { Column, getConnection, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, getConnection, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Building } from "../../../domain/building/Building";
 import { Transaction } from "../../../domain/transactions/Transaction";
 import { TransactionRepository } from "../../../domain/transactions/TransactionRepository";
+import { BuildingDao } from "../building/PostgresBuildingRepository";
 
 export class PostgresTransactionRepository implements TransactionRepository {
 
     public async add(transaction: Transaction): Promise<Transaction> {
         try {
             const repository = this.getTransactionRepository();
+            transaction.buildingId = 1;
+            console.log("LA TRANS 2", transaction)
             return repository.save(transaction);
         } catch (error) {
             throw new Error(error);
@@ -64,6 +68,7 @@ export class PostgresTransactionRepository implements TransactionRepository {
     }
 }
 
+@Entity("Transaction")
 export class TransactionDao implements Transaction {
     @PrimaryGeneratedColumn()
     id?: number;
@@ -73,4 +78,11 @@ export class TransactionDao implements Transaction {
     description: string;
     @Column({ type: 'timestamptz' })
     date: Date;
+
+    @Column()
+    buildingId?: number;
+
+    @ManyToOne(() => BuildingDao, building => building.transactions)
+    building?: BuildingDao;
+
 }

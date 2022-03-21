@@ -24,8 +24,11 @@ export class PayExpensesAction {
         const transaction: Transaction = await this.transactionRepository.add({
             mount: this.getExpenseMount(expense),
             description: `Expenses ${expense.month}/${expense.year} of apartment id: ${expense.apartmentId}`,
-            date: new Date()
+            date: new Date(),
+            buildingId: expense.apartment.buildingId
         });
+
+        console.log("LA TRANS", transaction)
         const paidExpense = await this.expenseRepository.markAsPaid(expense.id, transaction.id);
         return paidExpense;
     }

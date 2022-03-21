@@ -22,12 +22,12 @@ import { ApartmentHandler } from "./handlers/ApartmentHandler";
 import { ExpensesHandler } from "./handlers/ExpensesHandler";
 import { ReportHandler } from "./handlers/ReportHandler";
 import { TransactionHandler } from "./handlers/TransactionHandler";
-
-import { JsonDbApartmentRepository } from "./services/apartments/JsonDbApartmentRepository";
-import { JsonDbBuildingRepository } from "./services/building/JsonDbBuildingRepository";
-import { JsonDbExpenseRepository } from "./services/expenses/JsonDbExpenseRepository";
+import { PostgresApartmentRepository } from "./services/apartments/PostgresApartmentRepository";
+import { PostgresTransactionRepository } from "./services/transactions/PostgresTransactionRepository";
+import { PostgresExpenseRepository } from "./services/expenses/PostgresExpenseRepository";
+import { PostgresBuildingRepository } from "./services/building/PostgresBuildingRepository";
 import { PdfReportService } from "./services/reports/PdfReportService";
-import { JsonDbTransactionRepository } from "./services/transactions/JsonDbTransactionRepository";
+
 
 dotenv.config();
 
@@ -43,10 +43,10 @@ app.get("/ping", (req: Request, res: Response) => {
 
 const postgresConnection = new PostgresConnection();
 
-const apartmentRepository = new JsonDbApartmentRepository();
-const transactionRepository = new JsonDbTransactionRepository();
-const expensesRepository = new JsonDbExpenseRepository();
-const buildingRepository = new JsonDbBuildingRepository();
+const apartmentRepository = new PostgresApartmentRepository();
+const transactionRepository = new PostgresTransactionRepository();
+const expensesRepository = new PostgresExpenseRepository();
+const buildingRepository = new PostgresBuildingRepository();
 const reportService = new PdfReportService();
 
 const addApartmentAction = new AddApartmentAction(apartmentRepository);

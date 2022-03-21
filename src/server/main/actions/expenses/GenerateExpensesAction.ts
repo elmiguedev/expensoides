@@ -28,7 +28,8 @@ export class GenerateExpensesAction {
       month: data.month,
       description: "test",
       paid: false,
-      detail: building.expenses
+      detail: building.expenses,
+      createdDate: new Date()
     });
     return expense;
   }

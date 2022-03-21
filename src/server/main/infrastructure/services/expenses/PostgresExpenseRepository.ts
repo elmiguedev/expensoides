@@ -1,6 +1,8 @@
-import { Column, Entity, getConnection, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, getConnection, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Apartment } from "../../../domain/apartments/Apartment";
 import { Expense } from "../../../domain/expenses/Expense";
 import { ExpenseRepository } from "../../../domain/expenses/ExpenseRepository";
+import { ApartmentDao } from "../apartments/PostgresApartmentRepository";
 import { ExpenseDetailDao } from "../building/PostgresBuildingRepository";
 
 export class PostgresExpenseRepository implements ExpenseRepository {
@@ -59,7 +61,8 @@ export class PostgresExpenseRepository implements ExpenseRepository {
             return repository.findOne({
                 where: {
                     id: id
-                }
+                },
+                relations: ["apartment", "detail"]
             });
         } catch (error) {
             throw new Error(error);
@@ -105,7 +108,7 @@ export class ExpenseDao implements Expense {
     @PrimaryGeneratedColumn()
     id?: number;
     @Column({ type: 'timestamptz' })
-    createdDate?: Date;
+    createdDate: Date;
     @Column()
     apartmentId: number;
     @Column()
@@ -116,12 +119,15 @@ export class ExpenseDao implements Expense {
     description: string;
     @Column()
     paid: boolean;
-    @Column()
+    @Column({ nullable: true })
     transactionId?: number;
-    @Column()
+    @Column({ nullable: true })
     paymentDate?: Date;
     @ManyToMany(type => ExpenseDetailDao, detail => detail.id, { cascade: true })
     @JoinTable()
     detail: ExpenseDetailDao[];
+
+    @ManyToOne(() => ApartmentDao, apartment => apartment.expenses)
+    apartment?: ApartmentDao;
 
 }

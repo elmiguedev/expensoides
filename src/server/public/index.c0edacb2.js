@@ -22786,6 +22786,7 @@ var _transactions = require("./pages/transactions/Transactions");
 var _expenses = require("./pages/expenses/expenses-list/Expenses");
 var _newExpenses = require("./pages/expenses/new-expense/NewExpenses");
 var _genericExpense = require("./pages/reports/GenericExpense");
+var _newApartment = require("./pages/apartments/NewApartment");
 const App = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
@@ -22800,7 +22801,16 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 15,
+                        lineNumber: 16,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                        path: "apartments/new",
+                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newApartment.NewApartment, {
+                        }, void 0, false, void 0, void 0)
+                    }, void 0, false, {
+                        fileName: "src/app/App.js",
+                        lineNumber: 17,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22809,7 +22819,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 16,
+                        lineNumber: 18,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22818,7 +22828,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 17,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22827,7 +22837,7 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 18,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22836,23 +22846,23 @@ const App = ()=>{
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/app/App.js",
-                        lineNumber: 19,
+                        lineNumber: 21,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/app/App.js",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/app/App.js",
-            lineNumber: 13,
+            lineNumber: 14,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/App.js",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 5
     }, undefined));
 };
@@ -22865,7 +22875,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8","./pages/reports/GenericExpense":"edm0c"}],"8NkAr":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8","./pages/reports/GenericExpense":"edm0c","./pages/apartments/NewApartment":"jvneU"}],"8NkAr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24898,6 +24908,22 @@ const Navbar = ()=>{
                                 fileName: "src/app/components/Navbar.js",
                                 lineNumber: 22,
                                 columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                    className: "nav-link",
+                                    to: "/apartments/new",
+                                    children: "Nuevo departamento"
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 26,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/app/components/Navbar.js",
+                                lineNumber: 25,
+                                columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
@@ -25182,6 +25208,12 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 class ApartmentService {
     constructor(){
+    }
+    static async add(apartment) {
+        console.log("LO QUE VIENE", apartment);
+        apartment.buildingId = 1;
+        const response = await _axiosDefault.default.post("/api/apartments", apartment);
+        return response.data;
     }
     static async getAll() {
         const response = await _axiosDefault.default.get("/api/apartments");
@@ -26714,7 +26746,7 @@ class ExpensesService {
         const today = new Date();
         const year = today.getFullYear();
         const month = today.getMonth() + 1;
-        const buildingId = 0;
+        const buildingId = 1;
         const response = await _axiosDefault.default.post("/api/expenses/generate/all", {
             buildingId: buildingId,
             year: year,
@@ -26727,6 +26759,7 @@ class ExpensesService {
         return response.data;
     }
     static async payExpenses(expenseId) {
+        console.log("EL IDE", expenseId);
         const response = await _axiosDefault.default.post(`/api/expenses/pay`, {
             expenseId: expenseId
         });
@@ -28292,6 +28325,259 @@ class ReportService {
     }
 }
 
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"jvneU":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9d4c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9d4c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NewApartment", ()=>NewApartment
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _textField = require("../../components/ui/TextField");
+var _button = require("../../components/ui/Button");
+var _useForm = require("../../hooks/useForm");
+var _apartmentService = require("../../services/ApartmentService");
+var _s = $RefreshSig$();
+const NewApartment = (props)=>{
+    _s();
+    const { form , getInput  } = _useForm.useForm({
+        floor: 1,
+        number: 1,
+        owner: ""
+    });
+    const saveApartment = ()=>{
+        _apartmentService.ApartmentService.add({
+            ...form
+        }).then();
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        className: "container",
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                        children: "Nuevo departamento"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/apartments/NewApartment.js",
+                        lineNumber: 22,
+                        columnNumber: 21
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/apartments/NewApartment.js",
+                    lineNumber: 21,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/apartments/NewApartment.js",
+                lineNumber: 20,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: JSON.stringify(form)
+                }, void 0, false, {
+                    fileName: "src/app/pages/apartments/NewApartment.js",
+                    lineNumber: 27,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/apartments/NewApartment.js",
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Piso:"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 35,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                    ...getInput("floor")
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 36,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/apartments/NewApartment.js",
+                            lineNumber: 34,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Numero:"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 39,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                    ...getInput("number")
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 40,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/apartments/NewApartment.js",
+                            lineNumber: 38,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Due\xf1o:"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 43,
+                                    columnNumber: 25
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                    ...getInput("owner")
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/apartments/NewApartment.js",
+                                    lineNumber: 44,
+                                    columnNumber: 25
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/apartments/NewApartment.js",
+                            lineNumber: 42,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_button.Button, {
+                                onClick: saveApartment,
+                                children: "Agregar departamento"
+                            }, void 0, false, {
+                                fileName: "src/app/pages/apartments/NewApartment.js",
+                                lineNumber: 47,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/app/pages/apartments/NewApartment.js",
+                            lineNumber: 46,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/apartments/NewApartment.js",
+                    lineNumber: 33,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/apartments/NewApartment.js",
+                lineNumber: 32,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/apartments/NewApartment.js",
+        lineNumber: 19,
+        columnNumber: 9
+    }, undefined));
+};
+_s(NewApartment, "q5AooCYyXyuUEjlxeufAKKanXuQ=", false, function() {
+    return [
+        _useForm.useForm
+    ];
+});
+_c = NewApartment;
+var _c;
+$RefreshReg$(_c, "NewApartment");
+
+  $parcel$ReactRefreshHelpers$9d4c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","../../components/ui/TextField":"8MB4t","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../hooks/useForm":"eTHBl","../../components/ui/Button":"coCjw","../../services/ApartmentService":"35kqt"}],"eTHBl":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c301 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c301.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useForm", ()=>useForm
+);
+var _react = require("react");
+const useForm = (initialValues)=>{
+    const [form, setForm] = _react.useState(initialValues);
+    const onChange = (e)=>{
+        const { value , name , type , checked  } = e.target;
+        setForm({
+            ...form,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    };
+    const getInput = (name)=>{
+        return {
+            name,
+            value: form[name],
+            onChange
+        };
+    };
+    const getCheckbox = (name)=>{
+        return {
+            name,
+            checked: form[name],
+            onChange
+        };
+    };
+    const getRadio = (name, value)=>{
+        return {
+            name,
+            value,
+            checked: value === form[name],
+            onChange
+        };
+    };
+    const getSelect = (name)=>{
+        return {
+            name,
+            value: form[name],
+            onChange
+        };
+    };
+    return {
+        form,
+        getInput,
+        getSelect,
+        getCheckbox,
+        getRadio
+    };
+};
+
+  $parcel$ReactRefreshHelpers$c301.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

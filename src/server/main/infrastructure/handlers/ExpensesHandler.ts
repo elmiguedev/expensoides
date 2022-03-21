@@ -63,10 +63,12 @@ export class ExpensesHandler {
 
     public async payExpenses(req: Request, res: Response) {
         const expenseId = +req.body.expenseId;
+        console.log("EL ID QUE LLEGA", expenseId);
         try {
             const expense = await this.payExpensesAction.execute({ id: expenseId });
             res.status(200).json(expense);
         } catch (error: any) {
+            console.log("EL ERROR", error)
             res.status(400).send(error.message);
         }
     }

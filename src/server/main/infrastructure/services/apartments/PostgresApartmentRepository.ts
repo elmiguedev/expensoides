@@ -1,6 +1,9 @@
-import { Column, Connection, createConnection, Entity, getConnection, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Connection, createConnection, Entity, getConnection, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Apartment } from "../../../domain/apartments/Apartment";
 import { ApartmentRepository } from "../../../domain/apartments/ApartmentRepository";
+import { Building } from "../../../domain/building/Building";
+import { BuildingDao } from "../building/PostgresBuildingRepository";
+import { ExpenseDao } from "../expenses/PostgresExpenseRepository";
 
 export class PostgresApartmentRepository implements ApartmentRepository {
 
@@ -55,11 +58,15 @@ export class ApartmentDao implements Apartment {
     @PrimaryGeneratedColumn()
     id?: number;
     @Column()
-    buildingId: number;
-    @Column()
     floor: number;
     @Column()
     owner: string;
     @Column()
     number: number;
+    @Column()
+    buildingId: number;
+    @ManyToOne(() => BuildingDao, building => building.apartments)
+    building?: BuildingDao;
+    @OneToMany(() => ExpenseDao, expense => expense.apartment)
+    expenses?: ExpenseDao[];
 }

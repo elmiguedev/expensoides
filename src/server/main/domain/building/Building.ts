@@ -1,4 +1,6 @@
+import { Apartment } from "../apartments/Apartment";
 import { ExpenseDetail } from "../expenses/ExpenseDetail";
+import { Transaction } from "../transactions/Transaction";
 
 export interface Building {
   id: number;
@@ -6,5 +8,7 @@ export interface Building {
   address: string;
   cuit: string;
   admin: string;
-  expenses: ExpenseDetail[]
+  expenses: ExpenseDetail[];
+  transactions?: Transaction[];
+  apartments?: Apartment[];
 }

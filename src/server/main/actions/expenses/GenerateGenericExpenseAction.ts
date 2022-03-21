@@ -36,7 +36,8 @@ export class GenerateGenericExpenseAction {
             month: creationDate.getMonth() + 1,
             description: data.description,
             paid: false,
-            detail: data.detail
+            detail: data.detail,
+            createdDate: new Date()
         });
 
         console.log("LA CREADA", expense);

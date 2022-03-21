@@ -32,7 +32,8 @@ export class GenerateAllExpensesAction {
                     month: data.month,
                     description: "test",
                     paid: false,
-                    detail: building.expenses
+                    detail: building.expenses,
+                    createdDate: new Date(),
                 };
 
                 await this.expenseRepository.add(expense);

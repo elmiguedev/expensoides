@@ -1,12 +1,10 @@
 import { createConnection } from "typeorm";
 import { ApartmentDao } from "../services/apartments/PostgresApartmentRepository";
 import { BuildingDao, ExpenseDetailDao } from "../services/building/PostgresBuildingRepository";
+import { ExpenseDao } from "../services/expenses/PostgresExpenseRepository";
+import { TransactionDao } from "../services/transactions/PostgresTransactionRepository";
 
 export class PostgresConnection {
-    constructor() {
-
-    }
-
     public async connect() {
 
         await createConnection({
@@ -22,11 +20,9 @@ export class PostgresConnection {
                 ApartmentDao,
                 ExpenseDao,
                 TransactionDao,
-
             ],
             logging: false,
-            synchronize: true,
+            synchronize: false,
         });
-
     }
 }

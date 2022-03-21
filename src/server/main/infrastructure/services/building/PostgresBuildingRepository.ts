@@ -1,7 +1,11 @@
 import { Column, createConnection, Entity, getConnection, JoinColumn, JoinTable, ManyToMany, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Apartment } from "../../../domain/apartments/Apartment";
 import { Building } from "../../../domain/building/Building";
 import { BuildingRepository } from "../../../domain/building/BuildingRepository";
 import { ExpenseDetail } from "../../../domain/expenses/ExpenseDetail";
+import { Transaction } from "../../../domain/transactions/Transaction";
+import { ApartmentDao } from "../apartments/PostgresApartmentRepository";
+import { TransactionDao } from "../transactions/PostgresTransactionRepository";
 
 export class PostgresBuildingRepository implements BuildingRepository {
 
@@ -56,6 +60,12 @@ export class BuildingDao implements Building {
     @ManyToMany(type => ExpenseDetailDao, detail => detail.id, { cascade: true })
     @JoinTable()
     expenses: ExpenseDetailDao[];
+
+    @OneToMany(() => TransactionDao, transaction => transaction.building)
+    transactions?: TransactionDao[];
+
+    @OneToMany(() => ApartmentDao, apartment => apartment.building)
+    apartments?: ApartmentDao[];
 }
 
 @Entity({ name: "ExpenseDetail" })

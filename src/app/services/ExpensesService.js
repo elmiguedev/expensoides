@@ -6,7 +6,7 @@ export class ExpensesService {
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
-    const buildingId = 0;
+    const buildingId = 1;
 
     const response = await axios.post("/api/expenses/generate/all", {
       buildingId: buildingId,
@@ -23,6 +23,7 @@ export class ExpensesService {
   }
 
   static async payExpenses(expenseId) {
+    console.log("EL IDE", expenseId)
     const response = await axios.post(`/api/expenses/pay`, {
       expenseId: expenseId
     });

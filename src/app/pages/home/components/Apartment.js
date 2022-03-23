@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ExpensesService } from "../../../services/ExpensesService";
+import { useDataContext } from "../../../hooks/useDataContext";
 
 export const Apartment = (props) => {
 
@@ -8,6 +9,7 @@ export const Apartment = (props) => {
     onChange
   } = props;
 
+  const { contextData, changeContextData } = useDataContext();
   const [expenses, setExpenses] = useState([]);
 
   const getUnpaidExpenses = () => {
@@ -19,8 +21,10 @@ export const Apartment = (props) => {
   const payExpenses = (expenses) => {
     const expense = expenses[0];
     if (expense) {
+      changeContextData("loading", true);
       ExpensesService.payExpenses(expense.id).then(
         (res) => {
+          changeContextData("loading", false);
           getUnpaidExpenses();
           if (onChange) {
             onChange();

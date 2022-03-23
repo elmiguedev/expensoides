@@ -1,22 +1,18 @@
 import React, { createContext, useState } from "react";
 
-export const DataContext = createContext({
-    data: {},
-    changeData: () => { }
-});
+export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-    const [data, setData] = useState({
+    const [contextData, setContextData] = useState({
         loading: false
     });
 
-    const changeData = (prop, value) => {
-        console.log(data)
-        setData({ ...data, [prop]: value });
+    const changeContextData = (prop, value) => {
+        setContextData({ ...contextData, [prop]: value });
     }
 
     return (
-        <DataContext.Provider value={{ data, changeData }}>
+        <DataContext.Provider value={{ contextData, changeContextData }}>
             {children}
         </DataContext.Provider>
     );

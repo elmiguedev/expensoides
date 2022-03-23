@@ -2,9 +2,11 @@ import { TextField } from "../../components/ui/TextField"
 import { Button } from "../../components/ui/Button"
 import { useForm } from "../../hooks/useForm";
 import { ApartmentService } from "../../services/ApartmentService";
+import { useContext } from "react";
+import { DataContext } from "../../context/DataContext"
 
 export const NewApartment = (props) => {
-
+    const { contextData, changeContextData } = useContext(DataContext);
     const { form, getInput } = useForm({
         floor: 1,
         number: 1,
@@ -12,7 +14,12 @@ export const NewApartment = (props) => {
     });
 
     const saveApartment = () => {
-        ApartmentService.add({ ...form }).then();
+        changeContextData("loading", true);
+        ApartmentService.add({ ...form }).then(
+            () => {
+                changeContextData("loading", false);
+            }
+        );
     }
 
     return (

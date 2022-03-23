@@ -7,6 +7,7 @@ import { LoadingScreen } from "../../components/ui/LoadingScreen";
 
 export const Home = () => {
 
+  const { contextData, changeContextData } = useContext(DataContext);
   const [apartments, setApartments] = useState([]);
 
   useEffect(() => {
@@ -14,9 +15,10 @@ export const Home = () => {
   }, []);
 
   const getApartments = () => {
+    changeContextData("loading", true);
     ApartmentService.getAll().then((data => {
-      console.log("LOS APT", data);
       setApartments(data);
+      changeContextData("loading", false);
     }));
   }
 
@@ -26,20 +28,11 @@ export const Home = () => {
     });
   }
 
-  const { data, changeData } = useContext(DataContext);
-
-
   return (
     <div>
       <div className="row mb-3">
         <div className="col">
           <h1>Dptos</h1>
-          {JSON.stringify(data)}
-          <button onClick={() => {
-            changeData("loading", true); setTimeout(() => {
-              changeData("loading", false)
-            }, 3000);
-          }}>holi</button>
         </div>
       </div>
       <div className="row mb-3">

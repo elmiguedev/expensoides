@@ -42,7 +42,6 @@ export const useForm = (initialValues) => {
         }
     }
 
-
     return {
         form,
         getInput,

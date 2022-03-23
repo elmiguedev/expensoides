@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import path from "path";
 import dotenv from "dotenv";
+import passport from "passport";
+import { PassportMiddleware } from "./middleware/PassportMiddleware";
 
 import { AddApartmentAction } from "../actions/apartments/AddApartmentAction";
 import { ListApartmentsAction } from "../actions/apartments/ListApartmentsAction";
@@ -27,15 +29,19 @@ import { PostgresTransactionRepository } from "./services/transactions/PostgresT
 import { PostgresExpenseRepository } from "./services/expenses/PostgresExpenseRepository";
 import { PostgresBuildingRepository } from "./services/building/PostgresBuildingRepository";
 import { PdfReportService } from "./services/reports/PdfReportService";
+import { AuthHandler } from "./handlers/AuthHandler";
 
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const auth = PassportMiddleware();
 
+app.use("/login", new AuthHandler().login)
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "../../public")));
+app.use(passport.initialize());
 
 app.get("/ping", (req: Request, res: Response) => {
     res.send("pong pong");
@@ -116,7 +122,7 @@ const reportHandler = new ReportHandler(
 )
 
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
-app.get("/api/apartments", apartmentHandler.getAll.bind(apartmentHandler));
+app.get("/api/apartments", auth, apartmentHandler.getAll.bind(apartmentHandler));
 app.get("/api/apartments/:apartmentId/expenses/unpaid", expensesHandler.getUnpaidExpenses.bind(expensesHandler));
 
 app.get("/api/transactions", transactionHandler.getAll.bind(transactionHandler));
@@ -137,6 +143,7 @@ app.post("/api/report/month", reportHandler.generateMonthReport.bind(reportHandl
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/index.html"));
 });
+
 
 app.listen(PORT, async () => {
     await postgresConnection.connect();

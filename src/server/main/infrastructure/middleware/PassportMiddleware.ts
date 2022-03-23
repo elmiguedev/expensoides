@@ -16,8 +16,7 @@ export const PassportMiddleware = () => {
     (email, password, cb) => {
       //this one is typically a DB call. Assume that the returned user object is pre-formatted and ready for storing in JWT
       try {
-        const user = users.find(u => u.email == email && user.passport == password);
-
+        const user = users.find(u => u.email == email && u.password == password);
         if (!user) {
           return cb(null, false, { message: 'Incorrect email or password.' });
         }
@@ -30,18 +29,15 @@ export const PassportMiddleware = () => {
   ));
   passport.use("jwt", new JWTStrategy({
     jwtFromRequest: PassportJWT.ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'SECRETO'
+    secretOrKey: process.env.JWT_SECRET
   },
     (jwtPayload, cb) => {
-      console.log("INTENTA CONTROLAR", jwtPayload);
-      //find the user in db if needed. This functionality may be omitted if you store everything you'll need in JWT payload.
       try {
         const user = users.find(u => u.id == jwtPayload.id);
-
         if (!user) {
           return cb(null, user);
         }
-        return cb(null, user, { message: 'Logged In Successfully' });
+        return cb(null, user);
       } catch (err) {
         return cb(err);
       }

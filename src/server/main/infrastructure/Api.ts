@@ -38,7 +38,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const auth = PassportMiddleware();
 
-app.use("/login", new AuthHandler().login)
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "../../public")));
 app.use(passport.initialize());
@@ -120,6 +119,7 @@ const reportHandler = new ReportHandler(
     generateGenericExpenseReportAction,
     generateMonthReportAction,
 )
+app.use("/api/login", new AuthHandler().login)
 
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
 app.get("/api/apartments", auth, apartmentHandler.getAll.bind(apartmentHandler));

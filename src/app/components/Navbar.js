@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 export const Navbar = () => {
+
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -24,6 +32,11 @@ export const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to={"/apartments/new"}>Nuevo departamento</Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link" href="#" onClick={handleLogout}>Cerrar sesión</a>
             </li>
           </ul>
         </div>

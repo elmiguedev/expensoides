@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import { ExpensesService } from "../../services/ExpensesService";
 import { DataContext } from "../../context/DataContext";
 import { LoadingScreen } from "../../components/ui/LoadingScreen";
+import { AuthService } from "../../services/AuthService";
 
 export const Home = () => {
 
@@ -33,6 +34,7 @@ export const Home = () => {
       <div className="row mb-3">
         <div className="col">
           <h1>Dptos</h1>
+          <button onClick={() => { AuthService.login("test", "test").then((res) => console.log(res)) }}>login</button>
         </div>
       </div>
       <div className="row mb-3">

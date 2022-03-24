@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { DataContext } from "../../context/DataContext"
 
 export const NewApartment = (props) => {
+
     const { contextData, changeContextData } = useContext(DataContext);
     const { form, getInput } = useForm({
         floor: 1,

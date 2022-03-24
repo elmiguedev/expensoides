@@ -121,8 +121,8 @@ const reportHandler = new ReportHandler(
 )
 app.use("/api/login", new AuthHandler().login)
 
-app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
 app.get("/api/apartments", auth, apartmentHandler.getAll.bind(apartmentHandler));
+app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));
 app.get("/api/apartments/:apartmentId/expenses/unpaid", expensesHandler.getUnpaidExpenses.bind(expensesHandler));
 
 app.get("/api/transactions", transactionHandler.getAll.bind(transactionHandler));

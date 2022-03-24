@@ -22779,97 +22779,26 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "App", ()=>App
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _layout = require("./components/Layout");
-var _home = require("./pages/home/Home");
 var _reactRouterDom = require("react-router-dom");
-var _transactions = require("./pages/transactions/Transactions");
-var _expenses = require("./pages/expenses/expenses-list/Expenses");
-var _newExpenses = require("./pages/expenses/new-expense/NewExpenses");
-var _genericExpense = require("./pages/reports/GenericExpense");
-var _newApartment = require("./pages/apartments/NewApartment");
+var _appRoutes = require("./AppRoutes");
 var _dataContext = require("./context/DataContext");
 const App = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_dataContext.DataProvider, {
         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                    path: "/",
-                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_layout.Layout, {
-                    }, void 0, false, void 0, void 0),
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_home.Home, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 18,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "apartments/new",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newApartment.NewApartment, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 19,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "transactions",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_transactions.Transactions, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 20,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "expenses",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_expenses.Expenses, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 21,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "expenses/new",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newExpenses.NewExpenses, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 22,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "reports/expenses/generic",
-                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genericExpense.GenericExpense, {
-                            }, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/app/App.js",
-                            lineNumber: 23,
-                            columnNumber: 13
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/app/App.js",
-                    lineNumber: 17,
-                    columnNumber: 11
-                }, undefined)
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_appRoutes.AppRoutes, {
             }, void 0, false, {
                 fileName: "src/app/App.js",
-                lineNumber: 16,
+                lineNumber: 9,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/app/App.js",
-            lineNumber: 15,
+            lineNumber: 8,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/app/App.js",
-        lineNumber: 14,
+        lineNumber: 7,
         columnNumber: 5
     }, undefined));
 };
@@ -22882,72 +22811,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","./components/Layout":"8NkAr","./pages/home/Home":"M3rZX","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8","./pages/reports/GenericExpense":"edm0c","./pages/apartments/NewApartment":"jvneU","./context/DataContext":"kezn2"}],"8NkAr":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e55b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Layout", ()=>Layout
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _navbar = require("./Navbar");
-var _loadingScreen = require("./ui/LoadingScreen");
-var _react = require("react");
-var _dataContext = require("../context/DataContext");
-var _s = $RefreshSig$();
-const Layout = ()=>{
-    _s();
-    const { contextData  } = _react.useContext(_dataContext.DataContext);
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        children: [
-            contextData.loading === true && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loadingScreen.LoadingScreen, {
-            }, void 0, false, {
-                fileName: "src/app/components/Layout.js",
-                lineNumber: 11,
-                columnNumber: 40
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.Navbar, {
-            }, void 0, false, {
-                fileName: "src/app/components/Layout.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "container",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Outlet, {
-                }, void 0, false, {
-                    fileName: "src/app/components/Layout.js",
-                    lineNumber: 14,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/components/Layout.js",
-                lineNumber: 13,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/app/components/Layout.js",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined));
-};
-_s(Layout, "QYsZ8FY46aQF6yP1EjDl5D3zRqY=");
-_c = Layout;
-var _c;
-$RefreshReg$(_c, "Layout");
-
-  $parcel$ReactRefreshHelpers$e55b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","./Navbar":"1i1Nz","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./ui/LoadingScreen":"TKOCp","react":"fBCUg","../context/DataContext":"kezn2"}],"klkWS":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","./AppRoutes":"gNbmY","./context/DataContext":"kezn2"}],"klkWS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -24811,173 +24675,7 @@ const normalizeSearch = (search)=>!search || search === "?" ? "" : search.starts
 const normalizeHash = (hash)=>!hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash
 ; ///////////////////////////////////////////////////////////////////////////////
 
-},{"react":"fBCUg","history":"3zrg9","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"1i1Nz":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4da9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4da9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-const Navbar = ()=>{
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("nav", {
-        className: "navbar navbar-expand-lg navbar-light bg-light",
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
-                    className: "navbar-brand",
-                    href: "#",
-                    children: "Navbar"
-                }, void 0, false, {
-                    fileName: "src/app/components/Navbar.js",
-                    lineNumber: 7,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                    className: "navbar-toggler",
-                    type: "button",
-                    "data-bs-toggle": "collapse",
-                    "data-bs-target": "#navbarSupportedContent",
-                    "aria-controls": "navbarSupportedContent",
-                    "aria-expanded": "false",
-                    "aria-label": "Toggle navigation",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                        className: "navbar-toggler-icon"
-                    }, void 0, false, {
-                        fileName: "src/app/components/Navbar.js",
-                        lineNumber: 9,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/components/Navbar.js",
-                    lineNumber: 8,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "collapse navbar-collapse",
-                    id: "navbarSupportedContent",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
-                        className: "navbar-nav me-auto mb-2 mb-lg-0",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                                className: "nav-item",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    className: "nav-link",
-                                    to: "/",
-                                    children: "Inicio"
-                                }, void 0, false, {
-                                    fileName: "src/app/components/Navbar.js",
-                                    lineNumber: 14,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/components/Navbar.js",
-                                lineNumber: 13,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                                className: "nav-item",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    className: "nav-link",
-                                    to: "/transactions",
-                                    children: "Transacciones"
-                                }, void 0, false, {
-                                    fileName: "src/app/components/Navbar.js",
-                                    lineNumber: 17,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/components/Navbar.js",
-                                lineNumber: 16,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                                className: "nav-item",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    className: "nav-link",
-                                    to: "/expenses",
-                                    children: "Expensas"
-                                }, void 0, false, {
-                                    fileName: "src/app/components/Navbar.js",
-                                    lineNumber: 20,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/components/Navbar.js",
-                                lineNumber: 19,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                                className: "nav-item",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    className: "nav-link",
-                                    to: "/reports/expenses/generic",
-                                    children: "Report"
-                                }, void 0, false, {
-                                    fileName: "src/app/components/Navbar.js",
-                                    lineNumber: 23,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/components/Navbar.js",
-                                lineNumber: 22,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                                className: "nav-item",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    className: "nav-link",
-                                    to: "/apartments/new",
-                                    children: "Nuevo departamento"
-                                }, void 0, false, {
-                                    fileName: "src/app/components/Navbar.js",
-                                    lineNumber: 26,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/components/Navbar.js",
-                                lineNumber: 25,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/app/components/Navbar.js",
-                        lineNumber: 12,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/components/Navbar.js",
-                    lineNumber: 11,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/app/components/Navbar.js",
-            lineNumber: 6,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/app/components/Navbar.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined));
-};
-_c = Navbar;
-var _c;
-$RefreshReg$(_c, "Navbar");
-
-  $parcel$ReactRefreshHelpers$4da9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"gRhKU":[function(require,module,exports) {
+},{"react":"fBCUg","history":"3zrg9","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"gRhKU":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -25097,277 +24795,491 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"9ol1C"}],"TKOCp":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d119 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react-refresh/runtime":"9ol1C"}],"gNbmY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$facd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d119.prelude(module);
+$parcel$ReactRefreshHelpers$facd.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoadingScreen", ()=>LoadingScreen
+parcelHelpers.export(exports, "AppRoutes", ()=>AppRoutes
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const LoadingScreen = ()=>{
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        className: "loading-container",
-        style: {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "white",
-            zIndex: 999,
-            opacity: 0.5
-        },
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "loading-spinner",
-            style: {
-                display: "flex",
-                width: "100%",
-                height: "100%",
-                alignContent: "center",
-                alignItems: "center",
-                justifyContent: "center"
-            },
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "spinner-border",
-                role: "status",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                    className: "visually-hidden",
-                    children: "Loading..."
+var _reactRouterDom = require("react-router-dom");
+var _transactions = require("./pages/transactions/Transactions");
+var _expenses = require("./pages/expenses/expenses-list/Expenses");
+var _newExpenses = require("./pages/expenses/new-expense/NewExpenses");
+var _genericExpense = require("./pages/reports/GenericExpense");
+var _newApartment = require("./pages/apartments/NewApartment");
+var _home = require("./pages/home/Home");
+var _login = require("./pages/login/Login");
+var _layout = require("./components/Layout");
+var _authService = require("./services/AuthService");
+var _protectedRoute = require("./components/ProtectedRoute");
+var _useAuth = require("./hooks/useAuth");
+const AppRoutes = ()=>{
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_useAuth.AuthProvider, {
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
+            children: [
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                    path: "/login",
+                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_login.Login, {
+                    }, void 0, false, void 0, void 0)
                 }, void 0, false, {
-                    fileName: "src/app/components/ui/LoadingScreen.js",
-                    lineNumber: 21,
-                    columnNumber: 17
+                    fileName: "src/app/AppRoutes.js",
+                    lineNumber: 18,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                    path: "/",
+                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_protectedRoute.ProtectedRoute, {
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_layout.Layout, {
+                        }, void 0, false, void 0, void 0)
+                    }, void 0, false, void 0, void 0),
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_home.Home, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "apartments/new",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newApartment.NewApartment, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 21,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "transactions",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_transactions.Transactions, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 22,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "expenses",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_expenses.Expenses, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 23,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "expenses/new",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_newExpenses.NewExpenses, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 24,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                            path: "reports/expenses/generic",
+                            element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genericExpense.GenericExpense, {
+                            }, void 0, false, void 0, void 0)
+                        }, void 0, false, {
+                            fileName: "src/app/AppRoutes.js",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/AppRoutes.js",
+                    lineNumber: 19,
+                    columnNumber: 9
                 }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/components/ui/LoadingScreen.js",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/app/components/ui/LoadingScreen.js",
-            lineNumber: 12,
-            columnNumber: 9
+            ]
+        }, void 0, true, {
+            fileName: "src/app/AppRoutes.js",
+            lineNumber: 17,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
-        fileName: "src/app/components/ui/LoadingScreen.js",
-        lineNumber: 2,
-        columnNumber: 13
+        fileName: "src/app/AppRoutes.js",
+        lineNumber: 16,
+        columnNumber: 5
     }, undefined));
 };
-_c = LoadingScreen;
+_c = AppRoutes;
 var _c;
-$RefreshReg$(_c, "LoadingScreen");
+$RefreshReg$(_c, "AppRoutes");
 
-  $parcel$ReactRefreshHelpers$d119.postlude(module);
+  $parcel$ReactRefreshHelpers$facd.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"kezn2":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e439 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","./pages/transactions/Transactions":"fmRgn","./pages/expenses/expenses-list/Expenses":"4gprS","./pages/expenses/new-expense/NewExpenses":"4YcM8","./pages/reports/GenericExpense":"edm0c","./pages/apartments/NewApartment":"jvneU","./pages/home/Home":"M3rZX","./pages/login/Login":"88Ksd","./components/Layout":"8NkAr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","./services/AuthService":"6Y65h","./components/ProtectedRoute":"lmj8T","./hooks/useAuth":"gPzDg"}],"fmRgn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$33a2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e439.prelude(module);
+$parcel$ReactRefreshHelpers$33a2.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "DataContext", ()=>DataContext
-);
-parcelHelpers.export(exports, "DataProvider", ()=>DataProvider
+parcelHelpers.export(exports, "Transactions", ()=>Transactions
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
+var _transactionService = require("../../services/TransactionService");
 var _s = $RefreshSig$();
-const DataContext = /*#__PURE__*/ _react.createContext();
-const DataProvider = ({ children  })=>{
+const Transactions = ()=>{
     _s();
-    const [contextData, setContextData] = _react.useState({
-        loading: false
+    const [transactions, setTransactions] = _react.useState([]);
+    const [balance, setBalance] = _react.useState(0);
+    const [newTransaction, setNewTransaction] = _react.useState({
+        mount: 0,
+        description: ""
     });
-    const changeContextData = (prop, value)=>{
-        setContextData({
-            ...contextData,
-            [prop]: value
+    const getTransactions = ()=>{
+        _transactionService.TransactionService.getAll().then((data)=>{
+            setTransactions(data);
         });
     };
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(DataContext.Provider, {
-        value: {
-            contextData,
-            changeContextData
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/app/context/DataContext.js",
-        lineNumber: 15,
-        columnNumber: 9
-    }, undefined));
-};
-_s(DataProvider, "Wj3vw3o3Zw52KlkSG/pAURzjhTQ=");
-_c = DataProvider;
-var _c;
-$RefreshReg$(_c, "DataProvider");
-
-  $parcel$ReactRefreshHelpers$e439.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"M3rZX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bcb6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bcb6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Home", ()=>Home
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _apartmentService = require("../../services/ApartmentService");
-var _apartment = require("./components/Apartment");
-var _react = require("react");
-var _expensesService = require("../../services/ExpensesService");
-var _dataContext = require("../../context/DataContext");
-var _loadingScreen = require("../../components/ui/LoadingScreen");
-var _s = $RefreshSig$();
-const Home = ()=>{
-    _s();
-    const { contextData , changeContextData  } = _react.useContext(_dataContext.DataContext);
-    const [apartments, setApartments] = _react.useState([]);
+    const getBalance = ()=>{
+        _transactionService.TransactionService.getBalance().then((data)=>{
+            setBalance(data);
+        });
+    };
+    const handleMountInputChange = (e)=>{
+        setNewTransaction({
+            ...newTransaction,
+            mount: +e.target.value
+        });
+    };
+    const handleDescriptionInputChange = (e)=>{
+        setNewTransaction({
+            ...newTransaction,
+            description: e.target.value
+        });
+    };
+    const addPayment = ()=>{
+        _transactionService.TransactionService.addPayment(newTransaction).then(()=>{
+            getBalance();
+            getTransactions();
+            clearNewTransaction();
+        });
+    };
+    const addEarning = ()=>{
+        _transactionService.TransactionService.addEarning(newTransaction).then(()=>{
+            getBalance();
+            getTransactions();
+            clearNewTransaction();
+        });
+    };
+    const clearNewTransaction = ()=>{
+        setNewTransaction({
+            mount: 0,
+            description: ""
+        });
+    };
     _react.useEffect(()=>{
-        getApartments();
+        getTransactions();
+        getBalance();
     }, []);
-    const getApartments = ()=>{
-        changeContextData("loading", true);
-        _apartmentService.ApartmentService.getAll().then((data)=>{
-            setApartments(data);
-            changeContextData("loading", false);
-        });
-    };
-    const generateExpensesButtonHandler = ()=>{
-        _expensesService.ExpensesService.generateAllExpenses().then((expenses)=>{
-            console.log(expenses);
-        });
-    };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row mb-3",
+                className: "row",
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                     className: "col",
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                        children: "Dptos"
+                        children: "Transacciones"
                     }, void 0, false, {
-                        fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 35,
+                        fileName: "src/app/pages/transactions/Transactions.js",
+                        lineNumber: 65,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
-                    fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 34,
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 64,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
-                fileName: "src/app/pages/home/Home.js",
-                lineNumber: 33,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row mb-3",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                        onClick: generateExpensesButtonHandler,
-                        className: "btn btn-primary",
-                        children: "Generar expensas"
-                    }, void 0, false, {
-                        fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 40,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/Home.js",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/home/Home.js",
-                lineNumber: 38,
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 63,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "row",
-                children: apartments.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                        className: "col-3",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_apartment.Apartment, {
-                            onChange: ()=>{
-                                getApartments();
-                            },
-                            apartment: apartment
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
+                            children: "Agregar transaccion"
                         }, void 0, false, {
-                            fileName: "src/app/pages/home/Home.js",
-                            lineNumber: 46,
-                            columnNumber: 13
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 70,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                            type: "number",
+                            placeholder: "monto",
+                            value: newTransaction.mount,
+                            onChange: handleMountInputChange
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 71,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
+                            type: "text",
+                            placeholder: "descripcion",
+                            value: newTransaction.description,
+                            onChange: handleDescriptionInputChange
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 72,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                            className: "btn btn-primary",
+                            onClick: addEarning,
+                            children: "Agregar ingreso"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                            className: "btn btn-danger",
+                            onClick: addPayment,
+                            children: "Agregar gasto"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 74,
+                            columnNumber: 11
                         }, undefined)
-                    }, apartment.id, false, {
-                        fileName: "src/app/pages/home/Home.js",
-                        lineNumber: 45,
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 69,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 68,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("strong", {
+                            children: "Balance total: "
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 79,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                            className: `badge ${balance >= 0 ? "bg-success" : "bg-danger"}`,
+                            children: balance
+                        }, void 0, false, {
+                            fileName: "src/app/pages/transactions/Transactions.js",
+                            lineNumber: 80,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 78,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 77,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("table", {
+                        className: "table table-condensed table-striped",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("thead", {
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "id"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 88,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "mount"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 89,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "description"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 90,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
+                                            children: "date"
+                                        }, void 0, false, {
+                                            fileName: "src/app/pages/transactions/Transactions.js",
+                                            lineNumber: 91,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/app/pages/transactions/Transactions.js",
+                                    lineNumber: 87,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/app/pages/transactions/Transactions.js",
+                                lineNumber: 86,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
+                                children: transactions.map((transaction)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
+                                        className: transaction.mount >= 0 ? 'table-success' : 'table-danger',
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.id
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 97,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.mount
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 98,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.description
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 99,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
+                                                children: transaction.date
+                                            }, void 0, false, {
+                                                fileName: "src/app/pages/transactions/Transactions.js",
+                                                lineNumber: 100,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        ]
+                                    }, transaction.id, true, {
+                                        fileName: "src/app/pages/transactions/Transactions.js",
+                                        lineNumber: 96,
+                                        columnNumber: 17
+                                    }, undefined)
+                                )
+                            }, void 0, false, {
+                                fileName: "src/app/pages/transactions/Transactions.js",
+                                lineNumber: 94,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/app/pages/transactions/Transactions.js",
+                        lineNumber: 85,
                         columnNumber: 11
                     }, undefined)
-                )
+                }, void 0, false, {
+                    fileName: "src/app/pages/transactions/Transactions.js",
+                    lineNumber: 84,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
-                fileName: "src/app/pages/home/Home.js",
-                lineNumber: 43,
+                fileName: "src/app/pages/transactions/Transactions.js",
+                lineNumber: 83,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/app/pages/home/Home.js",
-        lineNumber: 32,
+        fileName: "src/app/pages/transactions/Transactions.js",
+        lineNumber: 62,
         columnNumber: 5
     }, undefined));
 };
-_s(Home, "t6p53aH16VH0SO547Orzq8K2F/o=");
-_c = Home;
+_s(Transactions, "SVZAjbYB6UmQwnaoLjUjpHpuxEo=");
+_c = Transactions;
 var _c;
-$RefreshReg$(_c, "Home");
+$RefreshReg$(_c, "Transactions");
 
-  $parcel$ReactRefreshHelpers$bcb6.postlude(module);
+  $parcel$ReactRefreshHelpers$33a2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../context/DataContext":"kezn2","../../components/ui/LoadingScreen":"TKOCp"}],"35kqt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/TransactionService":"kTOjL","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"kTOjL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ApartmentService", ()=>ApartmentService
+parcelHelpers.export(exports, "TransactionService", ()=>TransactionService
 );
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-class ApartmentService {
+var _apiClient = require("./ApiClient");
+class TransactionService {
     constructor(){
     }
-    static async add(apartment) {
-        console.log("LO QUE VIENE", apartment);
-        apartment.buildingId = 1;
-        const response = await _axiosDefault.default.post("/api/apartments", apartment);
+    static async addPayment(transaction) {
+        const response = await _apiClient.ApiClient.post("/api/transactions/payment", transaction);
+        return response.data;
+    }
+    static async addEarning(transaction) {
+        const response = await _apiClient.ApiClient.post("/api/transactions/earning", transaction);
+        return response.data;
+    }
+    static async getBalance() {
+        const response = await _apiClient.ApiClient.get("/api/transactions/balance");
         return response.data;
     }
     static async getAll() {
-        const response = await _axiosDefault.default.get("/api/apartments");
+        const response = await _apiClient.ApiClient.get("/api/transactions");
         return response.data;
     }
 }
 
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"7WEqO":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","./ApiClient":"k27ts"}],"k27ts":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ApiClient", ()=>ApiClient
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _authService = require("./AuthService");
+class ApiClient {
+    static baseUrl = "";
+    static get(url) {
+        return _axiosDefault.default.get(`${this.baseUrl}${url}`, {
+            headers: _authService.AuthHeader()
+        });
+    }
+    static post(url, data) {
+        return _axiosDefault.default.get(`${this.baseUrl}${url}`, data, {
+            headers: _authService.AuthHeader()
+        });
+    }
+}
+
+},{"axios":"7WEqO","./AuthService":"6Y65h","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"7WEqO":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"6w7hu"}],"6w7hu":[function(require,module,exports) {
@@ -26780,519 +26692,43 @@ var utils = require('./../utils');
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"7MmTk"}],"bjPbu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a333 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a333.prelude(module);
-
-try {
+},{"./../utils":"7MmTk"}],"6Y65h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Apartment", ()=>Apartment
+parcelHelpers.export(exports, "AuthService", ()=>AuthService
 );
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _expensesService = require("../../../services/ExpensesService");
-var _useDataContext = require("../../../hooks/useDataContext");
-var _s = $RefreshSig$();
-const Apartment = (props)=>{
-    _s();
-    const { apartment , onChange  } = props;
-    const { contextData , changeContextData  } = _useDataContext.useDataContext();
-    const [expenses1, setExpenses] = _react.useState([]);
-    const getUnpaidExpenses = ()=>{
-        _expensesService.ExpensesService.getUnpaidExpensesByApartment(apartment.id).then((data)=>{
-            setExpenses(data);
-        });
-    };
-    const payExpenses = (expenses)=>{
-        const expense = expenses[0];
-        if (expense) {
-            changeContextData("loading", true);
-            _expensesService.ExpensesService.payExpenses(expense.id).then((res)=>{
-                changeContextData("loading", false);
-                getUnpaidExpenses();
-                if (onChange) onChange();
-            });
-        }
-    };
-    const getCardClass = ()=>{
-        return `card card-primary mb-4 ${expenses1.length > 0 ? "bg-warning" : "bg-success"}`;
-    };
-    _react.useEffect(()=>{
-        getUnpaidExpenses();
-    }, []);
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        className: getCardClass(),
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "card-body",
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
-                    children: apartment.number
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 50,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                    children: apartment.owner
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 51,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                    children: [
-                        "Adeuda ",
-                        expenses1.length,
-                        " expensas"
-                    ]
-                }, void 0, true, {
-                    fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 52,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                    onClick: ()=>{
-                        payExpenses(expenses1);
-                    },
-                    className: "btn btn-primary",
-                    children: "Pagar expensas"
-                }, void 0, false, {
-                    fileName: "src/app/pages/home/components/Apartment.js",
-                    lineNumber: 53,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/app/pages/home/components/Apartment.js",
-            lineNumber: 49,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/app/pages/home/components/Apartment.js",
-        lineNumber: 48,
-        columnNumber: 5
-    }, undefined));
-};
-_s(Apartment, "QJcJRdha2tUm7/pL7PkEeIA3TnI=", false, function() {
-    return [
-        _useDataContext.useDataContext
-    ];
-});
-_c = Apartment;
-var _c;
-$RefreshReg$(_c, "Apartment");
-
-  $parcel$ReactRefreshHelpers$a333.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../../hooks/useDataContext":"jPvm6"}],"8o2ak":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService
+parcelHelpers.export(exports, "AuthHeader", ()=>AuthHeader
 );
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-class ExpensesService {
-    static async generateAllExpenses() {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = today.getMonth() + 1;
-        const buildingId = 1;
-        const response = await _axiosDefault.default.post("/api/expenses/generate/all", {
-            buildingId: buildingId,
-            year: year,
-            month: month
+class AuthService {
+    static login(username, password) {
+        return _axiosDefault.default.post("http://localhost:3000/api/login", {
+            email: username,
+            password: password
+        }).then((response)=>{
+            if (response.data.token) localStorage.setItem("user", JSON.stringify(response.data));
+            return response.data;
         });
-        return response.data;
     }
-    static async getUnpaidExpensesByApartment(apartmentId) {
-        const response = await _axiosDefault.default.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
-        return response.data;
+    static logout() {
+        localStorage.removeItem("user");
     }
-    static async payExpenses(expenseId) {
-        console.log("EL IDE", expenseId);
-        const response = await _axiosDefault.default.post(`/api/expenses/pay`, {
-            expenseId: expenseId
-        });
-        return response.data;
-    }
-    static async getAll() {
-        const response = await _axiosDefault.default.get(`/api/expenses`);
-        return response.data;
-    }
-    static async generateGenericExpense(expense) {
-        const response = await _axiosDefault.default.post("/api/expenses/generate/generic", expense);
-        return response.data;
+    static getCurrentUser() {
+        return JSON.parse(localStorage.getItem('user'));
     }
 }
-
-},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"jPvm6":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6c57 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6c57.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useDataContext", ()=>useDataContext
-);
-var _react = require("react");
-var _dataContext = require("../context/DataContext");
-var _s = $RefreshSig$();
-const useDataContext = ()=>{
-    _s();
-    return _react.useContext(_dataContext.DataContext);
-};
-_s(useDataContext, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
-
-  $parcel$ReactRefreshHelpers$6c57.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+function AuthHeader() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user && user.token) return {
+        Authorization: 'Bearer ' + user.token
+    };
+    else return {
+    };
 }
-},{"react":"fBCUg","../context/DataContext":"kezn2","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"fmRgn":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$33a2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$33a2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Transactions", ()=>Transactions
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _transactionService = require("../../services/TransactionService");
-var _s = $RefreshSig$();
-const Transactions = ()=>{
-    _s();
-    const [transactions, setTransactions] = _react.useState([]);
-    const [balance, setBalance] = _react.useState(0);
-    const [newTransaction, setNewTransaction] = _react.useState({
-        mount: 0,
-        description: ""
-    });
-    const getTransactions = ()=>{
-        _transactionService.TransactionService.getAll().then((data)=>{
-            setTransactions(data);
-        });
-    };
-    const getBalance = ()=>{
-        _transactionService.TransactionService.getBalance().then((data)=>{
-            setBalance(data);
-        });
-    };
-    const handleMountInputChange = (e)=>{
-        setNewTransaction({
-            ...newTransaction,
-            mount: +e.target.value
-        });
-    };
-    const handleDescriptionInputChange = (e)=>{
-        setNewTransaction({
-            ...newTransaction,
-            description: e.target.value
-        });
-    };
-    const addPayment = ()=>{
-        _transactionService.TransactionService.addPayment(newTransaction).then(()=>{
-            getBalance();
-            getTransactions();
-            clearNewTransaction();
-        });
-    };
-    const addEarning = ()=>{
-        _transactionService.TransactionService.addEarning(newTransaction).then(()=>{
-            getBalance();
-            getTransactions();
-            clearNewTransaction();
-        });
-    };
-    const clearNewTransaction = ()=>{
-        setNewTransaction({
-            mount: 0,
-            description: ""
-        });
-    };
-    _react.useEffect(()=>{
-        getTransactions();
-        getBalance();
-    }, []);
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                        children: "Transacciones"
-                    }, void 0, false, {
-                        fileName: "src/app/pages/transactions/Transactions.js",
-                        lineNumber: 65,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/pages/transactions/Transactions.js",
-                    lineNumber: 64,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/transactions/Transactions.js",
-                lineNumber: 63,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
-                            children: "Agregar transaccion"
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 70,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
-                            type: "number",
-                            placeholder: "monto",
-                            value: newTransaction.mount,
-                            onChange: handleMountInputChange
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 71,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
-                            type: "text",
-                            placeholder: "descripcion",
-                            value: newTransaction.description,
-                            onChange: handleDescriptionInputChange
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 72,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                            className: "btn btn-primary",
-                            onClick: addEarning,
-                            children: "Agregar ingreso"
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-                            className: "btn btn-danger",
-                            onClick: addPayment,
-                            children: "Agregar gasto"
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 74,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/app/pages/transactions/Transactions.js",
-                    lineNumber: 69,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/transactions/Transactions.js",
-                lineNumber: 68,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("strong", {
-                            children: "Balance total: "
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 79,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                            className: `badge ${balance >= 0 ? "bg-success" : "bg-danger"}`,
-                            children: balance
-                        }, void 0, false, {
-                            fileName: "src/app/pages/transactions/Transactions.js",
-                            lineNumber: 80,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/app/pages/transactions/Transactions.js",
-                    lineNumber: 78,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/transactions/Transactions.js",
-                lineNumber: 77,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "row",
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("table", {
-                        className: "table table-condensed table-striped",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("thead", {
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            children: "id"
-                                        }, void 0, false, {
-                                            fileName: "src/app/pages/transactions/Transactions.js",
-                                            lineNumber: 88,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            children: "mount"
-                                        }, void 0, false, {
-                                            fileName: "src/app/pages/transactions/Transactions.js",
-                                            lineNumber: 89,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            children: "description"
-                                        }, void 0, false, {
-                                            fileName: "src/app/pages/transactions/Transactions.js",
-                                            lineNumber: 90,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("th", {
-                                            children: "date"
-                                        }, void 0, false, {
-                                            fileName: "src/app/pages/transactions/Transactions.js",
-                                            lineNumber: 91,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/app/pages/transactions/Transactions.js",
-                                    lineNumber: 87,
-                                    columnNumber: 15
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/app/pages/transactions/Transactions.js",
-                                lineNumber: 86,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("tbody", {
-                                children: transactions.map((transaction)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("tr", {
-                                        className: transaction.mount >= 0 ? 'table-success' : 'table-danger',
-                                        children: [
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                                children: transaction.id
-                                            }, void 0, false, {
-                                                fileName: "src/app/pages/transactions/Transactions.js",
-                                                lineNumber: 97,
-                                                columnNumber: 19
-                                            }, undefined),
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                                children: transaction.mount
-                                            }, void 0, false, {
-                                                fileName: "src/app/pages/transactions/Transactions.js",
-                                                lineNumber: 98,
-                                                columnNumber: 19
-                                            }, undefined),
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                                children: transaction.description
-                                            }, void 0, false, {
-                                                fileName: "src/app/pages/transactions/Transactions.js",
-                                                lineNumber: 99,
-                                                columnNumber: 19
-                                            }, undefined),
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("td", {
-                                                children: transaction.date
-                                            }, void 0, false, {
-                                                fileName: "src/app/pages/transactions/Transactions.js",
-                                                lineNumber: 100,
-                                                columnNumber: 19
-                                            }, undefined)
-                                        ]
-                                    }, transaction.id, true, {
-                                        fileName: "src/app/pages/transactions/Transactions.js",
-                                        lineNumber: 96,
-                                        columnNumber: 17
-                                    }, undefined)
-                                )
-                            }, void 0, false, {
-                                fileName: "src/app/pages/transactions/Transactions.js",
-                                lineNumber: 94,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/app/pages/transactions/Transactions.js",
-                        lineNumber: 85,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/app/pages/transactions/Transactions.js",
-                    lineNumber: 84,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/app/pages/transactions/Transactions.js",
-                lineNumber: 83,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/app/pages/transactions/Transactions.js",
-        lineNumber: 62,
-        columnNumber: 5
-    }, undefined));
-};
-_s(Transactions, "SVZAjbYB6UmQwnaoLjUjpHpuxEo=");
-_c = Transactions;
+_c = AuthHeader;
 var _c;
-$RefreshReg$(_c, "Transactions");
-
-  $parcel$ReactRefreshHelpers$33a2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/TransactionService":"kTOjL","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"kTOjL":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "TransactionService", ()=>TransactionService
-);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-class TransactionService {
-    constructor(){
-    }
-    static async addPayment(transaction) {
-        const response = await _axiosDefault.default.post("/api/transactions/payment", transaction);
-        return response.data;
-    }
-    static async addEarning(transaction) {
-        const response = await _axiosDefault.default.post("/api/transactions/earning", transaction);
-        return response.data;
-    }
-    static async getBalance() {
-        const response = await _axiosDefault.default.get("/api/transactions/balance");
-        return response.data;
-    }
-    static async getAll() {
-        const response = await _axiosDefault.default.get("/api/transactions");
-        return response.data;
-    }
-}
+$RefreshReg$(_c, "AuthHeader");
 
 },{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ"}],"4gprS":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3d14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -27555,7 +26991,47 @@ $RefreshReg$(_c, "Expenses");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"4YcM8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"8o2ak":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ExpensesService", ()=>ExpensesService
+);
+var _apiClient = require("./ApiClient");
+class ExpensesService {
+    static async generateAllExpenses() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth() + 1;
+        const buildingId = 1;
+        const response = await _apiClient.ApiClient.post("/api/expenses/generate/all", {
+            buildingId: buildingId,
+            year: year,
+            month: month
+        });
+        return response.data;
+    }
+    static async getUnpaidExpensesByApartment(apartmentId) {
+        const response = await _apiClient.ApiClient.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
+        return response.data;
+    }
+    static async payExpenses(expenseId) {
+        console.log("EL IDE", expenseId);
+        const response = await _apiClient.ApiClient.post(`/api/expenses/pay`, {
+            expenseId: expenseId
+        });
+        return response.data;
+    }
+    static async getAll() {
+        const response = await _apiClient.ApiClient.get(`/api/expenses`);
+        return response.data;
+    }
+    static async generateGenericExpense(expense) {
+        const response = await _apiClient.ApiClient.post("/api/expenses/generate/generic", expense);
+        return response.data;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","./ApiClient":"k27ts"}],"4YcM8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$243a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27923,7 +27399,7 @@ $RefreshReg$(_c, "NewExpenses");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../components/ui/DropdownList":"782Sd","../../../components/ui/TextField":"8MB4t","../../../services/ApartmentService":"35kqt","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../../components/ui/Button":"coCjw"}],"782Sd":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../components/ui/DropdownList":"782Sd","../../../components/ui/TextField":"8MB4t","../../../components/ui/Button":"coCjw","../../../services/ApartmentService":"35kqt","../../../services/ExpensesService":"8o2ak","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"782Sd":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28031,7 +27507,27 @@ $RefreshReg$(_c, "Button");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"edm0c":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"35kqt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ApartmentService", ()=>ApartmentService
+);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _apiClient = require("./ApiClient");
+class ApartmentService {
+    static async add(apartment) {
+        apartment.buildingId = 1;
+        const response = await _apiClient.ApiClient.post("/api/apartments", apartment);
+        return response.data;
+    }
+    static async getAll() {
+        const response = await _apiClient.ApiClient.get("/api/apartments");
+        return response.data;
+    }
+}
+
+},{"axios":"7WEqO","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","./ApiClient":"k27ts"}],"edm0c":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f3fe = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28477,7 +27973,7 @@ $RefreshReg$(_c, "GenericExpense");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../services/ReportService":"dT8wk"}],"dT8wk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../services/ReportService":"dT8wk","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"dT8wk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ReportService", ()=>ReportService
@@ -28552,17 +28048,17 @@ const NewApartment = (props)=>{
                         children: "Nuevo departamento"
                     }, void 0, false, {
                         fileName: "src/app/pages/apartments/NewApartment.js",
-                        lineNumber: 29,
+                        lineNumber: 30,
                         columnNumber: 21
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app/pages/apartments/NewApartment.js",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/apartments/NewApartment.js",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -28572,12 +28068,12 @@ const NewApartment = (props)=>{
                     children: JSON.stringify(form)
                 }, void 0, false, {
                     fileName: "src/app/pages/apartments/NewApartment.js",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/apartments/NewApartment.js",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -28592,20 +28088,20 @@ const NewApartment = (props)=>{
                                     children: "Piso:"
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 42,
+                                    lineNumber: 43,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
                                     ...getInput("floor")
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 43,
+                                    lineNumber: 44,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/app/pages/apartments/NewApartment.js",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -28615,20 +28111,20 @@ const NewApartment = (props)=>{
                                     children: "Numero:"
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
                                     ...getInput("number")
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 47,
+                                    lineNumber: 48,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/app/pages/apartments/NewApartment.js",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -28638,20 +28134,20 @@ const NewApartment = (props)=>{
                                     children: "Due\xf1o:"
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 50,
+                                    lineNumber: 51,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
                                     ...getInput("owner")
                                 }, void 0, false, {
                                     fileName: "src/app/pages/apartments/NewApartment.js",
-                                    lineNumber: 51,
+                                    lineNumber: 52,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/app/pages/apartments/NewApartment.js",
-                            lineNumber: 49,
+                            lineNumber: 50,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -28661,29 +28157,29 @@ const NewApartment = (props)=>{
                                 children: "Agregar departamento"
                             }, void 0, false, {
                                 fileName: "src/app/pages/apartments/NewApartment.js",
-                                lineNumber: 54,
+                                lineNumber: 55,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/app/pages/apartments/NewApartment.js",
-                            lineNumber: 53,
+                            lineNumber: 54,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/app/pages/apartments/NewApartment.js",
-                    lineNumber: 40,
+                    lineNumber: 41,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/app/pages/apartments/NewApartment.js",
-                lineNumber: 39,
+                lineNumber: 40,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app/pages/apartments/NewApartment.js",
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 9
     }, undefined));
 };
@@ -28701,7 +28197,7 @@ $RefreshReg$(_c, "NewApartment");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","../../components/ui/TextField":"8MB4t","../../components/ui/Button":"coCjw","../../hooks/useForm":"3fhl3","../../services/ApartmentService":"35kqt","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","react":"fBCUg","../../context/DataContext":"kezn2"}],"3fhl3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"kxFO6","../../components/ui/TextField":"8MB4t","../../components/ui/Button":"coCjw","../../hooks/useForm":"3fhl3","../../services/ApartmentService":"35kqt","react":"fBCUg","../../context/DataContext":"kezn2","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"3fhl3":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7a77 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28768,6 +28264,936 @@ _s(useForm, "Y29oJGteCsBRaHqub1iJGgShZ98=");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"kezn2":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e439 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e439.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DataContext", ()=>DataContext
+);
+parcelHelpers.export(exports, "DataProvider", ()=>DataProvider
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const DataContext = /*#__PURE__*/ _react.createContext();
+const DataProvider = ({ children  })=>{
+    _s();
+    const [contextData, setContextData] = _react.useState({
+        loading: false
+    });
+    const changeContextData = (prop, value)=>{
+        setContextData({
+            ...contextData,
+            [prop]: value
+        });
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(DataContext.Provider, {
+        value: {
+            contextData,
+            changeContextData
+        },
+        children: children
+    }, void 0, false, {
+        fileName: "src/app/context/DataContext.js",
+        lineNumber: 15,
+        columnNumber: 9
+    }, undefined));
+};
+_s(DataProvider, "Wj3vw3o3Zw52KlkSG/pAURzjhTQ=");
+_c = DataProvider;
+var _c;
+$RefreshReg$(_c, "DataProvider");
+
+  $parcel$ReactRefreshHelpers$e439.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"M3rZX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bcb6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bcb6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Home", ()=>Home
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _apartmentService = require("../../services/ApartmentService");
+var _apartment = require("./components/Apartment");
+var _react = require("react");
+var _expensesService = require("../../services/ExpensesService");
+var _dataContext = require("../../context/DataContext");
+var _loadingScreen = require("../../components/ui/LoadingScreen");
+var _authService = require("../../services/AuthService");
+var _s = $RefreshSig$();
+const Home = ()=>{
+    _s();
+    const { contextData , changeContextData  } = _react.useContext(_dataContext.DataContext);
+    const [apartments, setApartments] = _react.useState([]);
+    _react.useEffect(()=>{
+        getApartments();
+    }, []);
+    const getApartments = ()=>{
+        changeContextData("loading", true);
+        _apartmentService.ApartmentService.getAll().then((data)=>{
+            setApartments(data);
+            changeContextData("loading", false);
+        });
+    };
+    const generateExpensesButtonHandler = ()=>{
+        _expensesService.ExpensesService.generateAllExpenses().then((expenses)=>{
+            console.log(expenses);
+        });
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row mb-3",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                            children: "Dptos"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/home/Home.js",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                            onClick: ()=>{
+                                _authService.AuthService.login("test", "test").then((res)=>console.log(res)
+                                );
+                            },
+                            children: "login"
+                        }, void 0, false, {
+                            fileName: "src/app/pages/home/Home.js",
+                            lineNumber: 37,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/home/Home.js",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/home/Home.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row mb-3",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                        onClick: generateExpensesButtonHandler,
+                        className: "btn btn-primary",
+                        children: "Generar expensas"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/home/Home.js",
+                        lineNumber: 42,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/Home.js",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/home/Home.js",
+                lineNumber: 40,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: apartments.map((apartment)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                        className: "col-3",
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_apartment.Apartment, {
+                            onChange: ()=>{
+                                getApartments();
+                            },
+                            apartment: apartment
+                        }, void 0, false, {
+                            fileName: "src/app/pages/home/Home.js",
+                            lineNumber: 48,
+                            columnNumber: 13
+                        }, undefined)
+                    }, apartment.id, false, {
+                        fileName: "src/app/pages/home/Home.js",
+                        lineNumber: 47,
+                        columnNumber: 11
+                    }, undefined)
+                )
+            }, void 0, false, {
+                fileName: "src/app/pages/home/Home.js",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/home/Home.js",
+        lineNumber: 33,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Home, "t6p53aH16VH0SO547Orzq8K2F/o=");
+_c = Home;
+var _c;
+$RefreshReg$(_c, "Home");
+
+  $parcel$ReactRefreshHelpers$bcb6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","../../services/ApartmentService":"35kqt","./components/Apartment":"bjPbu","react":"fBCUg","../../services/ExpensesService":"8o2ak","../../context/DataContext":"kezn2","../../components/ui/LoadingScreen":"TKOCp","../../services/AuthService":"6Y65h","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"bjPbu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a333 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a333.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Apartment", ()=>Apartment
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _expensesService = require("../../../services/ExpensesService");
+var _useDataContext = require("../../../hooks/useDataContext");
+var _s = $RefreshSig$();
+const Apartment = (props)=>{
+    _s();
+    const { apartment , onChange  } = props;
+    const { contextData , changeContextData  } = _useDataContext.useDataContext();
+    const [expenses1, setExpenses] = _react.useState([]);
+    const getUnpaidExpenses = ()=>{
+        _expensesService.ExpensesService.getUnpaidExpensesByApartment(apartment.id).then((data)=>{
+            setExpenses(data);
+        });
+    };
+    const payExpenses = (expenses)=>{
+        const expense = expenses[0];
+        if (expense) {
+            changeContextData("loading", true);
+            _expensesService.ExpensesService.payExpenses(expense.id).then((res)=>{
+                changeContextData("loading", false);
+                getUnpaidExpenses();
+                if (onChange) onChange();
+            });
+        }
+    };
+    const getCardClass = ()=>{
+        return `card card-primary mb-4 ${expenses1.length > 0 ? "bg-warning" : "bg-success"}`;
+    };
+    _react.useEffect(()=>{
+        getUnpaidExpenses();
+    }, []);
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        className: getCardClass(),
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "card-body",
+            children: [
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h4", {
+                    children: apartment.number
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                    children: apartment.owner
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 51,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                    children: [
+                        "Adeuda ",
+                        expenses1.length,
+                        " expensas"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 52,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    onClick: ()=>{
+                        payExpenses(expenses1);
+                    },
+                    className: "btn btn-primary",
+                    children: "Pagar expensas"
+                }, void 0, false, {
+                    fileName: "src/app/pages/home/components/Apartment.js",
+                    lineNumber: 53,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/app/pages/home/components/Apartment.js",
+            lineNumber: 49,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/app/pages/home/components/Apartment.js",
+        lineNumber: 48,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Apartment, "QJcJRdha2tUm7/pL7PkEeIA3TnI=", false, function() {
+    return [
+        _useDataContext.useDataContext
+    ];
+});
+_c = Apartment;
+var _c;
+$RefreshReg$(_c, "Apartment");
+
+  $parcel$ReactRefreshHelpers$a333.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../../services/ExpensesService":"8o2ak","../../../hooks/useDataContext":"jPvm6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"jPvm6":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6c57 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6c57.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useDataContext", ()=>useDataContext
+);
+var _react = require("react");
+var _dataContext = require("../context/DataContext");
+var _s = $RefreshSig$();
+const useDataContext = ()=>{
+    _s();
+    return _react.useContext(_dataContext.DataContext);
+};
+_s(useDataContext, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+
+  $parcel$ReactRefreshHelpers$6c57.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"fBCUg","../context/DataContext":"kezn2","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"TKOCp":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d119 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d119.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoadingScreen", ()=>LoadingScreen
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const LoadingScreen = ()=>{
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        className: "loading-container",
+        style: {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "white",
+            zIndex: 999,
+            opacity: 0.5
+        },
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "loading-spinner",
+            style: {
+                display: "flex",
+                width: "100%",
+                height: "100%",
+                alignContent: "center",
+                alignItems: "center",
+                justifyContent: "center"
+            },
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "spinner-border",
+                role: "status",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                    className: "visually-hidden",
+                    children: "Loading..."
+                }, void 0, false, {
+                    fileName: "src/app/components/ui/LoadingScreen.js",
+                    lineNumber: 21,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/components/ui/LoadingScreen.js",
+                lineNumber: 20,
+                columnNumber: 13
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/app/components/ui/LoadingScreen.js",
+            lineNumber: 12,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/app/components/ui/LoadingScreen.js",
+        lineNumber: 2,
+        columnNumber: 13
+    }, undefined));
+};
+_c = LoadingScreen;
+var _c;
+$RefreshReg$(_c, "LoadingScreen");
+
+  $parcel$ReactRefreshHelpers$d119.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"88Ksd":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$43b5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$43b5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Login", ()=>Login
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _textField = require("../../components/ui/TextField");
+var _button = require("../../components/ui/Button");
+var _reactRouterDom = require("react-router-dom");
+var _useAuth = require("../../hooks/useAuth");
+var _useForm = require("../../hooks/useForm");
+var _s = $RefreshSig$();
+const Login = (props)=>{
+    _s();
+    const navigate = _reactRouterDom.useNavigate();
+    const { login  } = _useAuth.useAuth();
+    const { form , getInput  } = _useForm.useForm({
+        username: "",
+        password: ""
+    });
+    const handleLogin = ()=>{
+        login(form.username, form.password).then(()=>{
+            navigate("/");
+        });
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        className: "container",
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                        children: "Login"
+                    }, void 0, false, {
+                        fileName: "src/app/pages/login/Login.js",
+                        lineNumber: 28,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/pages/login/Login.js",
+                    lineNumber: 27,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/login/Login.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "row",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Usuario"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/login/Login.js",
+                                    lineNumber: 34,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                    ...getInput("username")
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/login/Login.js",
+                                    lineNumber: 35,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/login/Login.js",
+                            lineNumber: 33,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
+                                    children: "Clave"
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/login/Login.js",
+                                    lineNumber: 39,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_textField.TextField, {
+                                    type: "password",
+                                    ...getInput("password")
+                                }, void 0, false, {
+                                    fileName: "src/app/pages/login/Login.js",
+                                    lineNumber: 40,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/pages/login/Login.js",
+                            lineNumber: 38,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "form-group",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_button.Button, {
+                                onClick: handleLogin,
+                                children: "Ingresar"
+                            }, void 0, false, {
+                                fileName: "src/app/pages/login/Login.js",
+                                lineNumber: 44,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/app/pages/login/Login.js",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/pages/login/Login.js",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/pages/login/Login.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/pages/login/Login.js",
+        lineNumber: 25,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Login, "fohgbJ8iM1X0IQDrm/osUynA5eA=", false, function() {
+    return [
+        _reactRouterDom.useNavigate,
+        _useAuth.useAuth,
+        _useForm.useForm
+    ];
+});
+_c = Login;
+var _c;
+$RefreshReg$(_c, "Login");
+
+  $parcel$ReactRefreshHelpers$43b5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","../../components/ui/TextField":"8MB4t","../../components/ui/Button":"coCjw","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../../hooks/useAuth":"gPzDg","../../hooks/useForm":"3fhl3"}],"gPzDg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ad35 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ad35.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAuth", ()=>useAuth
+);
+parcelHelpers.export(exports, "AuthProvider", ()=>AuthProvider
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _authService = require("../services/AuthService");
+var _s = $RefreshSig$(), _s1 = $RefreshSig$();
+const AuthContext = /*#__PURE__*/ _react.createContext();
+const useAuth = ()=>{
+    _s();
+    return _react.useContext(AuthContext);
+};
+_s(useAuth, "gDsCjeeItUuvgOWf1v4qoK9RF6k=");
+const AuthProvider = ({ children  })=>{
+    _s1();
+    const authenticated = !!_authService.AuthService.getCurrentUser();
+    const [isAuthenticated, setIsAuthenticated] = _react.useState(authenticated);
+    const login = (username, password)=>{
+        return new Promise((resolve, reject)=>{
+            _authService.AuthService.login(username, password).then(()=>{
+                setIsAuthenticated(true);
+                resolve();
+            }).catch((err)=>{
+                setIsAuthenticated(false);
+                reject(err);
+            });
+        });
+    };
+    const logout = ()=>{
+        _authService.AuthService.logout();
+        setIsAuthenticated(false);
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(AuthContext.Provider, {
+        value: {
+            isAuthenticated,
+            login,
+            logout
+        },
+        children: children
+    }, void 0, false, {
+        fileName: "src/app/hooks/useAuth.js",
+        lineNumber: 36,
+        columnNumber: 5
+    }, undefined));
+};
+_s1(AuthProvider, "4LDiX6v4pbd6i8s8XQaMyAcNXPA=");
+_c = AuthProvider;
+var _c;
+$RefreshReg$(_c, "AuthProvider");
+
+  $parcel$ReactRefreshHelpers$ad35.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react":"fBCUg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../services/AuthService":"6Y65h"}],"8NkAr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e55b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e55b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Layout", ()=>Layout
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _navbar = require("./Navbar");
+var _loadingScreen = require("./ui/LoadingScreen");
+var _react = require("react");
+var _dataContext = require("../context/DataContext");
+var _s = $RefreshSig$();
+const Layout = ()=>{
+    _s();
+    const { contextData  } = _react.useContext(_dataContext.DataContext);
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        children: [
+            contextData && contextData.loading === true && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loadingScreen.LoadingScreen, {
+            }, void 0, false, {
+                fileName: "src/app/components/Layout.js",
+                lineNumber: 11,
+                columnNumber: 55
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.Navbar, {
+            }, void 0, false, {
+                fileName: "src/app/components/Layout.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                className: "container",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Outlet, {
+                }, void 0, false, {
+                    fileName: "src/app/components/Layout.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/app/components/Layout.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app/components/Layout.js",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Layout, "QYsZ8FY46aQF6yP1EjDl5D3zRqY=");
+_c = Layout;
+var _c;
+$RefreshReg$(_c, "Layout");
+
+  $parcel$ReactRefreshHelpers$e55b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","./Navbar":"1i1Nz","./ui/LoadingScreen":"TKOCp","react":"fBCUg","../context/DataContext":"kezn2","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"1i1Nz":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4da9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4da9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navbar", ()=>Navbar
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _useAuth = require("../hooks/useAuth");
+var _s = $RefreshSig$();
+const Navbar = ()=>{
+    _s();
+    const { logout  } = _useAuth.useAuth();
+    const handleLogout = ()=>{
+        logout();
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("nav", {
+        className: "navbar navbar-expand-lg navbar-light bg-light",
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "container",
+            children: [
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
+                    className: "navbar-brand",
+                    href: "#",
+                    children: "Navbar"
+                }, void 0, false, {
+                    fileName: "src/app/components/Navbar.js",
+                    lineNumber: 15,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
+                    className: "navbar-toggler",
+                    type: "button",
+                    "data-bs-toggle": "collapse",
+                    "data-bs-target": "#navbarSupportedContent",
+                    "aria-controls": "navbarSupportedContent",
+                    "aria-expanded": "false",
+                    "aria-label": "Toggle navigation",
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
+                        className: "navbar-toggler-icon"
+                    }, void 0, false, {
+                        fileName: "src/app/components/Navbar.js",
+                        lineNumber: 17,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/app/components/Navbar.js",
+                    lineNumber: 16,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "collapse navbar-collapse",
+                    id: "navbarSupportedContent",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                            className: "navbar-nav me-auto mb-2 mb-lg-0",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                    className: "nav-item",
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        className: "nav-link",
+                                        to: "/",
+                                        children: "Inicio"
+                                    }, void 0, false, {
+                                        fileName: "src/app/components/Navbar.js",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 21,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                    className: "nav-item",
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        className: "nav-link",
+                                        to: "/transactions",
+                                        children: "Transacciones"
+                                    }, void 0, false, {
+                                        fileName: "src/app/components/Navbar.js",
+                                        lineNumber: 25,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 24,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                    className: "nav-item",
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        className: "nav-link",
+                                        to: "/expenses",
+                                        children: "Expensas"
+                                    }, void 0, false, {
+                                        fileName: "src/app/components/Navbar.js",
+                                        lineNumber: 28,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 27,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                    className: "nav-item",
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        className: "nav-link",
+                                        to: "/reports/expenses/generic",
+                                        children: "Report"
+                                    }, void 0, false, {
+                                        fileName: "src/app/components/Navbar.js",
+                                        lineNumber: 31,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 30,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                    className: "nav-item",
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        className: "nav-link",
+                                        to: "/apartments/new",
+                                        children: "Nuevo departamento"
+                                    }, void 0, false, {
+                                        fileName: "src/app/components/Navbar.js",
+                                        lineNumber: 34,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 33,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/app/components/Navbar.js",
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                            className: "navbar-nav ms-auto mb-2 mb-lg-0",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                                className: "nav-item",
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
+                                    className: "nav-link",
+                                    href: "#",
+                                    onClick: handleLogout,
+                                    children: "Cerrar sesi\xf3n"
+                                }, void 0, false, {
+                                    fileName: "src/app/components/Navbar.js",
+                                    lineNumber: 39,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/app/components/Navbar.js",
+                                lineNumber: 38,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/app/components/Navbar.js",
+                            lineNumber: 37,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app/components/Navbar.js",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/app/components/Navbar.js",
+            lineNumber: 14,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/app/components/Navbar.js",
+        lineNumber: 13,
+        columnNumber: 5
+    }, undefined));
+};
+_s(Navbar, "JN45pPWTCN0QEZFRvGkjOxroHA0=", false, function() {
+    return [
+        _useAuth.useAuth
+    ];
+});
+_c = Navbar;
+var _c;
+$RefreshReg$(_c, "Navbar");
+
+  $parcel$ReactRefreshHelpers$4da9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU","../hooks/useAuth":"gPzDg"}],"lmj8T":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7088 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7088.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProtectedRoute", ()=>ProtectedRoute
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _useAuth = require("../hooks/useAuth");
+var _s = $RefreshSig$();
+const ProtectedRoute = ({ children  })=>{
+    _s();
+    const { isAuthenticated  } = _useAuth.useAuth();
+    if (!isAuthenticated) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Navigate, {
+        to: "/login"
+    }, void 0, false, {
+        fileName: "src/app/components/ProtectedRoute.js",
+        lineNumber: 7,
+        columnNumber: 12
+    }, undefined));
+    return children;
+};
+_s(ProtectedRoute, "1LGxUrjNz4q7iKM/2JDC9lJQ3xY=", false, function() {
+    return [
+        _useAuth.useAuth
+    ];
+});
+_c = ProtectedRoute;
+var _c;
+$RefreshReg$(_c, "ProtectedRoute");
+
+  $parcel$ReactRefreshHelpers$7088.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","../hooks/useAuth":"gPzDg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

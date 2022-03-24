@@ -8,7 +8,7 @@ export const Layout = () => {
   const { contextData } = useContext(DataContext);
   return (
     <div>
-      {contextData.loading === true && <LoadingScreen ></LoadingScreen>}
+      {contextData && contextData.loading === true && <LoadingScreen ></LoadingScreen>}
       <Navbar></Navbar>
       <div className="container">
         <Outlet></Outlet>

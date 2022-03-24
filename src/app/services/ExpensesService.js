@@ -1,4 +1,4 @@
-import axios from "axios";
+import { ApiClient } from "./ApiClient";
 
 export class ExpensesService {
 
@@ -8,7 +8,7 @@ export class ExpensesService {
     const month = today.getMonth() + 1;
     const buildingId = 1;
 
-    const response = await axios.post("/api/expenses/generate/all", {
+    const response = await ApiClient.post("/api/expenses/generate/all", {
       buildingId: buildingId,
       year: year,
       month: month
@@ -18,25 +18,25 @@ export class ExpensesService {
   }
 
   static async getUnpaidExpensesByApartment(apartmentId) {
-    const response = await axios.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
+    const response = await ApiClient.get(`/api/apartments/${apartmentId}/expenses/unpaid`);
     return response.data;
   }
 
   static async payExpenses(expenseId) {
     console.log("EL IDE", expenseId)
-    const response = await axios.post(`/api/expenses/pay`, {
+    const response = await ApiClient.post(`/api/expenses/pay`, {
       expenseId: expenseId
     });
     return response.data;
   }
 
   static async getAll() {
-    const response = await axios.get(`/api/expenses`);
+    const response = await ApiClient.get(`/api/expenses`);
     return response.data;
   }
 
   static async generateGenericExpense(expense) {
-    const response = await axios.post("/api/expenses/generate/generic", expense);
+    const response = await ApiClient.post("/api/expenses/generate/generic", expense);
     return response.data;
   }
 

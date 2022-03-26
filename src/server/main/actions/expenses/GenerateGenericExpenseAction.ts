@@ -23,7 +23,6 @@ export class GenerateGenericExpenseAction {
         }
 
         const apartment = await this.apartmentRepository.getById(data.apartmentId);
-        console.log("EL APARTMENT", apartment);
 
         if (apartment === undefined) {
             throw new Error("Invalid apartment");
@@ -39,8 +38,6 @@ export class GenerateGenericExpenseAction {
             detail: data.detail,
             createdDate: new Date()
         });
-
-        console.log("LA CREADA", expense);
 
         return expense;
     }

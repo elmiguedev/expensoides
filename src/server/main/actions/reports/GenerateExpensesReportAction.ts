@@ -63,11 +63,7 @@ export class GenerateExpensesReportAction {
             detail: expense.detail
         }
 
-        console.log("LA PREPORT DATA", reportData);
-
         const filePath = await this.reportService.generateExpenseReport(reportData);
-
-        console.log("EL FILE PATH");
 
         return filePath;
     }

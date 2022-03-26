@@ -7,6 +7,7 @@ import { GenerateExpensesAction } from "../../../main/actions/expenses/GenerateE
 import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
 import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 import { ExpenseRepository } from "../../../main/domain/expenses/ExpenseRepository";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 
 describe("Pay expenses actions", () => {
 
@@ -75,10 +76,12 @@ describe("Pay expenses actions", () => {
 })
 
 const getExpenseRepository = () => {
+    InMemoryDb.getInstance().expenses = [];
     return new InMemoryExpenseRepository();
 }
 
 const getTransactionRepository = () => {
+    InMemoryDb.getInstance().transactions = [];
     return new InMemoryTransactionRepository();
 }
 
@@ -87,6 +90,7 @@ const getBuildingRepository = () => {
 }
 
 const getApartmentRepository = () => {
+    InMemoryDb.getInstance().apartments = [];
     const repository = new InMemoryApartmentRepository();
     repository.add({
         buildingId: 1,

@@ -1,6 +1,7 @@
 import { AddEarningAction } from "../../../main/actions/transactions/AddEarningAction";
 import { AddPaymentAction } from "../../../main/actions/transactions/AddPaymentAction";
 import { GetBalanceAction } from "../../../main/actions/transactions/GetBalanceAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Get balance action", () => {
@@ -31,5 +32,6 @@ describe("Get balance action", () => {
 })
 
 const getTransactionRepository = () => {
+    InMemoryDb.getInstance().transactions = [];
     return new InMemoryTransactionRepository();
 }

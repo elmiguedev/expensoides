@@ -1,4 +1,5 @@
 import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
 import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 
@@ -73,6 +74,7 @@ const getBuildingRepository = () => {
 }
 
 const getApartmentRepository = () => {
+    InMemoryDb.getInstance().apartments = [];
     return new InMemoryApartmentRepository();
 }
 

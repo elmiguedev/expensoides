@@ -1,21 +1,16 @@
 import { Expense } from "../../../domain/expenses/Expense";
 import { ExpenseRepository } from "../../../domain/expenses/ExpenseRepository";
+import { InMemoryDb } from "../../db/InMemoryDb";
 
 export class InMemoryExpenseRepository implements ExpenseRepository {
 
-  private expenses: Expense[];
-
-  constructor() {
-    this.expenses = [];
-  }
-
   public getByPeriod(month: number, year: number): Promise<Expense[]> {
-    const result = this.expenses.filter(expense => expense.year === year && expense.month === month);
+    const result = InMemoryDb.getInstance().expenses.filter(expense => expense.year === year && expense.month === month);
     return Promise.resolve(result);
   }
 
   public getAll(): Promise<Expense[]> {
-    return Promise.resolve(this.expenses);
+    return Promise.resolve(InMemoryDb.getInstance().expenses);
   }
 
   async markAsPaid(id: number, transactionId: number): Promise<Expense> {
@@ -27,15 +22,17 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
   }
 
   getById(id: number): Promise<Expense> {
-    return Promise.resolve(this.expenses.find(exp => exp.id === id));
+    const expense = InMemoryDb.getInstance().expenses.find(exp => exp.id === id);
+    expense.apartment = InMemoryDb.getInstance().apartments.find(a => a.id == expense.apartmentId);
+    return Promise.resolve(expense);
   }
 
   getUnpaidByApartment(apartmentId: number): Promise<Expense[]> {
-    return Promise.resolve(this.expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false));
+    return Promise.resolve(InMemoryDb.getInstance().expenses.filter(exp => exp.apartmentId === apartmentId && exp.paid === false));
   }
 
   getExpense(apartmentId: number, year: number, month: number): Promise<Expense> {
-    return Promise.resolve(this.expenses.find(e =>
+    return Promise.resolve(InMemoryDb.getInstance().expenses.find(e =>
       e.apartmentId === apartmentId &&
       e.year === year &&
       e.month === month
@@ -44,8 +41,8 @@ export class InMemoryExpenseRepository implements ExpenseRepository {
 
   add(expense: Expense): Promise<Expense> {
     expense.createdDate = new Date();
-    expense.id = this.expenses.length;
-    this.expenses.push(expense);
+    expense.id = InMemoryDb.getInstance().expenses.length;
+    InMemoryDb.getInstance().expenses.push(expense);
     return Promise.resolve(expense);
   }
 

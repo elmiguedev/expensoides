@@ -17,7 +17,6 @@ export class GenerateGenericExpenseReportAction {
   }
 
   public async execute(data: ActionData): Promise<string> {
-    console.log("LA DATA", data)
     const reportData: ExpenseReportData = {
       expenseId: String(data.expenseId).padStart(8, '0'),
       building: data.building,

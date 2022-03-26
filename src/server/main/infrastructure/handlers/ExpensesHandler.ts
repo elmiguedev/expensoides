@@ -41,7 +41,6 @@ export class ExpensesHandler {
     }
 
     public async generateAllExpenses(req: Request, res: Response) {
-        console.log("SE EJECUTA LA TODAS")
         const expenseData = req.body;
         try {
             const expenses = await this.generateAllExpensesAction.execute(expenseData);
@@ -63,12 +62,10 @@ export class ExpensesHandler {
 
     public async payExpenses(req: Request, res: Response) {
         const expenseId = +req.body.expenseId;
-        console.log("EL ID QUE LLEGA", expenseId);
         try {
             const expense = await this.payExpensesAction.execute({ id: expenseId });
             res.status(200).json(expense);
         } catch (error: any) {
-            console.log("EL ERROR", error)
             res.status(400).send(error.message);
         }
     }
@@ -84,7 +81,6 @@ export class ExpensesHandler {
 
     public async generateGenericExpense(req: Request, res: Response) {
         try {
-            console.log("SE EJECUTA LA GENERIC")
             const data = req.body;
             const expenses = await this.generateGenericExpenseAction.execute(data);
             res.status(200).json(expenses);

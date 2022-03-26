@@ -1,5 +1,6 @@
 import { GetUnpaidExpensesAction } from "../../../main/actions/expenses/GetUnpaidExpensesAction";
 import { Expense } from "../../../main/domain/expenses/Expense";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository"
 
 describe("Get unpaid expenses action", () => {
@@ -46,5 +47,6 @@ describe("Get unpaid expenses action", () => {
 })
 
 const getExpenseRepository = () => {
+    InMemoryDb.getInstance().expenses = [];
     return new InMemoryExpenseRepository();
 }

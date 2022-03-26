@@ -1,4 +1,5 @@
 import { GetAllExpensesAction } from "../../../main/actions/expenses/GetAllExpensesAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository"
 
 describe("Get all expenses action", () => {
@@ -25,5 +26,6 @@ describe("Get all expenses action", () => {
 })
 
 const getExpenseRepository = () => {
+    InMemoryDb.getInstance().expenses = [];
     return new InMemoryExpenseRepository();
 }

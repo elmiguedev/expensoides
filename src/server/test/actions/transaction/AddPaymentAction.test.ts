@@ -1,4 +1,5 @@
 import { AddPaymentAction } from "../../../main/actions/transactions/AddPaymentAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Add payment action", () => {
@@ -20,5 +21,6 @@ describe("Add payment action", () => {
 })
 
 const getTransactionRepository = () => {
+    InMemoryDb.getInstance().transactions = [];
     return new InMemoryTransactionRepository();
 }

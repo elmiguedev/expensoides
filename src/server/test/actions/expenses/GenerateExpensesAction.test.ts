@@ -3,6 +3,7 @@ import { GenerateExpensesAction } from "../../../main/actions/expenses/GenerateE
 import { AddApartmentAction } from "../../../main/actions/apartments/AddApartmentAction";
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
 import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 
 describe("GenerateExpenses Action", () => {
   test("should generate new expense entity", async () => {
@@ -107,10 +108,12 @@ describe("GenerateExpenses Action", () => {
 })
 
 const getApartmentRepository = () => {
+  InMemoryDb.getInstance().apartments = [];
   return new InMemoryApartmentRepository();
 }
 
 const getExpensesRepository = () => {
+  InMemoryDb.getInstance().expenses = [];
   return new InMemoryExpenseRepository();
 }
 

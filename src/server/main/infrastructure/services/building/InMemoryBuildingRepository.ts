@@ -1,12 +1,10 @@
 import { Building } from "../../../domain/building/Building";
 import { BuildingRepository } from "../../../domain/building/BuildingRepository";
+import { InMemoryDb } from "../../db/InMemoryDb";
 
 export class InMemoryBuildingRepository implements BuildingRepository {
-  private buildings: Building[];
-
   constructor() {
-    this.buildings = [];
-    this.buildings.push({
+    InMemoryDb.getInstance().buildings.push({
       id: 1,
       name: "Torre Test",
       address: "Av. Siempre viva 123",
@@ -21,7 +19,7 @@ export class InMemoryBuildingRepository implements BuildingRepository {
   }
 
   getById(id: number): Promise<Building> {
-    const building = this.buildings.find(b => b.id === id);
+    const building = InMemoryDb.getInstance().buildings.find(b => b.id === id);
     return Promise.resolve(building);
   }
 

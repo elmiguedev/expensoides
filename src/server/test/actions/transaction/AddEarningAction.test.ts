@@ -1,4 +1,5 @@
 import { AddEarningAction } from "../../../main/actions/transactions/AddEarningAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryTransactionRepository } from "../../../main/infrastructure/services/transactions/InMemoryTransactionRepository";
 
 describe("Add earning task", () => {
@@ -20,5 +21,6 @@ describe("Add earning task", () => {
 })
 
 const getTransactionRepository = () => {
+    InMemoryDb.getInstance().transactions = [];
     return new InMemoryTransactionRepository();
 }

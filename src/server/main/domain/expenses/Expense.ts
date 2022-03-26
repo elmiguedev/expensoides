@@ -3,7 +3,7 @@ import { ExpenseDetail } from "./ExpenseDetail";
 
 export interface Expense {
   id?: number;
-  createdDate: Date;
+  createdDate?: Date;
   year: number;
   month: number;
   description: string;

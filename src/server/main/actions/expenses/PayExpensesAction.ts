@@ -28,7 +28,6 @@ export class PayExpensesAction {
             buildingId: expense.apartment.buildingId
         });
 
-        console.log("LA TRANS", transaction)
         const paidExpense = await this.expenseRepository.markAsPaid(expense.id, transaction.id);
         return paidExpense;
     }

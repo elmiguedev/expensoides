@@ -4,6 +4,7 @@ import { InMemoryApartmentRepository } from "../../../main/infrastructure/servic
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
 import { InMemoryBuildingRepository } from "../../../main/infrastructure/services/building/InMemoryBuildingRepository";
 import { GenerateExpensesAction } from "../../../main/actions/expenses/GenerateExpensesAction";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 
 describe("Generate All expenses action", () => {
 
@@ -61,6 +62,7 @@ describe("Generate All expenses action", () => {
 })
 
 const getApartmentRepository = async () => {
+    InMemoryDb.getInstance().apartments = [];
     const repository = new InMemoryApartmentRepository();
     await repository.add({
         buildingId: 1,
@@ -84,6 +86,7 @@ const getApartmentRepository = async () => {
 }
 
 const getExpensesRepository = () => {
+    InMemoryDb.getInstance().expenses = [];
     return new InMemoryExpenseRepository();
 }
 

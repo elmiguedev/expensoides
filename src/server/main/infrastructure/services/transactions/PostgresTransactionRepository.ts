@@ -10,7 +10,6 @@ export class PostgresTransactionRepository implements TransactionRepository {
         try {
             const repository = this.getTransactionRepository();
             transaction.buildingId = 1;
-            console.log("LA TRANS 2", transaction)
             return repository.save(transaction);
         } catch (error) {
             throw new Error(error);

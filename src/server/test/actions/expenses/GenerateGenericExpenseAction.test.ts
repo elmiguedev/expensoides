@@ -1,5 +1,6 @@
 import { GenerateGenericExpenseAction } from "../../../main/actions/expenses/GenerateGenericExpenseAction";
 import { Expense } from "../../../main/domain/expenses/Expense";
+import { InMemoryDb } from "../../../main/infrastructure/db/InMemoryDb";
 import { InMemoryApartmentRepository } from "../../../main/infrastructure/services/apartments/InMemoryApartmentRepository";
 import { InMemoryExpenseRepository } from "../../../main/infrastructure/services/expenses/InMemoryExpenseRepository";
 
@@ -82,10 +83,12 @@ describe("generate generic expense action", () => {
 });
 
 const getExpenseRepository = () => {
+    InMemoryDb.getInstance().expenses = [];
     return new InMemoryExpenseRepository();
 }
 
 const getApartmentRepository = async () => {
+    InMemoryDb.getInstance().apartments = [];
     const repository = new InMemoryApartmentRepository();
     await repository.add({
         buildingId: 1,

@@ -69,88 +69,19 @@ const getExpenseRepository = async () => {
     const repository = new InMemoryExpenseRepository();
     await repository.add({
         apartmentId: 0,
-        description: "Expensas ordinarias Marzo 2022",
+        description: "Expensas ordinarias Febrero 2022",
         detail: [
             {
                 description: "Expensas ordinarias",
                 mount: 2000
             }
         ],
-        month: 3,
+        month: 2,
         paid: true,
         transactionId: 0,
         year: 2022,
-        paymentDate: new Date()
-    })
-    await repository.add({
-        apartmentId: 1,
-        description: "Expensas ordinarias Marzo 2022",
-        detail: [
-            {
-                description: "Expensas ordinarias",
-                mount: 2000
-            }
-        ],
-        month: 3,
-        paid: true,
-        transactionId: 1,
-        year: 2022,
-        paymentDate: new Date()
-    })
-    await repository.add({
-        apartmentId: 2,
-        description: "Expensas ordinarias Marzo 2022",
-        detail: [
-            {
-                description: "Expensas ordinarias",
-                mount: 2000
-            }
-        ],
-        month: 3,
-        paid: true,
-        transactionId: 2,
-        year: 2022,
-        paymentDate: new Date()
-    })
-    await repository.add({
-        apartmentId: 0,
-        description: "Expensas ordinarias Abril 2022",
-        detail: [
-            {
-                description: "Expensas ordinarias",
-                mount: 2000
-            }
-        ],
-        month: 4,
-        paid: false,
-        year: 2022
-    })
-    await repository.add({
-        apartmentId: 1,
-        description: "Expensas ordinarias Abril 2022",
-        detail: [
-            {
-                description: "Expensas ordinarias",
-                mount: 2000
-            }
-        ],
-        month: 4,
-        paid: false,
-        year: 2022
-    })
-    await repository.add({
-        apartmentId: 2,
-        description: "Expensas ordinarias Abril 2022",
-        detail: [
-            {
-                description: "Expensas ordinarias",
-                mount: 2000
-            }
-        ],
-        month: 4,
-        paid: false,
-        year: 2022
-    })
+        paymentDate: new Date('2022-02-22 10:00:00')
+    });
 
     return repository;
 
@@ -159,34 +90,9 @@ const getExpenseRepository = async () => {
 const getTransactionRepository = async () => {
     const repository = new InMemoryTransactionRepository();
     await repository.add({
-        date: new Date(),
+        date: new Date('2022-02-22 10:00:00'),
         description: "Expensas ordinarias Marzo 2022",
         mount: 2000,
-    })
-    await repository.add({
-        date: new Date(),
-        description: "Expensas ordinarias Marzo 2022",
-        mount: 2000,
-    })
-    await repository.add({
-        date: new Date(),
-        description: "Expensas ordinarias Marzo 2022",
-        mount: 2000,
-    })
-    await repository.add({
-        date: new Date(),
-        description: "EPEC",
-        mount: -730,
-    })
-    await repository.add({
-        date: new Date(),
-        description: "Servicio de Limpieza",
-        mount: -5000,
-    })
-    await repository.add({
-        date: new Date('2022-02-22'),
-        description: "Saldo ingreso",
-        mount: 7300,
     })
 
     return repository;

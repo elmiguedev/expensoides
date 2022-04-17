@@ -3,4 +3,5 @@ export interface User {
   username: string;
   password: string;
   createdDate?: Date;
+  reset?: boolean;
 }

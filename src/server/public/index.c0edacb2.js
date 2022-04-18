@@ -620,10 +620,10 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"ixXXP":[function(require,module,exports) {
+},{}],"353sK":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
-var HMR_PORT = 43917;
+var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "0398b3edc0edacb2";
@@ -26583,8 +26583,8 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 class AuthService {
     static login(username, password) {
-        return _axiosDefault.default.post("http://localhost:3000/api/login", {
-            email: username,
+        return _axiosDefault.default.post("/api/login", {
+            username: username,
             password: password
         }).then((response)=>{
             if (response.data.token) localStorage.setItem("user", JSON.stringify(response.data));
@@ -29194,6 +29194,6 @@ $RefreshReg$(_c, "ProtectedRoute");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","../hooks/useAuth":"gPzDg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","ixXXP","1l7bB"], "1l7bB", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"kxFO6","react-router-dom":"klkWS","../hooks/useAuth":"gPzDg","@parcel/transformer-js/src/esmodule-helpers.js":"7L7TQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"gRhKU"}],"aebrL":[function() {},{}]},["ajxKu","353sK","1l7bB"], "1l7bB", "parcelRequire94c2")
 
 //# sourceMappingURL=index.c0edacb2.js.map

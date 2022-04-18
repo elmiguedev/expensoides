@@ -17,7 +17,7 @@ describe("LoginUserAction should", () => {
     expect(user).not.toBeUndefined();
   })
 
-  test("throw an error if password is invalid", async () => {
+  test("throw an error if password is invalid and reset is false", async () => {
     const userRepository = await getUserRepository();
     const action = new LoginUserAction(userRepository);
 

@@ -5,20 +5,21 @@ import PassportJWT from "passport-jwt";
 const LocalStrategy = PassportLocal.Strategy;
 const JWTStrategy = PassportJWT.Strategy;
 
-const users = [{ id: 1, email: "test", password: "test" }];
+const users = [{ id: 1, username: "test", password: "test" }];
 
 export const PassportMiddleware = () => {
 
   passport.use("local", new LocalStrategy({
-    usernameField: 'email',
+    usernameField: 'username',
     passwordField: 'password'
   },
-    (email, password, cb) => {
+    (username, password, cb) => {
       //this one is typically a DB call. Assume that the returned user object is pre-formatted and ready for storing in JWT
       try {
-        const user = users.find(u => u.email == email && u.password == password);
+        console.log("test");
+        const user = users.find(u => u.username == username && u.password == password);
         if (!user) {
-          return cb(null, false, { message: 'Incorrect email or password.' });
+          return cb(null, false, { message: 'Incorrect username or password.' });
         }
         return cb(null, user, { message: 'Logged In Successfully' });
       } catch (error) {

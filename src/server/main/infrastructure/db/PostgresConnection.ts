@@ -3,6 +3,7 @@ import { ApartmentDao } from "../services/apartments/PostgresApartmentRepository
 import { BuildingDao, ExpenseDetailDao } from "../services/building/PostgresBuildingRepository";
 import { ExpenseDao } from "../services/expenses/PostgresExpenseRepository";
 import { TransactionDao } from "../services/transactions/PostgresTransactionRepository";
+import { UserDao } from "../services/users/PostgresUserRepository";
 
 export class PostgresConnection {
     public async connect() {
@@ -20,9 +21,10 @@ export class PostgresConnection {
                 ApartmentDao,
                 ExpenseDao,
                 TransactionDao,
+                UserDao
             ],
             logging: false,
-            synchronize: false,
+            synchronize: true,
         });
     }
 }

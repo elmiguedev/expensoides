@@ -119,7 +119,10 @@ const reportHandler = new ReportHandler(
     generateGenericExpenseReportAction,
     generateMonthReportAction,
 )
-app.use("/api/login", new AuthHandler().login)
+
+const authHandler = new AuthHandler();
+
+app.post("/api/login", authHandler.login.bind(authHandler));
 
 app.get("/api/apartments", auth, apartmentHandler.getAll.bind(apartmentHandler));
 app.post("/api/apartments", apartmentHandler.add.bind(apartmentHandler));

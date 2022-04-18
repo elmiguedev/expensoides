@@ -4,8 +4,8 @@ export class AuthService {
 
   static login(username, password) {
     return axios
-      .post("http://localhost:3000/api/login", {
-        email: username,
+      .post("/api/login", {
+        username: username,
         password: password
       })
       .then(response => {

@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 export class AuthHandler {
 
   public async login(req: Request, res: Response, next: NextFunction) {
+    console.log("entra")
     return passport.authenticate("local", { session: false }, (err, user, info) => {
       if (err || !user) {
         return res.status(400).json({

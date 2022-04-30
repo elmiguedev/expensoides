@@ -15,11 +15,13 @@ export const AuthProvider = ({ children }) => {
     return new Promise((resolve, reject) => {
       AuthService.login(username, password).then(
         () => {
+          console.log("pasa ok")
           setIsAuthenticated(true);
           resolve();
         }
       ).catch(
         (err) => {
+          console.log("pasa mal")
           setIsAuthenticated(false);
           reject(err);
         }

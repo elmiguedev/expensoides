@@ -3,7 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import passport from "passport";
 import { PassportMiddleware } from "./middleware/PassportMiddleware";
-
+import { AddPaymentAction } from "../actions/transactions/AddPaymentAction";
 import { AddApartmentAction } from "../actions/apartments/AddApartmentAction";
 import { ListApartmentsAction } from "../actions/apartments/ListApartmentsAction";
 import { GenerateAllExpensesAction } from "../actions/expenses/GenerateAllExpensesAction";
@@ -16,7 +16,6 @@ import { GenerateExpensesReportAction } from "../actions/reports/GenerateExpense
 import { GenerateGenericExpenseReportAction } from "../actions/reports/GenerateGenericExpenseReport";
 import { GenerateMonthReportAction } from "../actions/reports/GenerateMonthReportAction";
 import { AddEarningAction } from "../actions/transactions/AddEarningAction";
-import { AddPaymentAction } from "../actions/transactions/AddPaymentAction";
 import { GetBalanceAction } from "../actions/transactions/GetBalanceAction";
 import { GetTransactionsAction } from "../actions/transactions/GetTransactionsAction";
 import { PostgresConnection } from "./db/PostgresConnection";
@@ -30,13 +29,18 @@ import { PostgresExpenseRepository } from "./services/expenses/PostgresExpenseRe
 import { PostgresBuildingRepository } from "./services/building/PostgresBuildingRepository";
 import { PdfReportService } from "./services/reports/PdfReportService";
 import { AuthHandler } from "./handlers/AuthHandler";
+import { LoginUserAction } from "../actions/users/LoginUserAction";
+import { PostgresUserRepository } from "./services/users/PostgresUserRepository";
 
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const auth = PassportMiddleware();
+
+const userRepository = new PostgresUserRepository();
+const loginUserAction = new LoginUserAction(userRepository)
+const auth = PassportMiddleware(loginUserAction);
 
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "../../public")));
@@ -54,9 +58,9 @@ const expensesRepository = new PostgresExpenseRepository();
 const buildingRepository = new PostgresBuildingRepository();
 const reportService = new PdfReportService();
 
+const addPaymentAction = new AddPaymentAction(transactionRepository)
 const addApartmentAction = new AddApartmentAction(apartmentRepository);
 const listApartmentsAction = new ListApartmentsAction(apartmentRepository);
-const addPaymentAction = new AddPaymentAction(transactionRepository);
 const addEarningAction = new AddEarningAction(transactionRepository);
 const getBalanceAction = new GetBalanceAction(transactionRepository);
 const getTransactionsAction = new GetTransactionsAction(transactionRepository);

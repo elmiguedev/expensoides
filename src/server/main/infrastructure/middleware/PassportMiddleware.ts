@@ -1,23 +1,20 @@
 import passport from "passport";
 import PassportLocal from "passport-local"
 import PassportJWT from "passport-jwt";
+import { LoginUserAction } from "../../actions/users/LoginUserAction";
 
 const LocalStrategy = PassportLocal.Strategy;
 const JWTStrategy = PassportJWT.Strategy;
 
-const users = [{ id: 1, username: "test", password: "test" }];
-
-export const PassportMiddleware = () => {
+export const PassportMiddleware = (loginUserAction: LoginUserAction) => {
 
   passport.use("local", new LocalStrategy({
     usernameField: 'username',
     passwordField: 'password'
   },
-    (username, password, cb) => {
-      //this one is typically a DB call. Assume that the returned user object is pre-formatted and ready for storing in JWT
+    async (username, password, cb) => {
       try {
-        console.log("test");
-        const user = users.find(u => u.username == username && u.password == password);
+        const user = await loginUserAction.execute({ username, password });
         if (!user) {
           return cb(null, false, { message: 'Incorrect username or password.' });
         }
@@ -34,11 +31,7 @@ export const PassportMiddleware = () => {
   },
     (jwtPayload, cb) => {
       try {
-        const user = users.find(u => u.id == jwtPayload.id);
-        if (!user) {
-          return cb(null, user);
-        }
-        return cb(null, user);
+        return cb(null, jwtPayload);
       } catch (err) {
         return cb(err);
       }

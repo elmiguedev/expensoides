@@ -28849,9 +28849,11 @@ const AuthProvider = ({ children  })=>{
     const login = (username, password)=>{
         return new Promise((resolve, reject)=>{
             _authService.AuthService.login(username, password).then(()=>{
+                console.log("pasa ok");
                 setIsAuthenticated(true);
                 resolve();
             }).catch((err)=>{
+                console.log("pasa mal");
                 setIsAuthenticated(false);
                 reject(err);
             });
@@ -28870,7 +28872,7 @@ const AuthProvider = ({ children  })=>{
         children: children
     }, void 0, false, {
         fileName: "src/app/hooks/useAuth.js",
-        lineNumber: 36,
+        lineNumber: 38,
         columnNumber: 5
     }, undefined));
 };

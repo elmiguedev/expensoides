@@ -5,6 +5,10 @@ import bcrypt from "bcrypt";
 
 export class InMemoryUserRepository implements UserRepository {
 
+  public async getAll(): Promise<User[]> {
+    return InMemoryDb.getInstance().users;
+  }
+
   public add(user: User): Promise<User> {
     user.id = InMemoryDb.getInstance().users.length + 1;
     user.createdDate = new Date();

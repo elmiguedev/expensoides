@@ -12,16 +12,26 @@ export const PassportMiddleware = (loginUserAction: LoginUserAction) => {
     usernameField: 'username',
     passwordField: 'password'
   },
-    async (username, password, cb) => {
-      try {
-        const user = await loginUserAction.execute({ username, password });
-        if (!user) {
-          return cb(null, false, { message: 'Incorrect username or password.' });
+    (username, password, cb) => {
+      console.log("entra aca", username, password)
+
+      loginUserAction.execute({ username, password }).then(
+        (user) => {
+          console.log("PASO AL MIDDLEWARE ", user);
+          if (!user) {
+            console.log("pero el user tuvo algo mal, ", user)
+            return cb(null, false, { message: 'Incorrect username or password.' });
+          }
+          return cb(null, { ...user }, { message: 'Logged In Successfully' });
         }
-        return cb(null, user, { message: 'Logged In Successfully' });
-      } catch (error) {
-        err => cb(err)
-      }
+      ).catch(
+        err => {
+          console.log("hubo un error", err)
+          return cb(null, false, { message: 'Incorrect username or password.' });
+
+        }
+      );
+
 
     }
   ));

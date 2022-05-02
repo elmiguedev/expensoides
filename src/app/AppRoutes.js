@@ -10,6 +10,7 @@ import { Layout } from "./components/Layout";
 import { AuthService } from "./services/AuthService";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AuthProvider } from "./hooks/useAuth";
+import { Users } from "./pages/users/Users";
 
 export const AppRoutes = () => {
   return (
@@ -23,6 +24,7 @@ export const AppRoutes = () => {
           <Route path="expenses" element={<Expenses />} />
           <Route path="expenses/new" element={<NewExpenses />} />
           <Route path="reports/expenses/generic" element={<GenericExpense />} />
+          <Route path="users" element={<Users />} />
         </Route>
       </Routes>
     </AuthProvider>

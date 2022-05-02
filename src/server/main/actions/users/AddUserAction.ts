@@ -8,10 +8,21 @@ export class AddUserAction {
     this.userRepository = userRepository;
   }
 
-  public execute(data: ActionData): Promise<User> {
+  public async execute(data: ActionData): Promise<User> {
+    console.log("LA DATA", data);
+    if (data.password !== data.passwordRepeat) {
+      throw new Error("Passwords are distict");
+    }
+
+    console.log("pasa la validacoin", data.password);
+
+    const newPassword = await this.userRepository.generatePassword(data.password);
+    console.log("la nueva clave", newPassword);
     return this.userRepository.add({
       username: data.username,
-      password: data.password
+      password: newPassword,
+      reset: false,
+      createdDate: new Date()
     })
   }
 }

@@ -6,6 +6,7 @@ export class AuthHandler {
 
   public async login(req: Request, res: Response, next: NextFunction) {
     return passport.authenticate("local", { session: false }, (err, user, info) => {
+      console.log("en el handler, paso y retorno el", user)
       if (err || !user) {
         return res.status(400).json({
           message: "Invalid authentication",

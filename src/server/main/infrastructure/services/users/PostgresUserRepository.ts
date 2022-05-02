@@ -5,8 +5,13 @@ import bcrypt from "bcrypt";
 
 export class PostgresUserRepository implements UserRepository {
 
-  public add(user: User): Promise<User> {
-    throw new Error("Method not implemented.");
+  public getAll(): Promise<User[]> {
+    return this.getUserRepository().find();
+  }
+
+  public async add(user: User): Promise<User> {
+    const newUser = await this.getUserRepository().save(user);
+    return newUser;
   }
 
   public updatePassword(user: User): Promise<User> {
@@ -30,6 +35,7 @@ export class PostgresUserRepository implements UserRepository {
   }
 
   private async hashPassword(password: string) {
+    console.log("entra al metodo para hacer hash", password);
     const salt = await bcrypt.genSalt();
     return bcrypt.hash(password, salt);
   }

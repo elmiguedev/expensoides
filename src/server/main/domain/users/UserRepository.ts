@@ -5,4 +5,5 @@ export interface UserRepository {
   updatePassword(user: User): Promise<User>;
   generatePassword(password: string): Promise<string>;
   getByUsername(username: string): Promise<User>;
+  getAll(): Promise<User[]>;
 }

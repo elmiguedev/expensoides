@@ -16,6 +16,7 @@ export class LoginUserAction {
     }
 
     const user = await this.userRepository.getByUsername(data.username);
+    console.log("el usuario que recupera:", user);
 
     if (!user) {
       throw new Error("invalid user");
@@ -26,10 +27,11 @@ export class LoginUserAction {
       return user;
     }
 
-    if (!bcrypt.compareSync(data.password, user.password)) {
+    if (bcrypt.compareSync(data.password, user.password) === false) {
       throw new Error("invalid user");
     }
 
+    console.log("PASO")
     return user;
   }
 

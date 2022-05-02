@@ -9,6 +9,6 @@ export class ApiClient {
   }
 
   static post(url, data) {
-    return axios.get(`${this.baseUrl}${url}`, data, { headers: AuthHeader() });
+    return axios.post(`${this.baseUrl}${url}`, data, { headers: AuthHeader() });
   }
 }

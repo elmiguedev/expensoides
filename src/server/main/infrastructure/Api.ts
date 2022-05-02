@@ -31,6 +31,9 @@ import { PdfReportService } from "./services/reports/PdfReportService";
 import { AuthHandler } from "./handlers/AuthHandler";
 import { LoginUserAction } from "../actions/users/LoginUserAction";
 import { PostgresUserRepository } from "./services/users/PostgresUserRepository";
+import { UserHandler } from "./handlers/UserHandler";
+import { GetUsersAction } from "../actions/users/GetUsersAction";
+import { AddUserAction } from "../actions/users/AddUserAction";
 
 
 dotenv.config();
@@ -97,6 +100,9 @@ const generateMonthReportAction = new GenerateMonthReportAction(
     buildingRepository
 )
 
+const getUsersAction = new GetUsersAction(userRepository);
+const addUserAction = new AddUserAction(userRepository);
+
 const apartmentHandler = new ApartmentHandler(
     addApartmentAction,
     listApartmentsAction
@@ -124,6 +130,8 @@ const reportHandler = new ReportHandler(
     generateMonthReportAction,
 )
 
+const userHandler = new UserHandler(getUsersAction, addUserAction);
+
 const authHandler = new AuthHandler();
 
 app.post("/api/login", authHandler.login.bind(authHandler));
@@ -146,6 +154,9 @@ app.get("/api/expenses", expensesHandler.getAll.bind(expensesHandler));
 app.post("/api/report/expenses/generic", reportHandler.generateGenericExpenseReport.bind(reportHandler));
 app.post("/api/report/expenses", reportHandler.generateExpenseReport.bind(reportHandler));
 app.post("/api/report/month", reportHandler.generateMonthReport.bind(reportHandler));
+
+app.post("/api/users", auth, userHandler.addUser.bind(userHandler));
+app.get("/api/users", auth, userHandler.getUsers.bind(userHandler));
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/index.html"));

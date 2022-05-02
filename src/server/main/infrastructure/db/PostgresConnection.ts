@@ -24,7 +24,7 @@ export class PostgresConnection {
                 UserDao
             ],
             logging: false,
-            synchronize: true,
+            synchronize: false,
         });
     }
 }

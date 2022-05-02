@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (username, password) => {
     return new Promise((resolve, reject) => {
+      console.log("se viene el user y el pass")
       AuthService.login(username, password).then(
         () => {
           console.log("pasa ok")
